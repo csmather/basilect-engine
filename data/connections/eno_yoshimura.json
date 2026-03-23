@@ -1,0 +1,12 @@
+{
+  "from": "brian_eno",
+  "to": "hiroshi_yoshimura",
+  "type": "lineage",
+  "strength": "strong",
+  "dimensions": ["intentional", "structural"],
+  "reasoning": "Yoshimura absorbed Eno's ambient philosophy and reconfigured it through Japanese sensibility. Where Eno builds a landscape for the listener to inhabit, Yoshimura turns attention toward the landscape already present. The same philosophical root — music as environment, not event — applied with fundamentally different intent: Eno's is escapist, Yoshimura's is attentive. Eno created the conceptual framework; Yoshimura created something distinct inside it. The lineage is explicit and documented; the deeper point is that they arrive at a similar compositional ethics through different cultural filters.",
+  "cross_cultural": true,
+  "cross_era": false,
+  "discovered_by": "manual",
+  "notes": "Well-documented connection — foundational for the graph but not a discovery. Tagged lineage rather than basilect to track that this is an established link."
+}

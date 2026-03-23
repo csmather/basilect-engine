@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:insheepsclothinghifi.com)",
+      "WebFetch(domain:hirokiishiguro.com)",
+      "WebFetch(domain:www.stampthewax.com)",
+      "WebFetch(domain:thevinylfactory.com)"
+    ]
+  }
+}
