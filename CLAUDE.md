@@ -13,6 +13,7 @@ The core theory: music has a shared language hidden beneath surface-level genre 
 Spotify-style systems work on audio features — BPM, warmth, density. That catches surface similarity. It misses the shared sensibility between a Japanese library music composer and a New York jazz rap producer, or the emotional architecture overlap between Radiohead and Fishmans. Those connections live in language — interviews, critical writing, liner notes, how artists describe what they're doing. LLM reasoning over accumulated context is better suited to this dimension than audio embeddings.
 
 The priority hierarchy for what makes a basilect connection:
+
 1. **Intentional/philosophical** — the artist's approach, sensibility, what they're trying to do
 2. **Textural** — sonic surface, grain, density, space
 3. **Emotional** — how the music moves through feeling over time
@@ -25,19 +26,23 @@ The priority hierarchy for what makes a basilect connection:
 These define what a valid connection looks like. Apply them when reasoning about candidates, evaluating paths, or generating new connections.
 
 ### What a basilect connection is
-A connection is valid when two artists share intentional or philosophical DNA despite surface-level differences. The goal is "same room, different door" — not artists who sound alike, but artists who are *doing* something alike.
+
+A connection is valid when two artists share intentional or philosophical DNA despite surface-level differences. The goal is "same room, different door" — not artists who sound alike, but artists who are _doing_ something alike.
 
 ### What makes a connection worth adding
+
 - It should reward curiosity, not confirm what the algorithm already shows. If Spotify or Last.fm would surface this pairing, it's probably not a basilect connection — it's a similarity connection.
-- Don't reach for obscurity for its own sake. The connection should feel like something a listener *would* value but *wouldn't* have found.
+- Don't reach for obscurity for its own sake. The connection should feel like something a listener _would_ value but _wouldn't_ have found.
 - Value sonic DNA, but value "same room, different door" higher — shared sensibility, emotional architecture, or production philosophy across different eras, scenes, or countries.
 - Cross-cultural and cross-era links are high value. Geographic and temporal range signals that the connection operates on a deeper dimension than scene proximity.
 - Genre labels are low priority. Vibes, texture, feeling, and compositional approach matter more than categorical genre fit.
 
 ### Blindspots
+
 Data (Last.fm, listening patterns, critical writing) clusters within scenes and cultures. The real discoveries often live outside the main cluster — artists from other countries, other eras, adjacent scenes that share intent but not audience. Flag these proactively. When researching a new artist, always ask: who's doing something philosophically similar in a completely different context?
 
 ### Epistemic honesty
+
 You cannot hear the music. Sonic judgments are based on contextual knowledge — genre tags, critical descriptions, scene associations, production lineage. Be transparent when a candidate is obscure enough that you're uncertain about the actual sound. Flag it as **"going off context"** so the curator can prioritize checking by ear.
 
 ---
@@ -81,6 +86,7 @@ Three layers: **sources** (raw evidence), **profiles** (synthesized for reasonin
 **Source types**: `interview`, `review`, `liner_notes`, `artist_statement`, `critical_essay`, `documentary`, `biography`, `curator_note`
 
 **Confidence levels**:
+
 - `high` — 3+ quality sources, philosophical profile is well-grounded
 - `medium` — 1-2 sources, profile is reasonable but could be deeper
 - `low` — primarily inferred from tags/scene context, limited primary sources
@@ -96,6 +102,7 @@ The philosophical profile is the ceiling for reasoning quality. A thin profile p
   "to": "rei_harakami",
   "type": "basilect",
   "strength": "strong",
+  "confidence": "medium",
   "dimensions": ["intentional", "emotional"],
   "reasoning": "Both operate in a Japanese tradition of introspective electronic/instrumental music where restraint is the primary tool. Harakami's synthesizers occupy the same emotional register as Nujabes' samples — unhurried, melancholic without being sentimental. Different sonic surfaces, same philosophical approach to space and feeling.",
   "cross_cultural": false,
@@ -105,6 +112,7 @@ The philosophical profile is the ceiling for reasoning quality. A thin profile p
 ```
 
 **Connection types**:
+
 - `basilect` — full philosophical/intentional connection. The real thing.
 - `sonic` — primarily textural/surface similarity. Weaker signal, but worth tracking.
 - `lineage` — direct influence (one artist shaped the other). Useful context, not the same as a basilect connection.
@@ -112,6 +120,15 @@ The philosophical profile is the ceiling for reasoning quality. A thin profile p
 **Dimensions** — tag which layers the connection operates on: `intentional`, `textural`, `emotional`, `structural`. Enables queries like "show me all cross-cultural connections that are primarily intentional."
 
 **discovered_by** — `manual` (established by the curator, either from personal knowledge or confirmed by ear) or `engine` (suggested by graph reasoning, pending approval).
+
+**Edge strength** vs **edge confidence** — these measure different things:
+
+- `strength` is curatorial: "if this connection is real, how good is it?" A strong connection is one that rewards a curious listener. This is a judgment about the connection's value, not its certainty.
+- `confidence` is epistemic: "how sure are we this connection is actually valid?" Constrained by the weakest node it touches — you can't have high confidence on an edge between two medium-confidence profiles.
+  - `high` — both nodes are well-sourced, the reasoning is grounded in specific evidence
+  - `medium` — at least one node has gaps, or the reasoning relies partly on inference
+  - `low` — speculative, going off context, or both nodes are thin
+  - A `strong` / `low` edge means "this would be a great connection if it holds up — prioritize ear-checking"
 
 ---
 
@@ -148,11 +165,35 @@ Research and add a new artist to the graph.
 
 Don't generate philosophical profiles from thin air. If sources are sparse, write what you can, set confidence to `low` or `stub`, and flag what's missing. A honest stub is better than a confident hallucination.
 
+#### Source strategy
+
+Search for what you don't already know, not for confirmation of what you do. Your training data gives you a starting impression of most artists — the goal of source research is to challenge, deepen, or correct that impression, not validate it.
+
+**Source value hierarchy** (highest to lowest):
+
+1. Artist's own words — interviews, liner notes, artist statements. These ground the philosophical profile in intent, not inference.
+2. Longform critical writing — reviews or essays that analyze specific works with textual detail, not just star ratings.
+3. Scene/compilation/label context — curatorial framing from labels, compilation liner notes, or scene retrospectives that position the artist within a tradition.
+4. General reviews and biography pages — useful for facts and tags, weak for philosophical profiling.
+
+**Search discipline:**
+
+- Lead with queries targeting the artist's own words: `[artist] interview`, `[artist] "in their own words"`, `[artist] liner notes`.
+- Follow with queries targeting specific works you're less familiar with — not the album you'd name from memory, but a deeper cut, a collaboration, a side project. This is where genuine discovery happens.
+- At least one query per artist should be exploratory — a label, a scene, a collaborator, a compilation — something that might surface context your training data doesn't emphasize.
+- If all your sources say roughly what you expected, you haven't searched well enough.
+
+**Minimum for confidence levels:**
+
+- `high` requires at least one primary source (interview/artist statement) + one critical source
+- `medium` requires at least two sources of any quality tier
+- `low` or `stub` means you found fewer than two usable sources — flag what's missing and move on honestly
+
 ### `seed`
 
 Bulk-add a cluster of connected artists from a natural language description. The curator describes the artists and the through-line connecting them:
 
-> *"Brian Eno connects to Hiroshi Yoshimura, Yoshio Ojima, Midori Hirano, and Midori Takada. The through-line is Japanese ambient / kankyō ongaku — artists who share Eno's philosophy of music as environment but filtered through a distinctly Japanese sensibility of restraint and negative space."*
+> _"Brian Eno connects to Hiroshi Yoshimura, Yoshio Ojima, Midori Hirano, and Midori Takada. The through-line is Japanese ambient / kankyō ongaku — artists who share Eno's philosophy of music as environment but filtered through a distinctly Japanese sensibility of restraint and negative space."_
 
 The command:
 
@@ -203,6 +244,7 @@ Batch analysis of the full graph:
 3. Flag isolated nodes (few connections) and thin profiles (low confidence) that are limiting the graph's reasoning power
 4. Suggest the highest-value artists to add next — not random, but artists who would create bridges between existing clusters or fill known blindspots
 5. Update `graph_summary.md`
+6. Surface high-strength / low-confidence edges as priority ear-checks — these are the connections most worth validating
 
 ### `status`
 
@@ -213,6 +255,7 @@ Regenerate `graph_summary.md` and print a quick overview: node count, edge count
 ## How Claude Code Should Work Here
 
 **Do:**
+
 - Reason about connections using the philosophical dimension first, then texture, emotion, structure
 - Search for and synthesize source material when building profiles
 - Flag uncertainty — "going off context" is always better than a confident guess
@@ -220,6 +263,7 @@ Regenerate `graph_summary.md` and print a quick overview: node count, edge count
 - Track your own confidence in each suggestion
 
 **Don't:**
+
 - Default to Last.fm-style reasoning ("fans of X also listen to Y") — that's audience overlap, not a basilect connection
 - Generate philosophical profiles without source material — ask for more or mark as stub
 - Treat genre tags as the primary signal for connections
