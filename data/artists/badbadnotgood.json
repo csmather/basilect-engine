@@ -1,0 +1,51 @@
+{
+  "id": "badbadnotgood",
+  "name": "BADBADNOTGOOD",
+  "country": "CA",
+  "era": "2010s-2020s",
+  "tags": ["jazz", "contemporary jazz", "jazz fusion", "instrumental hip-hop", "jazz rap", "toronto"],
+
+  "sonic_profile": {
+    "texture": "warm, live-room organic — acoustic instruments given space to breathe; later work adds orchestral weight (strings, harp) without losing intimacy",
+    "density": "variable by era — early work is lean trio jazz with hip-hop rhythmic attack; IV adds harmonic richness; Talk Memory is the most spacious, orchestral passages offset by sparse improvisation",
+    "energy": "kinetic but controlled — rhythmically aggressive roots underneath harmonically sophisticated, introspective melodic writing; not meditative, not bombastic"
+  },
+
+  "philosophical_profile": "BADBADNOTGOOD treat jazz not as a genre to inhabit but as a way of thinking about music — a set of tools (harmonic language, improvisational spirit, group interplay) applied to whatever material is in front of them. They emerged from formal jazz training at Humber College but were more passionate about MF DOOM than Miles Davis standards, and that double allegiance is the engine: technically trained musicians who genuinely don't care about keeping the tradition. 'We're not really concerned about keeping the tradition. We spent a lot of time studying it... the goal is creating something unique and honest.' Their career arc runs from jazz-trained kids covering hip-hop as provocation, through collaborative work with Ghostface Killah, Tyler the Creator, and Kendrick Lamar, to the maturing compositional vision of IV and Talk Memory, where the hip-hop influence recedes and the jazz roots deepen into something more orchestral and introspective. What holds it together is improvisation as shared language — not free jazz chaos, but the willingness to let ideas change in real time, to let the music be alive in the room.",
+
+  "sources": [
+    {
+      "url": "https://www.loudandquiet.com/interview/badbadnotgood/",
+      "type": "interview",
+      "summary": "Members discuss genre refusal ('we use jazz as almost a tool'), their break from tradition, and focus on originality over convention.",
+      "fetched": "2026-03-22"
+    },
+    {
+      "url": "https://officemagazine.net/badbadnotgood-talk-memory",
+      "type": "interview",
+      "summary": "Sowinski and Whitty on Talk Memory's theme of community, jazz influences (Coltrane, Shorter), improvisation-based process.",
+      "fetched": "2026-03-22"
+    },
+    {
+      "url": "https://www.theskinny.co.uk/music/interviews/badbadnotgood-unveil-ghostface-collaboration",
+      "type": "interview",
+      "summary": "Chester Hansen: 'Jazz is more like an approach to music... it's just about the spirit of improvisation.' On genre as ethos rather than category.",
+      "fetched": "2026-03-22"
+    },
+    {
+      "url": "https://daily.bandcamp.com/album-of-the-day/badbadnotgood-talk-memory-review",
+      "type": "review",
+      "summary": "Frames Talk Memory as 'a meditation on what they might have become had they stuck to the curriculum, and what they could only have become by rebuking it.'",
+      "fetched": "2026-03-22"
+    },
+    {
+      "url": "https://spectrumculture.com/2021/10/12/badbadnotgood-talk-memory-review/",
+      "type": "review",
+      "summary": "Notes pivot toward direct jazz compositions anchored by Arthur Verocai's strings; characterizes the album as freed from constraints rather than aimless.",
+      "fetched": "2026-03-22"
+    }
+  ],
+
+  "confidence": "high",
+  "notes": "Matthew Tavares (keys) was an original member, departed before Talk Memory. Key collaborators: Ghostface Killah, Tyler the Creator, Kendrick Lamar, Floating Points, Arthur Verocai, Brandee Younger, Laraaji, Terrace Martin."
+}

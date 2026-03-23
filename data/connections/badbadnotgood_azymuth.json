@@ -1,0 +1,12 @@
+{
+  "from": "badbadnotgood",
+  "to": "azymuth",
+  "type": "basilect",
+  "strength": "strong",
+  "confidence": "medium",
+  "dimensions": ["intentional", "textural"],
+  "reasoning": "Both built their jazz practice around groove as the organising principle — but they arrived at that from completely different rhythmic traditions. BBNG came through hip-hop: the kit attack is MPC-inflected, the rhythmic feel is rooted in sample culture. Azymuth came through samba: their 'samba doido' wires traditional Brazilian folk rhythm into electric jazz fusion. Neither is trying to preserve jazz — both are using jazz harmony and improvisational sensibility as tools deployed in service of rhythmic feeling. The cross-cultural, cross-era gap (Toronto 2010s, Rio 1970s) is exactly what makes this a basilect rather than a scene connection. Spotify would never surface this pairing.",
+  "cross_cultural": true,
+  "cross_era": true,
+  "discovered_by": "manual"
+}

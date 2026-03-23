@@ -1,0 +1,12 @@
+{
+  "from": "arthur_verocai",
+  "to": "azymuth",
+  "type": "basilect",
+  "strength": "medium",
+  "confidence": "medium",
+  "dimensions": ["intentional"],
+  "reasoning": "Same cultural moment, completely different approach to the same core instinct: jazz as raw material rather than destination. Verocai is an orchestral arranger — strings first, harmony as architecture, cinematic and restrained. Azymuth is an electric groove band — rhythm first, 'no limits,' samba doido as the organising philosophy. On the surface they have little in common beyond country and era. The connection is philosophical: both refuse to let jazz be the point. Verocai uses it to make something that sounds like a film that doesn't exist; Azymuth uses it to make something that sounds like a city at 2am. The weakness of this edge is scene proximity — they came from the same Rio jazz world and may have simply absorbed similar influences. Worth ear-checking against their respective catalogs for shared sensibility rather than shared scene.",
+  "cross_cultural": false,
+  "cross_era": false,
+  "discovered_by": "manual"
+}

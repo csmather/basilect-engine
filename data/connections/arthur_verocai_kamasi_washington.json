@@ -1,0 +1,12 @@
+{
+  "from": "arthur_verocai",
+  "to": "kamasi_washington",
+  "type": "basilect",
+  "strength": "medium",
+  "confidence": "medium",
+  "dimensions": ["intentional", "structural"],
+  "reasoning": "Both make jazz that earns its scale — orchestral weight used because the music actually needs it, not as decoration. Verocai's 1972 album insisted on twelve violins and a full ensemble because the feeling he was after required it. Washington's The Epic runs three hours because the emotional and spiritual architecture he's building requires that space. The cross-cultural, cross-era gap (Brazil 1970s, Los Angeles 2010s) strengthens the connection — they couldn't have absorbed this from each other. Both also share the experience of making something that found its real audience only after a delay and a context shift (Verocai via hip-hop sampling, Washington via Kendrick Lamar's audience). Going off context on the specific sonic overlap — ear-check recommended.",
+  "cross_cultural": true,
+  "cross_era": true,
+  "discovered_by": "manual"
+}

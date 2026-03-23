@@ -7,7 +7,20 @@
       "WebFetch(domain:www.stampthewax.com)",
       "WebFetch(domain:thevinylfactory.com)",
       "WebFetch(domain:daily.bandcamp.com)",
-      "WebFetch(domain:www.passionweiss.com)"
+      "WebFetch(domain:www.passionweiss.com)",
+      "WebFetch(domain:jazz.fm)",
+      "WebFetch(domain:www.loudandquiet.com)",
+      "WebFetch(domain:pitchfork.com)",
+      "WebFetch(domain:officemagazine.net)",
+      "WebFetch(domain:spectrumculture.com)",
+      "WebFetch(domain:thehundreds.com)",
+      "WebFetch(domain:www.clashmusic.com)",
+      "WebFetch(domain:www.theskinny.co.uk)",
+      "Bash(xargs -I{} stat -c \"%y %n\" /c/Users/mathe/.claude/debug/{})",
+      "WebFetch(domain:soundsandcolours.com)",
+      "WebFetch(domain:daily.redbullmusicacademy.com)",
+      "WebFetch(domain:reforka.medium.com)",
+      "WebFetch(domain:www.stereogum.com)"
     ]
   }
 }
