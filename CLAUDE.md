@@ -274,8 +274,7 @@ Regenerate `graph_summary.md` and print a quick overview: node count, edge count
 
 ## Tools
 
-- **Firecrawl** — primary tool for web search and page reading during artist research. Handles JS rendering, returns clean markdown.
-- **WebSearch / WebFetch** — fallback if Firecrawl doesn't return good results for a query.
+- **WebSearch / WebFetch** — for source research during artist profiling. WebSearch for discovery, WebFetch for reading full pages.
 - **Filesystem** — read/write JSON files in `data/`. All graph state lives on disk.
 
 No external API calls. No database. The graph is JSON files that Claude Code reads into context and reasons over directly.
