@@ -156,7 +156,7 @@ All commands run interactively through Claude Code on your Pro plan. No API call
 
 Research and add a new artist to the graph.
 
-1. Search for critical writing, interviews, and reviews using Firecrawl (fall back to WebSearch/WebFetch if needed)
+1. Search for interviews, critical writing, and reviews
 2. Collect 2-5 quality sources — prioritize interviews and longform criticism over listicles and aggregator pages
 3. Draft the sonic and philosophical profiles from the source material
 4. Assign a confidence level based on source quality and coverage
