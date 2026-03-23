@@ -119,7 +119,7 @@ The philosophical profile is the ceiling for reasoning quality. A thin profile p
 
 **Dimensions** — tag which layers the connection operates on: `intentional`, `textural`, `emotional`, `structural`. Enables queries like "show me all cross-cultural connections that are primarily intentional."
 
-**discovered_by** — `manual` (established by the curator, either from personal knowledge or confirmed by ear) or `engine` (suggested by graph reasoning, pending approval).
+**discovered_by** — `manual` (for any connection originating from a `seed` or `connect` command, including lateral connections inferred within a seed cluster) or `engine` (strictly for connections suggested by graph reasoning or surfaced autonomously by `suggest` or `scan gaps`; pending approval).
 
 **Edge strength** vs **edge confidence** — these measure different things:
 
