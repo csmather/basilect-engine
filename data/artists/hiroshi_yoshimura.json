@@ -1,0 +1,33 @@
+{
+  "id": "hiroshi_yoshimura",
+  "name": "Hiroshi Yoshimura",
+  "country": "JP",
+  "era": "1980s-2000s",
+  "tags": ["kankyo ongaku", "ambient", "environmental", "Japanese", "minimal"],
+
+  "sonic_profile": {
+    "texture": "minimal, clean — keyboard and Fender Rhodes, sparse layering",
+    "density": "very low — each sound placed with intention, silence is structural",
+    "energy": "contemplative, undemanding — music that coexists with the room rather than filling it"
+  },
+
+  "philosophical_profile": "Yoshimura's kankyo ongaku is not background music — it's music that sharpens awareness of environment. Where Eno creates a landscape to inhabit, Yoshimura turns attention toward the landscape already present. He described composing by 'catching the waves of the scenery out of the window,' treating natural phenomena — rain, shade, cloud movement — as compositional partners, not just inspiration. Sound as a way of noticing, not constructing. The architecture of the listening space is as much part of the work as the notes.",
+
+  "sources": [
+    {
+      "url": "https://everythingisnoise.net/features/a-scene-in-retrospect-hiroshi-yoshimura-music-for-nine-postcards/",
+      "type": "critical_essay",
+      "summary": "Scene retrospective — kankyo ongaku philosophy, compositional approach, relationship to Eno's ambient concept.",
+      "fetched": "2026-03-22"
+    },
+    {
+      "url": "https://www.thevinylfactory.com/features/kankyo-ongaku-japanese-environmental-sounds-spencer-doran",
+      "type": "critical_essay",
+      "summary": "Spencer Doran on kankyo ongaku tradition — Yoshimura as central figure, the philosophy of sound in space.",
+      "fetched": "2026-03-22"
+    }
+  ],
+
+  "confidence": "high",
+  "notes": ""
+}

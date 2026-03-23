@@ -1,0 +1,33 @@
+{
+  "id": "brian_eno",
+  "name": "Brian Eno",
+  "country": "GB",
+  "era": "1970s-present",
+  "tags": ["ambient", "experimental", "generative", "art rock", "producer", "electronic"],
+
+  "sonic_profile": {
+    "texture": "sparse, slowly evolving, process-driven — texture emerges from systems rather than performance",
+    "density": "low to medium — space is compositionally active, not empty",
+    "energy": "contemplative, detached, observational — designed to recede"
+  },
+
+  "philosophical_profile": "Music as environment rather than event. Eno's central idea is that music doesn't need to demand attention to be meaningful — it should work at the periphery, shifting the quality of a space without imposing. He explicitly designed Ambient 1 to be 'as ignorable as it is interesting.' His generative and tape-loop methods treat composition as creating conditions rather than specifying outcomes. 'Repetition is a form of change' — the loop doesn't repeat, it accrues. The listener completes the work. Control relinquished, not lost.",
+
+  "sources": [
+    {
+      "url": "https://www.openculture.com/2021/03/brian-eno-explains-the-origins-of-ambient-music.html",
+      "type": "interview",
+      "summary": "Eno on the origins of ambient music — the bedridden epiphany, music as landscape you inhabit, control relinquished.",
+      "fetched": "2026-03-22"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Ambient_1:_Music_for_Airports",
+      "type": "critical_essay",
+      "summary": "Context on Ambient 1 — Eno's liner notes philosophy, furniture music lineage from Satie.",
+      "fetched": "2026-03-22"
+    }
+  ],
+
+  "confidence": "high",
+  "notes": ""
+}
