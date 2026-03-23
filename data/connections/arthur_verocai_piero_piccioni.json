@@ -1,0 +1,12 @@
+{
+  "from": "arthur_verocai",
+  "to": "piero_piccioni",
+  "type": "basilect",
+  "strength": "strong",
+  "confidence": "medium",
+  "dimensions": ["intentional", "textural", "structural"],
+  "reasoning": "Two orchestral arrangers from the 1970s who both made jazz-informed work that was ahead of its audience and got rediscovered decades later by people looking for exactly what they'd made. The parallel is almost eerie. Verocai's 1972 debut was ignored in Brazil and became a hip-hop sampling touchstone in the US and Europe. Piccioni's film scores were consumed as genre product at the time and are now mined as sophisticated jazz-orchestral writing. Both used strings as the primary expressive layer, not decoration. Both fused jazz harmony with orchestral composition without privileging either. Both were operating from a position of 'this is what the music needs' rather than 'this is what the market needs.' The cross-cultural connection (Brazil ↔ Italy, 1970s) is the kind the graph is built for — same room, completely different door.",
+  "cross_cultural": true,
+  "cross_era": false,
+  "discovered_by": "manual"
+}

@@ -1,0 +1,12 @@
+{
+  "from": "badbadnotgood",
+  "to": "arthur_verocai",
+  "type": "basilect",
+  "strength": "strong",
+  "confidence": "high",
+  "dimensions": ["intentional", "structural"],
+  "reasoning": "The most direct connection in this cluster: Verocai arranged the strings on BBNG's Talk Memory (2021), which is also the moment BBNG's jazz roots surfaced most fully. But the connection predates the collaboration — both treat jazz as compositional vocabulary rather than genre, and both arrived at that position through disobedience. BBNG came through hip-hop, refusing to preserve jazz tradition. Verocai made something uncompromising for its own sake in 1972 and watched it get ignored. Talk Memory is the meeting point: BBNG's matured orchestral sensibility found exactly the arranger it needed, and Verocai found exactly the context his language had been waiting for. Different continents, different eras, same room.",
+  "cross_cultural": true,
+  "cross_era": true,
+  "discovered_by": "manual"
+}

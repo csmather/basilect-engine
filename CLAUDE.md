@@ -154,11 +154,9 @@ All commands run interactively through Claude Code on your Pro plan. No API call
 
 ### Execution constraints
 
-Limit parallel/background agents to 2 at a time maximum. For seed commands
-with 4+ artists, batch into groups of 2 rather than spawning all at once.
-Present completed profiles for review before starting the next batch. This
-is a Pro plan with usage limits — a crash that loses 2 profiles is
-recoverable, a crash that loses 5 is not.
+**Do not use subagents for artist research unless explicitly requested.** Run WebSearch and WebFetch directly in the main conversation. Subagents add failure surface and context overhead on the Pro plan — direct research is more reliable.
+
+For seed commands with 4+ artists, research and write one artist at a time, saving to disk after each before moving to the next. This keeps each step recoverable. Do not batch or parallelize artist research.
 
 ### `add artist [name]`
 

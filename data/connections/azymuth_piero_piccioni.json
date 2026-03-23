@@ -1,0 +1,12 @@
+{
+  "from": "azymuth",
+  "to": "piero_piccioni",
+  "type": "basilect",
+  "strength": "medium",
+  "confidence": "low",
+  "dimensions": ["intentional"],
+  "reasoning": "Both deploy jazz in contexts where it isn't the primary genre frame — Piccioni in Italian film scoring, Azymuth in Brazilian samba fusion. The shared instinct is jazz as a vocabulary borrowed for other purposes, with groove and atmosphere outranking harmonic display. But the surface difference is significant enough that this is going off context: Piccioni's restraint and orchestral economy is almost the opposite of Azymuth's 'no limits' electric density. The connection may be more structural (jazz-as-tool in a non-jazz frame) than genuinely philosophical. Flag for ear-checking — if it holds up sonically, it's a strong cross-cultural find; if not, the intentional overlap may be too thin to carry the edge.",
+  "cross_cultural": true,
+  "cross_era": false,
+  "discovered_by": "manual"
+}
