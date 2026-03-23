@@ -3,10 +3,11 @@
   "to": "bartosz_kruczynski",
   "type": "basilect",
   "strength": "moderate",
+  "confidence": "low",
   "dimensions": ["emotional", "textural"],
   "reasoning": "Both produce quiet, atmospheric music as inhabitable space. Ishiguro's gentle piano/synth and Kruczynski's hazy pastoral electronics share an emotional register — unhurried, slightly melancholic, undemanding. Neither asks for full attention; both create a quality of space. The cross-cultural dimension (Japan/Poland) elevates this from scene proximity to philosophical alignment.",
   "cross_cultural": true,
   "cross_era": false,
-  "discovered_by": "engine",
+  "discovered_by": "manual",
   "notes": "Both profiles are medium confidence — connection is directionally correct but needs stronger sourcing on both ends before full trust."
 }
