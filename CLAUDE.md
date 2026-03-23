@@ -152,6 +152,14 @@ basilect-engine/
 
 All commands run interactively through Claude Code on your Pro plan. No API calls, no external scripts.
 
+### Execution constraints
+
+Limit parallel/background agents to 2 at a time maximum. For seed commands
+with 4+ artists, batch into groups of 2 rather than spawning all at once.
+Present completed profiles for review before starting the next batch. This
+is a Pro plan with usage limits — a crash that loses 2 profiles is
+recoverable, a crash that loses 5 is not.
+
 ### `add artist [name]`
 
 Research and add a new artist to the graph.

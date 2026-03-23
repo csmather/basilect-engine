@@ -5,7 +5,9 @@
       "WebFetch(domain:insheepsclothinghifi.com)",
       "WebFetch(domain:hirokiishiguro.com)",
       "WebFetch(domain:www.stampthewax.com)",
-      "WebFetch(domain:thevinylfactory.com)"
+      "WebFetch(domain:thevinylfactory.com)",
+      "WebFetch(domain:daily.bandcamp.com)",
+      "WebFetch(domain:www.passionweiss.com)"
     ]
   }
 }
