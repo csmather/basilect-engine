@@ -20,7 +20,13 @@
       "WebFetch(domain:soundsandcolours.com)",
       "WebFetch(domain:daily.redbullmusicacademy.com)",
       "WebFetch(domain:reforka.medium.com)",
-      "WebFetch(domain:www.stereogum.com)"
+      "WebFetch(domain:www.stereogum.com)",
+      "Bash(for f:*)",
+      "Bash(do echo:*)",
+      "Read(//c/Users/mathe/projects/basilect-engine/**)",
+      "Bash(python3 -c \"import json,sys; d=json.load\\(sys.stdin\\); print\\(d.get\\(''''id'''',''''?''''\\), ''''|'''', d.get\\(''''confidence'''',''''?''''\\), ''''|'''', d.get\\(''''name'''',''''?''''\\)\\)\")",
+      "Bash(done)",
+      "Bash(do python3:*)"
     ]
   }
 }
