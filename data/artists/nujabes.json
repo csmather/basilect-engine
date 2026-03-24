@@ -1,0 +1,23 @@
+{
+  "id": "nujabes",
+  "name": "Nujabes",
+  "country": "JP",
+  "tags": [
+    "hip-hop",
+    "jazz hop",
+    "japanese",
+    "chillout",
+    "trip-hop",
+    "jazz",
+    "instrumental hip-hop",
+    "hip hop",
+    "instrumental",
+    "electronic"
+  ],
+  "discourse_profile": "Sampling as devotion to the source material. Nujabes treated beat-making as the art of finding and amplifying the emotional core of a record — his favorite phrase was reportedly \"I want to find the best two bars.\" Rather than chopping or rearranging, he preferred bold melodic loops that preserved the original's harmonic arc, drawing heavily on jazz (Pharoah Sanders, Miles Davis, Chet Baker) and Brazilian music. The approach was contemplative rather than technical: beats that provoke emotional response beyond head-nodding, closer to meditation than song. He was deeply selective about what got released, shelving anything that didn't meet his standard. His spiritual orientation — rooted in Buddhism and a belief in music's healing capacity — informed a production philosophy that prioritized serenity and introspective space. Limited primary interview material exists; Nujabes was private and died in 2010, so the discourse record is thin and partly reconstructed from collaborator testimony (Funky DL, Pase Rock, Uyama Hiroto).",
+  "sources": [
+    { "url": "https://www.somestudies.com/studies/nujabes", "type": "critical_essay", "fetched": "2026-03-23" },
+    { "url": "https://atwoodmagazine.com/aapihm2205-nujabes-nohidea-essay-aapi-heritage-month/", "type": "critical_essay", "fetched": "2026-03-23" }
+  ],
+  "confidence": "medium"
+}

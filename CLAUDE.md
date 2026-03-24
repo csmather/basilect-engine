@@ -40,7 +40,7 @@ The hypothesis: the most rewarding music discoveries happen when two artists are
 ```
 
 - **id**: lowercase slug, underscores for spaces. e.g. `brian_eno`, `badbadnotgood`.
-- **tags**: from Last.fm `artist.getTopTags`. Include all tags with meaningful weight — typically 15-30. Lowercase, as returned by the API.
+- **tags**: from Last.fm `artist.getTopTags`. Include all tags with non-zero weight — typically ~10 per artist (the API's weight distribution drops off steeply). Lowercase, as returned by the API.
 - **discourse_profile**: synthesized from source research. See writing instructions below.
 - **sources**: breadcrumbs only — url, type, fetch date. No summaries stored.
 - **confidence**: `high` (3+ quality sources, profile well-grounded), `medium` (1-2 sources, reasonable but thin), `low` (inferred from context, limited primary material).
@@ -56,38 +56,45 @@ Build a new artist node. Three steps:
 **Step 1: Gather tags**
 
 Call the Last.fm API:
+
 ```
 http://ws.audioscrobbler.com/2.0/?method=artist.getTopTags&artist=ARTIST_NAME&api_key=API_KEY&format=json
 ```
 
 The API key is stored in `.env` as `LASTFM_API_KEY`. Use `scripts/lastfm.py` to fetch.
 
-Extract tag names. Keep all tags with non-trivial weight (the API returns a weight 0-100). Store as a flat list of lowercase strings.
+Extract tag names. Keep all tags with non-zero weight (the API returns a weight 0-100, but the distribution drops off steeply — expect ~10 usable tags per artist). Store as a flat list of lowercase strings.
 
 If the artist isn't found on Last.fm, note it and proceed — tags can be manually assigned from genre knowledge, but flag the node's proximity data as incomplete.
 
 **Step 2: Research discourse**
 
-Search for and read source material about the artist's intent, philosophy, and approach. The goal is to understand what the artist is *trying to do* — not what they sound like, not their biography, not their discography.
+Search for and read source material about the artist's intent, philosophy, and approach. The goal is to understand what the artist is _trying to do_ — not what they sound like, not their biography, not their discography.
 
 **Source priority** (highest to lowest):
+
 1. **Artist's own words** — interviews, liner notes, artist statements. These ground the profile in intent, not inference.
 2. **Longform critical writing** — essays or reviews that analyze approach and philosophy, not just rate the music.
 3. **Scene/label/compilation context** — curatorial framing that positions the artist within a tradition.
 4. **Biography and review pages** — useful for facts, weak for discourse.
 
 **Search strategy:**
+
 - Lead with queries targeting the artist's own words: `[artist] interview`, `[artist] "in their own words"`, `[artist] approach philosophy`.
-- Follow with queries targeting specific works — not the album you'd name from memory, but deeper cuts, collaborations, side projects.
-- At least one query should be exploratory — a label, a scene, a collaborator, a compilation that might surface context your training data doesn't emphasize.
-- If all your sources say roughly what you expected, you haven't searched well enough.
+- Follow with queries targeting specific works.
+- At least one query **must** be exploratory — a lesser-known work, a label, a scene, a collaborator, a compilation that might surface context your training data doesn't emphasize. This is not optional.
+- For non-anglophone artists, target English-language specialty publications (Bandcamp Daily, The Wire, Japan Times, Vinyl Factory, Red Bull Music Academy) and search for translated interviews. English-language material will be thinner — if confidence lands at `medium`, say why honestly rather than padding the profile with inference.
+- If your findings are unexpected compared to your training data, you're probably doing a good job.
 
 **Source reading workflow:**
+
 - Fetch a source → extract the relevant discourse signals into scratch notes → move on to the next source.
+- If a fetch fails (403, empty page, TLS error), search for an alternative source rather than falling back on search result summaries. Search snippets are leads, not sources.
 - Do NOT store source summaries as persistent data. The discourse profile is the output; the source list is the receipt.
 - Working notes are context-management tools, not data.
 
 **Minimum sources for confidence levels:**
+
 - `high`: at least 1 primary source (interview/artist statement) + 1 critical source
 - `medium`: at least 2 sources of any tier
 - `low`: fewer than 2 usable sources — flag what's missing and move on honestly
@@ -95,6 +102,7 @@ Search for and read source material about the artist's intent, philosophy, and a
 **Step 3: Write the discourse profile**
 
 Synthesize the source material into a prose paragraph (3-8 sentences) that captures:
+
 - What the artist says they're trying to do
 - What critics identify as their distinctive approach or philosophy
 - How they describe their relationship to genre, tradition, sound, or composition
@@ -127,6 +135,7 @@ Run `python scripts/compute.py`. Computes pairwise discourse similarity (cosine)
 ### `discover`
 
 Run `python scripts/discover.py`. Outputs ranked pair lists:
+
 - Basilect discoveries (high discourse sim, low tag proximity)
 - Deep scene connections (high discourse sim, high tag proximity)
 - Surface-only connections (low discourse sim, high tag proximity)
@@ -134,6 +143,7 @@ Run `python scripts/discover.py`. Outputs ranked pair lists:
 ### `stats`
 
 Run `python scripts/stats.py`. Outputs:
+
 - Node count, average tags per node, confidence distribution
 - Orthogonality test: Pearson and Spearman correlation between Φ_sim and P_prox
 - Distribution stats for both similarity measures

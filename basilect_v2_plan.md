@@ -45,7 +45,7 @@ No curation layer. No manual connection authoring. No approval gates during node
 
 For each artist, Claude Code runs:
 
-1. **Gather tags** — Last.fm `artist.getTopTags` API call. Store the tag names (as many as are useful, typically 15-30+).
+1. **Gather tags** — Last.fm `artist.getTopTags` API call. Store tag names with non-zero weight (~10 per artist — the API's weight distribution is steep).
 2. **Research discourse** — web search for interviews, critical writing, liner notes. Fetch 2-4 quality sources. Extract relevant discourse signals into scratch notes (not persisted). Write the discourse profile from accumulated notes.
 3. **Write node** — assemble the JSON and save to `data/artists/{slug}.json`.
 

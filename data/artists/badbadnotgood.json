@@ -1,0 +1,25 @@
+{
+  "id": "badbadnotgood",
+  "name": "BADBADNOTGOOD",
+  "country": "CA",
+  "tags": [
+    "jazz",
+    "experimental",
+    "hip-hop",
+    "instrumental hip-hop",
+    "avant-garde",
+    "jazz fusion",
+    "instrumental",
+    "canadian",
+    "nu jazz",
+    "hip hop"
+  ],
+  "discourse_profile": "Jazz as vocabulary, not allegiance. BBNG trained in jazz at Humber College but treat the tradition as a compositional toolkit rather than a genre to inhabit — harmonic and theoretical tools applied across hip-hop, soul, rock, Brazilian music, electronic production. They explicitly reject the jazz band label: the goal is a \"smorgasbord\" with no genre loyalty, sitting in what Sowinski calls \"a weird pocket\" between categories. Their creative process is deliberately non-conceptual — no unifying themes, just whatever music comes out at the time — and their formative education was playing hip-hop covers (Mos Def, Gucci Mane) with jazz instruments, learning what makes songs work by reinterpreting them rather than by advancing as soloists. Whitty frames the intent plainly: \"all we're really trying to do is create something that's unique and honest to who we are,\" with no concern for keeping any tradition. Collaboration is driven by personal resonance rather than talent scouting, and the physical studio presence — playing together in the room — is central to their process.",
+  "sources": [
+    { "url": "https://www.vice.com/en/article/badbadnotgood-iv-interview-2016/", "type": "interview", "fetched": "2026-03-23" },
+    { "url": "https://daily.bandcamp.com/features/interview-badbadnotgood", "type": "interview", "fetched": "2026-03-23" },
+    { "url": "https://www.clashmusic.com/features/in-conversation-badbadnotgood/", "type": "interview", "fetched": "2026-03-23" },
+    { "url": "https://www.loudandquiet.com/interview/badbadnotgood/", "type": "interview", "fetched": "2026-03-23" }
+  ],
+  "confidence": "high"
+}

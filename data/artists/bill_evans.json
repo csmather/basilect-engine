@@ -1,0 +1,23 @@
+{
+  "id": "bill_evans",
+  "name": "Bill Evans",
+  "country": "US",
+  "tags": [
+    "jazz",
+    "jazz piano",
+    "piano",
+    "bebop",
+    "fusion",
+    "cool jazz",
+    "modal jazz",
+    "american",
+    "post-bop",
+    "piano jazz"
+  ],
+  "discourse_profile": "Jazz as process, not style — \"one minute's music in one minute's time.\" Evans' central conviction is that all people share a universal musical mind and that true music speaks directly to it. His creative method is analytical internalization: take problems \"from the outer level in, one by one,\" working at conscious concentration until the process becomes subconscious, freeing intuition to operate over a fully absorbed foundation. He rejected approximation — \"it must be entirely true and entirely real and entirely accurate\" — believing you cannot build on vagueness. His harmonic language treated voicings as independent contrapuntal lines (\"harmony is counterpoint\"), rooting notes often omitted and left to the bassist, creating continuity across chord motion in the piano's central register. The trio with LaFaro and Motian was built on the same principle of internalized trust: Evans wanted musicians \"interested in each other\" who would spend years growing without verbal ambitions, allowing interplay to emerge naturally. Debussy and Ravel were explicit harmonic sources, but the philosophy is more fundamental than its influences — the insistence that honest engagement with fundamentals, not facility or style, is what enables real creative freedom.",
+  "sources": [
+    { "url": "https://www.themarginalian.org/2014/10/30/the-universal-mind-of-bill-evans/", "type": "interview", "fetched": "2026-03-23" },
+    { "url": "https://bobreynoldsmusic.com/bill-evans-creative-process/", "type": "interview", "fetched": "2026-03-23" }
+  ],
+  "confidence": "high"
+}

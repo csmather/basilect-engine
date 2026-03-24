@@ -1,0 +1,24 @@
+{
+  "id": "animal_collective",
+  "name": "Animal Collective",
+  "country": "US",
+  "tags": [
+    "experimental",
+    "indie",
+    "freak folk",
+    "folk",
+    "indie rock",
+    "psychedelic",
+    "electronic",
+    "neo-psychedelia",
+    "avant-garde",
+    "psychedelic pop"
+  ],
+  "discourse_profile": "Getting lost as creative method — both making and listening. Portner frames their goal as \"creating something that people can get lost in by getting lost in the environment where we're creating it.\" The band treats non-repetition as discipline: each record deliberately departs from the last, though they've accepted that certain instinctive signifiers will recur. Dadaism and Cubism are explicit reference points — taking familiar things out of context, stitching elements into songs where you wouldn't expect them. Vocals function as interlocking organisms rather than lead-and-harmony: \"two voices become one — without one singer it doesn't really work the same way, they dance with each other.\" Sung Tongs tried to make acoustic guitars \"sound electronic\" through light touch and microtonal harmonics; Merriweather sampled the band playing acoustic instruments and rebuilt the songs from those loops. Panda Bear describes a \"really specific, pure sense of joy\" in the moment a song comes to life that hasn't changed since his first recordings on an eight-track — childlike wonder as a persistent creative engine rather than an aesthetic pose. The song comes above everything else in collaboration; personal expression serves the collective output.",
+  "sources": [
+    { "url": "https://www.thelineofbestfit.com/features/longread/animal-collective-the-ideas-men-painting-with-interview", "type": "interview", "fetched": "2026-03-23" },
+    { "url": "https://www.stereogum.com/2283020/animal-collective-sung-tongs-track-by-track/music/", "type": "interview", "fetched": "2026-03-23" },
+    { "url": "https://beatsperminute.com/as-long-as-everyone-puts-the-song-above-everything-else-things-tend-to-work-out-ok-an-interview-with-panda-bear/", "type": "interview", "fetched": "2026-03-23" }
+  ],
+  "confidence": "high"
+}
