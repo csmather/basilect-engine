@@ -12,14 +12,103 @@
     "experimental",
     "synth punk",
     "drone",
-    "usa"
+    "usa",
+    "checkoutlater",
+    "color vinyl",
+    "multiple copies",
+    "weird clowns",
+    "hip-hop",
+    "post-hardcore",
+    "hardcore punk",
+    "drum and bass",
+    "rock",
+    "digital hardcore",
+    "grindcore",
+    "punk rock",
+    "electronic",
+    "alternative rock",
+    "indie rock",
+    "surf punk"
   ],
   "discourse_profile": "The Garden's central creative act is the refusal of genre itself. The twins coined 'vada vada' — born from Wyatt speaking gibberish in the garage — as a deliberate substitute for genre placement: 'an idea that represents pure creative expression, that disregards all previously made genres and ideals.' Fletcher frames it as a stance of creative autonomy: 'freely, creatively expressing yourself' without 'boxing yourself in and pigeonholing yourself.' They describe The Garden less as a band than as an ongoing art project — 'constantly adding to it while keeping it raw like it was in the beginning, with the whole point being to progress and expand.' Both brothers emphasize isolation from existing scenes; as Fletcher puts it, 'I've never considered us a punk band. Wyatt and I have always felt a little bit isolated within the music world.' Their process is improvised and instinctual — 'We make music as we live life. Everything comes naturally' — with the governing principle being unpredictability over consistency: 'It's about never being predictable and making everything fun for ourselves.' They cite the Minutemen as a touchstone and acknowledge The Prodigy's precedent for their punk-electronic fusions, but resist framing influence as lineage. The fashion and modeling work — including Hedi Slimane's adoption of them as YSL muses — is not a side career but an extension of the same anti-categorical position, rooted in thrift-store DIY rather than luxury branding.",
   "sources": [
-    { "url": "https://daily.bandcamp.com/features/the-garden-album-guide", "type": "critical_essay", "fetched": "2026-03-23" },
-    { "url": "https://www.kerrang.com/the-garden-interview-wyatt-fletcher-shears-hardcore-punk-rock-experimental", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://www.nme.com/blogs/nme-blogs/the-garden-interview-mirror-might-steal-your-charm-2274269", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://www.westword.com/music/wyatt-fletcher-shears-garden-concert-15492586/", "type": "interview", "fetched": "2026-03-23" }
+    {
+      "url": "https://daily.bandcamp.com/features/the-garden-album-guide",
+      "type": "critical_essay",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://www.kerrang.com/the-garden-interview-wyatt-fletcher-shears-hardcore-punk-rock-experimental",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://www.nme.com/blogs/nme-blogs/the-garden-interview-mirror-might-steal-your-charm-2274269",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://www.westword.com/music/wyatt-fletcher-shears-garden-concert-15492586/",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    }
   ],
-  "confidence": "high"
+  "confidence": "high",
+  "tag_sources": {
+    "lastfm_artist": [
+      "post-punk",
+      "art punk",
+      "punk",
+      "experimental rock",
+      "vada vada",
+      "ambient",
+      "experimental",
+      "synth punk",
+      "drone",
+      "usa"
+    ],
+    "lastfm_albums": {
+      "haha": [
+        "post-punk",
+        "art punk",
+        "checkoutlater",
+        "color vinyl",
+        "multiple copies"
+      ],
+      "Mirror Might Steal Your Charm": [
+        "punk",
+        "weird clowns",
+        "hip-hop",
+        "post-hardcore"
+      ],
+      "Horseshit on Route 66": [
+        "hardcore punk",
+        "art punk",
+        "experimental rock",
+        "post-punk",
+        "drum and bass",
+        "rock"
+      ],
+      "Kiss My Super Bowl Ring": [
+        "art punk",
+        "digital hardcore",
+        "punk",
+        "grindcore",
+        "punk rock",
+        "electronic",
+        "experimental rock",
+        "post-hardcore",
+        "post-punk"
+      ]
+    },
+    "musicbrainz": [
+      "alternative rock",
+      "art punk",
+      "electronic",
+      "experimental rock",
+      "indie rock",
+      "post-punk",
+      "surf punk"
+    ]
+  }
 }

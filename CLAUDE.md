@@ -117,6 +117,13 @@ Synthesize the source material into a prose paragraph (3-8 sentences) that captu
 - **Flag uncertainty.** If the profile relies substantially on inference rather than source material, say so. "Going off context — no primary interview material found" is better than a confident-sounding profile built on guesses.
 - **No genre hand-holding.** Don't explain what ambient music is. Don't contextualize jazz rap for a lay reader. Write for someone who knows music.
 
+**Quality checklist (every profile should have):**
+
+- [ ] At least one direct quote or near-quote from the artist (grounds the profile in primary material)
+- [ ] At least one named specific: a technique, a reference point, a collaborator, or a work that illustrates the philosophy (prevents generic abstraction)
+- [ ] At least one contrastive statement: what the artist rejects, avoids, or defines themselves against (contrastive details discriminate better than affirmative descriptions in embedding space)
+- [ ] No sentences that could describe a different artist equally well (if a sentence works for anyone, it works for no one)
+
 **Step 4: Assemble and save**
 
 Write the node JSON to `data/artists/{slug}.json`. Confirm the file was written.

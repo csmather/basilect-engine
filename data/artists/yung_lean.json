@@ -9,13 +9,120 @@
     "rap",
     "trap",
     "swedish",
-    "hip hop"
+    "abstract hip-hop",
+    "listened",
+    "vaportrap",
+    "abstract",
+    "vulgar",
+    "calm",
+    "atmospheric",
+    "ambient pop",
+    "art pop",
+    "emo rap",
+    "nocturnal",
+    "lonely",
+    "melancholic",
+    "drugs",
+    "wave",
+    "cold",
+    "psychedelic",
+    "rhythmic",
+    "ethereal",
+    "surreal",
+    "hypnotic",
+    "urban",
+    "pop rap",
+    "experimental hip-hop",
+    "alternative rnb",
+    "alternative r&b"
   ],
   "discourse_profile": "Yung Lean sees himself as 'a poet who does different genres' — hip-hop is circumstantial, not constitutive: 'If it was the '70s, I'd be a punk artist. I was just born into hip-hop.' His core commitment is to emotional music over party music, and to minimalism as a Swedish creative inheritance — 'you want to do a little less possible but sounding as good as possible.' The Sad Boys aesthetic began as a postmodern play on internet-era sadness and consumer signifiers, but evolved through personal crisis (the Warlord period's substance abuse and hospitalization) into genuine introspection. He describes his creative process as organic branching — 'little branches on a tree that just grows and grows' — rooted in writing lyrics and poetry, from which visual art, fashion, and performance naturally extend. Later work explicitly breaks the fourth wall between persona and person, with the album Jonatan using his real name and aspiring toward Springsteen-style directness. He frames artistic expression as compulsive rather than calculated: 'You have no choice. It has to come out.'",
   "sources": [
-    { "url": "https://www.interviewmagazine.com/music/for-a-moment-you-become-the-art-yung-lean-by-vincent-cassell", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://www.thefader.com/2016/06/16/yung-lean-warlord-interview", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://www.thefader.com/2014/07/03/social-anxiety-yung-lean-the-sad-boys-and-the-evolution-of-the-outsider-stance", "type": "critical_essay", "fetched": "2026-03-23" }
+    {
+      "url": "https://www.interviewmagazine.com/music/for-a-moment-you-become-the-art-yung-lean-by-vincent-cassell",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://www.thefader.com/2016/06/16/yung-lean-warlord-interview",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://www.thefader.com/2014/07/03/social-anxiety-yung-lean-the-sad-boys-and-the-evolution-of-the-outsider-stance",
+      "type": "critical_essay",
+      "fetched": "2026-03-23"
+    }
   ],
-  "confidence": "high"
+  "confidence": "high",
+  "tag_sources": {
+    "lastfm_artist": [
+      "hip-hop",
+      "cloud rap",
+      "sad",
+      "rap",
+      "trap",
+      "swedish"
+    ],
+    "lastfm_albums": {
+      "Lavender": [
+        "abstract hip-hop",
+        "cloud rap",
+        "trap",
+        "listened",
+        "vaportrap",
+        "hip-hop",
+        "abstract",
+        "vulgar",
+        "calm",
+        "atmospheric"
+      ],
+      "Stranger": [
+        "cloud rap",
+        "sad",
+        "ambient pop",
+        "art pop",
+        "trap",
+        "emo rap",
+        "nocturnal",
+        "lonely",
+        "melancholic",
+        "drugs"
+      ],
+      "Unknown Memory": [
+        "cloud rap",
+        "trap",
+        "wave",
+        "emo rap"
+      ],
+      "Kyoto": [
+        "cold",
+        "psychedelic",
+        "rhythmic",
+        "atmospheric",
+        "drugs",
+        "ethereal",
+        "surreal",
+        "hypnotic",
+        "wave",
+        "urban"
+      ],
+      "Stardust": [
+        "cloud rap",
+        "pop rap",
+        "ambient pop",
+        "experimental hip-hop",
+        "alternative rnb"
+      ]
+    },
+    "musicbrainz": [
+      "alternative r&b",
+      "art pop",
+      "cloud rap",
+      "experimental hip hop",
+      "hip hop",
+      "pop rap",
+      "trap"
+    ]
+  }
 }

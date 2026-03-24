@@ -1,9 +1,9 @@
 {
   "nodes": {
     "count": 20,
-    "avg_tags": 9.8,
-    "min_tags": 7,
-    "max_tags": 10,
+    "avg_tags": 22.6,
+    "min_tags": 9,
+    "max_tags": 41,
     "confidence": {
       "high": 19,
       "medium": 1,
@@ -18,17 +18,25 @@
       "max": 0.62
     },
     "tag_prox": {
-      "mean": 0.073,
-      "std": 0.096,
+      "mean": 0.167,
+      "std": 0.129,
       "min": 0.0,
-      "max": 0.545
+      "max": 0.598,
+      "zero_pairs": 11
+    },
+    "tag_prox_hard": {
+      "mean": 0.055,
+      "std": 0.059,
+      "min": 0.0,
+      "max": 0.303,
+      "zero_pairs": 35
     }
   },
   "orthogonality": {
-    "pearson_r": 0.151,
-    "pearson_p": 0.0377,
-    "spearman_r": 0.089,
-    "spearman_p": 0.2198,
+    "pearson_r": 0.136,
+    "pearson_p": 0.0605,
+    "spearman_r": 0.113,
+    "spearman_p": 0.1191,
     "verdict": "orthogonal"
   }
 }

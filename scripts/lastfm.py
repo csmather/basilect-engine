@@ -35,6 +35,46 @@ def fetch_top_tags(artist_name: str) -> list[str]:
     return [t["name"].lower() for t in tags_raw if int(t.get("count", 0)) > 0]
 
 
+def fetch_top_albums(artist_name: str, limit: int = 5) -> list[str]:
+    """Fetch top album names for an artist. Returns a list of album title strings."""
+    resp = requests.get(BASE_URL, params={
+        "method": "artist.getTopAlbums",
+        "artist": artist_name,
+        "api_key": API_KEY,
+        "format": "json",
+        "limit": limit,
+    })
+    resp.raise_for_status()
+    data = resp.json()
+
+    if "error" in data:
+        print(f"Last.fm error fetching albums for '{artist_name}': {data['message']}")
+        return []
+
+    albums = data.get("topalbums", {}).get("album", [])
+    # Filter out "(null)" or empty names that Last.fm sometimes returns
+    return [a["name"] for a in albums if a.get("name") and a["name"] != "(null)"]
+
+
+def fetch_album_tags(artist_name: str, album_name: str) -> list[tuple[str, int]]:
+    """Fetch top tags for a specific album. Returns list of (tag_name, count) tuples."""
+    resp = requests.get(BASE_URL, params={
+        "method": "album.getTopTags",
+        "artist": artist_name,
+        "album": album_name,
+        "api_key": API_KEY,
+        "format": "json",
+    })
+    resp.raise_for_status()
+    data = resp.json()
+
+    if "error" in data:
+        return []
+
+    tags_raw = data.get("toptags", {}).get("tag", [])
+    return [(t["name"].lower(), int(t.get("count", 0))) for t in tags_raw if int(t.get("count", 0)) > 0]
+
+
 def main():
     if len(sys.argv) < 2:
         print("Usage: python scripts/lastfm.py <artist name>")

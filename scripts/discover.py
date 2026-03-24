@@ -84,9 +84,21 @@ def main():
     surface = [p for p in pairs if p["discourse"] < d_median and p["tag"] >= t_median]
     surface.sort(key=lambda p: p["tag"] - p["discourse"], reverse=True)
 
+    # Unrelated: low discourse, low tag
+    unrelated = [p for p in pairs if p["discourse"] < d_median and p["tag"] < t_median]
+    unrelated.sort(key=lambda p: p["discourse"] + p["tag"])
+
+    # Quadrant distribution
+    print(f"\nQuadrant distribution:")
+    print(f"  Basilect discoveries (high D, low T): {len(basilect)}")
+    print(f"  Deep scene (high D, high T):          {len(deep)}")
+    print(f"  Surface only (low D, high T):         {len(surface)}")
+    print(f"  Unrelated (low D, low T):             {len(unrelated)}")
+
     print_list("BASILECT DISCOVERIES (high discourse, low tag)", basilect, names)
     print_list("DEEP SCENE CONNECTIONS (high discourse, high tag)", deep, names)
     print_list("SURFACE-ONLY CONNECTIONS (low discourse, high tag)", surface, names)
+    print_list("UNRELATED (low discourse, low tag)", unrelated, names)
 
     # Save structured output
     output = {
@@ -95,6 +107,7 @@ def main():
         "basilect": basilect,
         "deep_scene": deep,
         "surface_only": surface,
+        "unrelated": unrelated,
     }
     out_path = DATA_DIR / "discoveries.json"
     with open(out_path, "w", encoding="utf-8") as f:

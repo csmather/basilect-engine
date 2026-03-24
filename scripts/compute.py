@@ -6,6 +6,8 @@ from pathlib import Path
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
+from scripts.tag_similarity import soft_jaccard_matrix
+
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 ARTISTS_DIR = DATA_DIR / "artists"
 
@@ -53,11 +55,18 @@ def main():
     np.save(DATA_DIR / "discourse_sim.npy", discourse_sim)
     print(f"Saved discourse similarity matrix: {discourse_sim.shape}")
 
-    # Tag proximity: Jaccard similarity of tag sets
+    # Tag proximity: both hard and soft Jaccard
     tag_sets = load_tags(ids)
-    tag_prox = jaccard_matrix(tag_sets)
+
+    # Hard Jaccard (original)
+    tag_prox_hard = jaccard_matrix(tag_sets)
+    np.save(DATA_DIR / "tag_prox_hard.npy", tag_prox_hard)
+    print(f"Saved hard Jaccard matrix: {tag_prox_hard.shape}")
+
+    # Soft Jaccard (new primary)
+    tag_prox = soft_jaccard_matrix(tag_sets)
     np.save(DATA_DIR / "tag_prox.npy", tag_prox)
-    print(f"Saved tag proximity matrix: {tag_prox.shape}")
+    print(f"Saved soft Jaccard matrix: {tag_prox.shape}")
 
     # Quick summary
     n = len(ids)
@@ -66,7 +75,9 @@ def main():
     print(f"\n{num_pairs} unique pairs")
     print(f"Discourse sim  — mean: {discourse_sim[upper].mean():.3f}, "
           f"std: {discourse_sim[upper].std():.3f}")
-    print(f"Tag proximity  — mean: {tag_prox[upper].mean():.3f}, "
+    print(f"Tag prox (hard)— mean: {tag_prox_hard[upper].mean():.3f}, "
+          f"std: {tag_prox_hard[upper].std():.3f}")
+    print(f"Tag prox (soft)— mean: {tag_prox[upper].mean():.3f}, "
           f"std: {tag_prox[upper].std():.3f}")
 
 

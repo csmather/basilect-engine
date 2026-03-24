@@ -12,15 +12,103 @@
     "bedroom pop",
     "acoustic",
     "folk",
-    "american"
+    "american",
+    "slowcore",
+    "slacker rock",
+    "psychedelic",
+    "rock",
+    "love",
+    "anxious",
+    "neo-psychedelia",
+    "eclectic",
+    "2010s",
+    "2020s"
   ],
   "discourse_profile": "Giannascoli describes himself as a producer more than a singer-songwriter, treating GarageBand and the laptop as his primary instruments — tools for pitch-shifting, layering, and textural manipulation rather than just capture. His songwriting is aggressively intuitive: 'I just go off of intuition. The words that come into my head are what I put down,' and he deliberately avoids music theory to preserve the gut-level judgment of 'does it sound good?' He aligns his approach with Impressionism over realism — giving the listener a scene rather than a statement, using Sherwood Anderson's method of blowing single human traits out of proportion to create characters that are technically autobiographical but emotionally distorted. His governing principle is sustained self-engagement: 'the whole time I'm just trying to keep myself feeling something,' scrapping or reworking material that fails to provoke a reaction. His prolific early Bandcamp output established a practice of treating recording as continuous private activity rather than event, and his film scoring work extends the same logic — atmosphere and intimacy over narrative legibility, giving 'this thin tip of the iceberg, and hopefully the listener can pick up that there is something under the surface.'",
   "sources": [
-    { "url": "https://www.theringer.com/2022/09/23/music/alex-g-god-save-the-animals", "type": "critical_essay", "fetched": "2026-03-23" },
-    { "url": "https://www.dazeddigital.com/music/article/56969/1/alex-g-god-save-the-animals-album-interview", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://filmmakermagazine.com/111092-i-think-i-was-just-hip-to-loneliness-before-everyone-else-was-writer-director-jane-schoenbrun-and-composer-alex-g-on-the-sundance-premiering-were-all-going-to-the-worlds-fair/", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://wknc.org/2014/07/30/alex-g-on-writing-music-for-yourself-and-loving/", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://www.rollingstone.com/music/music-features/alex-g-god-save-the-animals-1234603262/", "type": "interview", "fetched": "2026-03-23" }
+    {
+      "url": "https://www.theringer.com/2022/09/23/music/alex-g-god-save-the-animals",
+      "type": "critical_essay",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://www.dazeddigital.com/music/article/56969/1/alex-g-god-save-the-animals-album-interview",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://filmmakermagazine.com/111092-i-think-i-was-just-hip-to-loneliness-before-everyone-else-was-writer-director-jane-schoenbrun-and-composer-alex-g-on-the-sundance-premiering-were-all-going-to-the-worlds-fair/",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://wknc.org/2014/07/30/alex-g-on-writing-music-for-yourself-and-loving/",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://www.rollingstone.com/music/music-features/alex-g-god-save-the-animals-1234603262/",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    }
   ],
-  "confidence": "high"
+  "confidence": "high",
+  "tag_sources": {
+    "lastfm_artist": [
+      "lo-fi",
+      "singer-songwriter",
+      "indie rock",
+      "indie",
+      "indie folk",
+      "indie pop",
+      "bedroom pop",
+      "acoustic",
+      "folk",
+      "american"
+    ],
+    "lastfm_albums": {
+      "TRICK": [
+        "indie folk",
+        "slowcore",
+        "bedroom pop",
+        "lo-fi",
+        "slacker rock",
+        "indie rock",
+        "psychedelic"
+      ],
+      "RACE": [
+        "bedroom pop",
+        "lo-fi",
+        "slacker rock",
+        "indie folk"
+      ],
+      "RULES": [
+        "bedroom pop",
+        "indie",
+        "singer-songwriter",
+        "indie folk",
+        "rock",
+        "love",
+        "anxious"
+      ],
+      "DSU": [
+        "slacker rock",
+        "indie",
+        "neo-psychedelia",
+        "lo-fi",
+        "bedroom pop",
+        "eclectic",
+        "rock"
+      ]
+    },
+    "musicbrainz": [
+      "2010s",
+      "2020s",
+      "bedroom pop",
+      "indie folk",
+      "indie rock",
+      "lo-fi",
+      "singer-songwriter"
+    ]
+  }
 }

@@ -12,15 +12,118 @@
     "experimental rock",
     "psychedelic",
     "lo-fi",
-    "american"
+    "american",
+    "nautical",
+    "progressive rock",
+    "art rock",
+    "psychedelic rock",
+    "neo-psychedelia",
+    "pop rock",
+    "psychedelic pop",
+    "pop",
+    "comedy rock",
+    "comedy",
+    "funk rock",
+    "hardcore punk",
+    "noise rock"
   ],
   "discourse_profile": "Ween's central insistence is that their genre omnivory is not parody but sincere engagement — Dean Ween has explicitly distanced their approach from Zappa's, criticizing his work as 'not sincere enough for me' and stating flatly, 'We're not trying to parody music. We're not trying to destroy music. We're just trying to make good music.' The duo frames genre not as a conceptual device but as something they aren't even conscious of navigating: they don't set out to write a funk song or a metal song, they write songs and pick the best ones regardless of where they land stylistically. Their recording philosophy is built on volume and spontaneity over craft — their stated motto is 'quantity, not quality,' a conviction that if a song requires laboring over, it's probably no good, and that the best performances come on the first or second take. This extends to a preference for continuous recording over bounded studio sessions, generating enormous banks of material from which albums are curated rather than constructed. The 12 Golden Country Greats sessions — where they used their major-label advance to record with Nashville's A-list session players — crystallize the method: total commitment to the form, executed with enough irreverence to unsettle expectations but never enough to undermine the music itself. Gene Ween has described the partnership as more akin to a marriage than a band, and the creative unit's longevity is grounded in a shared refusal to treat any genre as beneath full investment.",
   "sources": [
-    { "url": "https://tapeop.com/interviews/17/ween", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://www.wbur.org/news/2017/01/10/dean-ween-group", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://www.spin.com/2021/09/a-dinner-with-ween-from-the-march-1995-issue/", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://thequietus.com/articles/30826-ween", "type": "critical_essay", "fetched": "2026-03-23" },
-    { "url": "https://www.orpheusreview.com/features/funny-music-is-good-a-ween-retrospective-1", "type": "critical_essay", "fetched": "2026-03-23" }
+    {
+      "url": "https://tapeop.com/interviews/17/ween",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://www.wbur.org/news/2017/01/10/dean-ween-group",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://www.spin.com/2021/09/a-dinner-with-ween-from-the-march-1995-issue/",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://thequietus.com/articles/30826-ween",
+      "type": "critical_essay",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://www.orpheusreview.com/features/funny-music-is-good-a-ween-retrospective-1",
+      "type": "critical_essay",
+      "fetched": "2026-03-23"
+    }
   ],
-  "confidence": "high"
+  "confidence": "high",
+  "tag_sources": {
+    "lastfm_artist": [
+      "experimental",
+      "alternative",
+      "rock",
+      "indie",
+      "alternative rock",
+      "indie rock",
+      "experimental rock",
+      "psychedelic",
+      "lo-fi",
+      "american"
+    ],
+    "lastfm_albums": {
+      "The Mollusk": [
+        "alternative rock",
+        "alternative",
+        "nautical",
+        "progressive rock",
+        "rock",
+        "art rock"
+      ],
+      "Quebec": [
+        "psychedelic rock",
+        "neo-psychedelia",
+        "alternative rock",
+        "art rock",
+        "experimental rock"
+      ],
+      "Chocolate and Cheese": [
+        "alternative",
+        "alternative rock",
+        "experimental",
+        "neo-psychedelia",
+        "indie",
+        "rock"
+      ],
+      "White Pepper": [
+        "pop rock",
+        "alternative rock",
+        "rock",
+        "psychedelic pop",
+        "alternative",
+        "pop"
+      ],
+      "Pure Guava": [
+        "comedy rock",
+        "experimental",
+        "alternative rock",
+        "alternative",
+        "experimental rock"
+      ]
+    },
+    "musicbrainz": [
+      "alternative rock",
+      "art rock",
+      "comedy",
+      "comedy rock",
+      "experimental",
+      "experimental rock",
+      "funk rock",
+      "hardcore punk",
+      "lo-fi",
+      "neo-psychedelia",
+      "noise rock",
+      "pop rock",
+      "psychedelic rock",
+      "rock"
+    ]
+  }
 }

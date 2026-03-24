@@ -7,18 +7,108 @@
     "idm",
     "ambient",
     "experimental",
-    "electronica",
     "techno",
     "ambient techno",
     "british",
     "acid techno",
-    "acid"
+    "acid",
+    "drill and bass",
+    "acid breaks",
+    "bleep techno",
+    "breakbeat",
+    "breakcore",
+    "electroacoustic",
+    "instrumental",
+    "progressive techno"
   ],
   "discourse_profile": "Music as a constantly evolving feedback loop between maker and machine. James describes his ambition as \"trying to do the best thing imaginable\" through a process where making music changes you, which gives you an idea of something new to make. The drive toward originality is obsessive and material — he builds and butchers his own equipment because he doesn't \"want sounds that some Chinese bloke has programmed into a black box,\" tearing apart synths immediately upon purchase to understand how they're built. His method is intuitive and non-revisionist: \"I surround myself with equipment and just follow my feelings on the machines. I never remix anything, if it's not working I turn the sampler off and scrap it.\" Selected Ambient Works Volume II came partly from lucid dreaming — composing in sleep and attempting to recreate the sounds on waking, though \"it doesn't really come close to it.\" Synesthesia shapes his relationship to the work (tracks identified by color rather than title). He distinguishes tracks from songs — \"a track doesn't necessarily have a defined end and no defined beginning\" — and prefers atmospheric suggestion over direct communication. Records are a \"by-product\" that fund more time to make music; finished work loses interest immediately.",
   "sources": [
-    { "url": "https://909originals.com/2021/08/18/i-surround-myself-with-equipment-and-just-follow-my-feelings-on-the-machines-a-21-year-old-aphex-twin-looks-to-the-future-december-1992/", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://www.electronicbeats.net/from-the-vaults-aphex-twin", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://chaoscontrol.com/aphex-twin/", "type": "interview", "fetched": "2026-03-23" }
+    {
+      "url": "https://909originals.com/2021/08/18/i-surround-myself-with-equipment-and-just-follow-my-feelings-on-the-machines-a-21-year-old-aphex-twin-looks-to-the-future-december-1992/",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://www.electronicbeats.net/from-the-vaults-aphex-twin",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://chaoscontrol.com/aphex-twin/",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    }
   ],
-  "confidence": "high"
+  "confidence": "high",
+  "tag_sources": {
+    "lastfm_artist": [
+      "electronic",
+      "idm",
+      "ambient",
+      "experimental",
+      "techno",
+      "ambient techno",
+      "british",
+      "acid techno",
+      "acid"
+    ],
+    "lastfm_albums": {
+      "Drukqs": [
+        "idm",
+        "electronic",
+        "ambient",
+        "drill and bass",
+        "experimental"
+      ],
+      "Selected Ambient Works 85-92": [
+        "ambient",
+        "idm",
+        "electronic",
+        "ambient techno",
+        "electronic",
+        "techno"
+      ],
+      "Syro": [
+        "idm",
+        "electronic",
+        "acid techno",
+        "drill and bass",
+        "techno",
+        "experimental"
+      ],
+      "Come to Daddy": [
+        "electronic",
+        "idm",
+        "experimental",
+        "drill and bass",
+        "ambient"
+      ],
+      "Richard D. James Album": [
+        "idm",
+        "electronic",
+        "drill and bass",
+        "ambient",
+        "experimental"
+      ]
+    },
+    "musicbrainz": [
+      "acid breaks",
+      "acid techno",
+      "ambient",
+      "ambient techno",
+      "bleep techno",
+      "breakbeat",
+      "breakcore",
+      "british",
+      "drill and bass",
+      "electroacoustic",
+      "electronic",
+      "electronica",
+      "experimental",
+      "idm",
+      "instrumental",
+      "progressive techno",
+      "techno"
+    ]
+  }
 }

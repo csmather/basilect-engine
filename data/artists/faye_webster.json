@@ -12,13 +12,89 @@
     "atlanta",
     "alt-country",
     "country soul",
-    "2010s"
+    "2010s",
+    "indie pop",
+    "usa",
+    "short",
+    "chill",
+    "alternative country",
+    "full",
+    "new",
+    "alternative folk",
+    "4star",
+    "alternative indie folk",
+    "serious",
+    "instrumental",
+    "vyrzukhisuc-artiest"
   ],
   "discourse_profile": "Webster describes her songwriting as 'subconscious' — songs arrive in single sittings, typically finished in twenty minutes, and she resists revising away the gut impulse: 'if that's what was on my mind, I feel like it was meant to be on my mind for a reason.' The recording process mirrors this: first takes preserved, demos withheld from the band until the session, minimal rehearsal before capture. Her lyrical philosophy is radical simplicity — 'I'd rather just say the blunt thing. It doesn't need to be profound' — rooted in a belief that directness, not poeticism, is what connects. The genre blend is biographical rather than conceptual: she grew up in an Atlanta household with country-fiddle-playing parents, discovered rap through her school and social world, and signed to Awful Records (a hip-hop collective) as a folk artist. The result isn't a genre experiment but a natural overlap — pedal steel over R&B bass grooves, country songwriting instincts shaped by hip-hop's rhythmic and production values. She frames her artistic purpose as relational: 'all that I want to get out of it — to just be a relatable person.'",
   "sources": [
-    { "url": "https://consequence.net/cover/faye-webster-underdressed-at-the-symphony/", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://officemagazine.net/growing-faye-webster", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://i-d.co/article/faye-webster-is-the-alt-folk-standout-on-atlantas-awful-records/", "type": "interview", "fetched": "2026-03-23" }
+    {
+      "url": "https://consequence.net/cover/faye-webster-underdressed-at-the-symphony/",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://officemagazine.net/growing-faye-webster",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://i-d.co/article/faye-webster-is-the-alt-folk-standout-on-atlantas-awful-records/",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    }
   ],
-  "confidence": "high"
+  "confidence": "high",
+  "tag_sources": {
+    "lastfm_artist": [
+      "indie folk",
+      "singer-songwriter",
+      "indie",
+      "folk",
+      "american",
+      "country",
+      "atlanta",
+      "alt-country",
+      "country soul",
+      "2010s"
+    ],
+    "lastfm_albums": {
+      "Atlanta Millionaires Club": [
+        "alt-country",
+        "indie pop",
+        "folk",
+        "singer-songwriter",
+        "usa",
+        "indie"
+      ],
+      "Faye Webster": [
+        "short",
+        "chill",
+        "alternative country",
+        "indie folk",
+        "full",
+        "new",
+        "alternative folk",
+        "4star",
+        "alternative indie folk",
+        "serious"
+      ],
+      "I Know I'm Funny haha": [
+        "alt-country",
+        "american",
+        "singer-songwriter",
+        "chill",
+        "indie folk",
+        "new"
+      ],
+      "Underdressed at the Symphony": [
+        "instrumental"
+      ]
+    },
+    "musicbrainz": [
+      "indie folk",
+      "vyrzukhisuc-artiest"
+    ]
+  }
 }

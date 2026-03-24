@@ -12,12 +12,87 @@
     "rock",
     "japan",
     "ambient pop",
-    "reggae"
+    "reggae",
+    "psychedelia",
+    "progressive pop",
+    "post-rock",
+    "downtempo",
+    "live",
+    "psychedelic",
+    "funk rock",
+    "shibuya-kei"
   ],
   "discourse_profile": "Everyday life as the most dramatic material. Fishmans' music doesn't draw conclusions or seek them — it cuts out a fragment of lived experience and lets it continue endlessly. Sato described their work as operating in \"a flow that's different from the ordinary flow of time,\" and the band's private studio was essential to capturing that quality — it let Sato record alone, without pressure, preserving ephemeral emotional states that wouldn't survive a commercial session. Motegi frames the band's emotional register as inseparable from duality: \"not only to feel 'happy' but also to maintain the feeling of 'loneliness.'\" The sound evolved from reggae and dub foundations toward dream pop, ambient, and space rock, with producer ZAK's mixing expanding song structures until compositions became single extended pieces (Long Season as one 35-minute track). Slight imperfections and analog fluctuation were valued as what made the music recognizably Fishmans. Each member contributed a distinct emotional texture — \"multiple canvases\" — rather than serving a unified arrangement.",
   "sources": [
-    { "url": "https://tokion.jp/en/2021/08/23/why-is-fishmans-so-evocative/", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://www.yokogaomag.com/editorial/fishmans-a-legacy-that-outlived-the-frontman", "type": "critical_essay", "fetched": "2026-03-23" }
+    {
+      "url": "https://tokion.jp/en/2021/08/23/why-is-fishmans-so-evocative/",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://www.yokogaomag.com/editorial/fishmans-a-legacy-that-outlived-the-frontman",
+      "type": "critical_essay",
+      "fetched": "2026-03-23"
+    }
   ],
-  "confidence": "high"
+  "confidence": "high",
+  "tag_sources": {
+    "lastfm_artist": [
+      "dub",
+      "dream pop",
+      "japanese",
+      "pop",
+      "electronic",
+      "neo-psychedelia",
+      "rock",
+      "japan",
+      "ambient pop",
+      "reggae"
+    ],
+    "lastfm_albums": {
+      "空中キャンプ": [
+        "dream pop",
+        "dub",
+        "pop",
+        "neo-psychedelia",
+        "psychedelia",
+        "japanese"
+      ],
+      "Long Season": [
+        "dream pop",
+        "neo-psychedelia",
+        "progressive pop",
+        "dub",
+        "ambient pop",
+        "post-rock"
+      ],
+      "宇宙 日本 世田谷": [
+        "dream pop",
+        "downtempo",
+        "ambient pop",
+        "neo-psychedelia",
+        "dub",
+        "japanese"
+      ],
+      "98.12.28 男達の別れ (Live)": [
+        "dream pop",
+        "dub",
+        "live",
+        "neo-psychedelia",
+        "ambient pop",
+        "psychedelic",
+        "japanese"
+      ],
+      "Orange": [
+        "funk rock",
+        "shibuya-kei",
+        "neo-psychedelia",
+        "dub",
+        "psychedelia",
+        "reggae",
+        "rock"
+      ]
+    },
+    "musicbrainz": []
+  }
 }

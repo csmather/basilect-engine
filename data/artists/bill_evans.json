@@ -12,12 +12,115 @@
     "modal jazz",
     "american",
     "post-bop",
-    "piano jazz"
+    "piano jazz",
+    "jim hall",
+    "instrumental",
+    "acoustic",
+    "minimal",
+    "the best of the best",
+    "bill evans",
+    "totec radio",
+    "jazz trio",
+    "b evans",
+    "blues bar",
+    "sad",
+    "best ever",
+    "robertitus global",
+    "instrumental ram",
+    "intrumental ram",
+    "1950s",
+    "1960s",
+    "1970s",
+    "hard bop",
+    "jazz and blues",
+    "third stream",
+    "vocal jazz"
   ],
   "discourse_profile": "Jazz as process, not style — \"one minute's music in one minute's time.\" Evans' central conviction is that all people share a universal musical mind and that true music speaks directly to it. His creative method is analytical internalization: take problems \"from the outer level in, one by one,\" working at conscious concentration until the process becomes subconscious, freeing intuition to operate over a fully absorbed foundation. He rejected approximation — \"it must be entirely true and entirely real and entirely accurate\" — believing you cannot build on vagueness. His harmonic language treated voicings as independent contrapuntal lines (\"harmony is counterpoint\"), rooting notes often omitted and left to the bassist, creating continuity across chord motion in the piano's central register. The trio with LaFaro and Motian was built on the same principle of internalized trust: Evans wanted musicians \"interested in each other\" who would spend years growing without verbal ambitions, allowing interplay to emerge naturally. Debussy and Ravel were explicit harmonic sources, but the philosophy is more fundamental than its influences — the insistence that honest engagement with fundamentals, not facility or style, is what enables real creative freedom.",
   "sources": [
-    { "url": "https://www.themarginalian.org/2014/10/30/the-universal-mind-of-bill-evans/", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://bobreynoldsmusic.com/bill-evans-creative-process/", "type": "interview", "fetched": "2026-03-23" }
+    {
+      "url": "https://www.themarginalian.org/2014/10/30/the-universal-mind-of-bill-evans/",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://bobreynoldsmusic.com/bill-evans-creative-process/",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    }
   ],
-  "confidence": "high"
+  "confidence": "high",
+  "tag_sources": {
+    "lastfm_artist": [
+      "jazz",
+      "jazz piano",
+      "piano",
+      "bebop",
+      "fusion",
+      "cool jazz",
+      "modal jazz",
+      "american",
+      "post-bop",
+      "piano jazz"
+    ],
+    "lastfm_albums": {
+      "Undercurrent": [
+        "jim hall",
+        "jazz piano",
+        "jazz",
+        "instrumental",
+        "acoustic",
+        "piano",
+        "minimal",
+        "the best of the best"
+      ],
+      "Everybody Digs Bill Evans": [
+        "jazz",
+        "jazz piano",
+        "bill evans",
+        "totec radio"
+      ],
+      "You Must Believe In Spring (Remastered Version)": [
+        "cool jazz",
+        "jazz",
+        "post-bop",
+        "modal jazz"
+      ],
+      "Portrait In Jazz [Keepnews Collection]": [
+        "jazz piano",
+        "jazz",
+        "jazz trio",
+        "bill evans",
+        "b evans",
+        "blues bar",
+        "totec radio"
+      ],
+      "You Must Believe in Spring": [
+        "jazz",
+        "instrumental",
+        "piano",
+        "sad",
+        "best ever",
+        "totec radio",
+        "robertitus global",
+        "instrumental ram",
+        "intrumental ram"
+      ]
+    },
+    "musicbrainz": [
+      "1950s",
+      "1960s",
+      "1970s",
+      "american",
+      "cool jazz",
+      "hard bop",
+      "jazz",
+      "jazz and blues",
+      "modal jazz",
+      "piano jazz",
+      "post-bop",
+      "third stream",
+      "vocal jazz"
+    ]
+  }
 }

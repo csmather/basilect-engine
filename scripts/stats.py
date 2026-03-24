@@ -11,12 +11,16 @@ ARTISTS_DIR = DATA_DIR / "artists"
 
 
 def load_data():
-    """Load artist IDs and both similarity matrices."""
+    """Load artist IDs and all similarity matrices."""
     with open(DATA_DIR / "embedding_ids.json", encoding="utf-8") as f:
         ids = json.load(f)
     discourse_sim = np.load(DATA_DIR / "discourse_sim.npy")
     tag_prox = np.load(DATA_DIR / "tag_prox.npy")
-    return ids, discourse_sim, tag_prox
+
+    tag_prox_hard_path = DATA_DIR / "tag_prox_hard.npy"
+    tag_prox_hard = np.load(tag_prox_hard_path) if tag_prox_hard_path.exists() else None
+
+    return ids, discourse_sim, tag_prox, tag_prox_hard
 
 
 def node_stats(ids):
@@ -34,7 +38,7 @@ def node_stats(ids):
 
 
 def main():
-    ids, discourse_sim, tag_prox = load_data()
+    ids, discourse_sim, tag_prox, tag_prox_hard = load_data()
     n = len(ids)
     upper = np.triu_indices(n, k=1)
     d_scores = discourse_sim[upper]
@@ -55,10 +59,33 @@ def main():
     print(f"    mean={d_scores.mean():.3f}  std={d_scores.std():.3f}  "
           f"min={d_scores.min():.3f}  max={d_scores.max():.3f}")
     print(f"    quartiles: {np.percentile(d_scores, [25, 50, 75])}")
-    print(f"  Tag proximity (P_prox):")
+
+    # Tag proximity (soft Jaccard — primary)
+    print(f"  Tag proximity — soft Jaccard (primary):")
     print(f"    mean={t_scores.mean():.3f}  std={t_scores.std():.3f}  "
           f"min={t_scores.min():.3f}  max={t_scores.max():.3f}")
     print(f"    quartiles: {np.percentile(t_scores, [25, 50, 75])}")
+    zero_pairs = int(np.sum(t_scores == 0.0))
+    print(f"    Zero-overlap pairs: {zero_pairs} / {num_pairs} "
+          f"({100 * zero_pairs / num_pairs:.1f}%)")
+
+    # Tag proximity (hard Jaccard — comparison)
+    tag_prox_hard_stats = None
+    if tag_prox_hard is not None:
+        t_hard = tag_prox_hard[upper]
+        print(f"  Tag proximity — hard Jaccard (comparison):")
+        print(f"    mean={t_hard.mean():.3f}  std={t_hard.std():.3f}  "
+              f"min={t_hard.min():.3f}  max={t_hard.max():.3f}")
+        hard_zeros = int(np.sum(t_hard == 0.0))
+        print(f"    Zero-overlap pairs: {hard_zeros} / {num_pairs} "
+              f"({100 * hard_zeros / num_pairs:.1f}%)")
+        tag_prox_hard_stats = {
+            "mean": round(float(t_hard.mean()), 3),
+            "std": round(float(t_hard.std()), 3),
+            "min": round(float(t_hard.min()), 3),
+            "max": round(float(t_hard.max()), 3),
+            "zero_pairs": hard_zeros,
+        }
 
     # Orthogonality test
     pearson_r, pearson_p = sp_stats.pearsonr(d_scores, t_scores)
@@ -99,6 +126,7 @@ def main():
                 "std": round(float(t_scores.std()), 3),
                 "min": round(float(t_scores.min()), 3),
                 "max": round(float(t_scores.max()), 3),
+                "zero_pairs": zero_pairs,
             },
         },
         "orthogonality": {
@@ -109,6 +137,9 @@ def main():
             "verdict": verdict,
         },
     }
+    if tag_prox_hard_stats:
+        output["distribution"]["tag_prox_hard"] = tag_prox_hard_stats
+
     out_path = DATA_DIR / "stats.json"
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump(output, f, indent=2)
