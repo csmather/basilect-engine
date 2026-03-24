@@ -88,6 +88,19 @@ def main():
     print_list("DEEP SCENE CONNECTIONS (high discourse, high tag)", deep, names)
     print_list("SURFACE-ONLY CONNECTIONS (low discourse, high tag)", surface, names)
 
+    # Save structured output
+    output = {
+        "num_pairs": len(pairs),
+        "thresholds": {"discourse_median": d_median, "tag_median": t_median},
+        "basilect": basilect,
+        "deep_scene": deep,
+        "surface_only": surface,
+    }
+    out_path = DATA_DIR / "discoveries.json"
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(output, f, indent=2)
+    print(f"\nSaved to {out_path}")
+
 
 if __name__ == "__main__":
     main()

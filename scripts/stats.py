@@ -51,7 +51,7 @@ def main():
 
     # Distribution stats
     print(f"\nDISTRIBUTION STATS ({num_pairs} pairs)")
-    print(f"  Discourse similarity (Φ_sim):")
+    print(f"  Discourse similarity (D_sim):")
     print(f"    mean={d_scores.mean():.3f}  std={d_scores.std():.3f}  "
           f"min={d_scores.min():.3f}  max={d_scores.max():.3f}")
     print(f"    quartiles: {np.percentile(d_scores, [25, 50, 75])}")
@@ -67,13 +67,52 @@ def main():
     print(f"  Pearson:  r={pearson_r:.3f}  (p={pearson_p:.4f})")
     print(f"  Spearman: r={spearman_r:.3f}  (p={spearman_p:.4f})")
     if abs(pearson_r) < 0.3:
-        print(f"  → The two layers are measuring substantially different things.")
+        verdict = "orthogonal"
+        print(f"  >> The two layers are measuring substantially different things.")
     elif abs(pearson_r) < 0.6:
-        print(f"  → Moderate correlation — some overlap, but the layers carry "
+        verdict = "moderate"
+        print(f"  >> Moderate correlation -- some overlap, but the layers carry "
               f"independent signal.")
     else:
-        print(f"  → High correlation — discourse profiles may be restating genre "
+        verdict = "correlated"
+        print(f"  >> High correlation -- discourse profiles may be restating genre "
               f"info in prose.")
+
+    # Save structured output
+    output = {
+        "nodes": {
+            "count": n,
+            "avg_tags": round(float(np.mean(tag_counts)), 1),
+            "min_tags": min(tag_counts),
+            "max_tags": max(tag_counts),
+            "confidence": confidence_dist,
+        },
+        "distribution": {
+            "discourse_sim": {
+                "mean": round(float(d_scores.mean()), 3),
+                "std": round(float(d_scores.std()), 3),
+                "min": round(float(d_scores.min()), 3),
+                "max": round(float(d_scores.max()), 3),
+            },
+            "tag_prox": {
+                "mean": round(float(t_scores.mean()), 3),
+                "std": round(float(t_scores.std()), 3),
+                "min": round(float(t_scores.min()), 3),
+                "max": round(float(t_scores.max()), 3),
+            },
+        },
+        "orthogonality": {
+            "pearson_r": round(pearson_r, 3),
+            "pearson_p": round(pearson_p, 4),
+            "spearman_r": round(spearman_r, 3),
+            "spearman_p": round(spearman_p, 4),
+            "verdict": verdict,
+        },
+    }
+    out_path = DATA_DIR / "stats.json"
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(output, f, indent=2)
+    print(f"\nSaved to {out_path}")
 
 
 if __name__ == "__main__":
