@@ -1,0 +1,24 @@
+{
+  "id": "skrillex",
+  "name": "Skrillex",
+  "country": "US",
+  "tags": [
+    "dubstep",
+    "electronic",
+    "breakcore",
+    "electro",
+    "electronica",
+    "brostep",
+    "electro house",
+    "house",
+    "dance",
+    "american"
+  ],
+  "discourse_profile": "Skrillex came to electronic music through post-hardcore (From First to Last), and that origin story is load-bearing: he approaches synthesis the way a vocalist approaches a mic — pursuing sounds that 'almost sound human, even though they come from a computer.' His creative process is intuitive and fast, sketching dozens of ideas per session and selecting with fresh ears, guided by the conviction that 'ideas, an aesthetic, and a concept are bigger than any tool.' He resists genre labels ('I just want people to actually have their own opinions about me') while maintaining that his orientation was always underground, not mainstream — the commercial explosion of brostep was incidental, not strategic. The 2023 double album split crystallized his dual commitments: Quest for Fire as refined dancefloor music absorbing grime, d'n'b, and global bass; Don't Get Too Close as an emo-inflected passion project with vocal vulnerability. Collaboration is central — he frames the group process as 'half the fun,' coming from a band background where creation is collective. Recent work with Fred again.. and Four Tet extends this into a rave-as-community philosophy, building inclusive large-scale events that blur performer/audience lines.",
+  "sources": [
+    { "url": "https://www.npr.org/2014/03/22/292564042/skrillex-dubsteps-darling-steps-our-for-recess", "type": "interview", "fetched": "2026-03-23" },
+    { "url": "https://www.kerrang.com/skrillex-sonny-moore-quest-for-fire-dont-get-too-close-dubstep-edm-dj-rock-from-first-to-last", "type": "critical_essay", "fetched": "2026-03-23" },
+    { "url": "https://ra.co/reviews/35331", "type": "critical_essay", "fetched": "2026-03-23" }
+  ],
+  "confidence": "high"
+}

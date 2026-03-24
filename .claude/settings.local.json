@@ -3,8 +3,9 @@
     "allow": [
       "Bash(pip install:*)",
       "Bash(python scripts/:*)",
+      "Bash(python:*)",
       "WebSearch",
-      "WebFetch"
+      "WebFetch(domain:*)"
     ]
   }
 }
