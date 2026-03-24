@@ -4,6 +4,7 @@
       "Bash(pip install:*)",
       "Bash(python scripts/:*)",
       "Bash(python:*)",
+      "Bash(curl:*)",
       "WebSearch",
       "WebFetch(domain:*)"
     ]

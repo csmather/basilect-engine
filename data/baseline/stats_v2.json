@@ -5,16 +5,16 @@
     "min_tags": 9,
     "max_tags": 41,
     "confidence": {
-      "high": 20,
-      "medium": 0,
+      "high": 19,
+      "medium": 1,
       "low": 0
     }
   },
   "distribution": {
     "discourse_sim": {
-      "mean": 0.447,
-      "std": 0.067,
-      "min": 0.247,
+      "mean": 0.444,
+      "std": 0.071,
+      "min": 0.208,
       "max": 0.62
     },
     "tag_prox": {
@@ -33,10 +33,10 @@
     }
   },
   "orthogonality": {
-    "pearson_r": 0.13,
-    "pearson_p": 0.0729,
-    "spearman_r": 0.102,
-    "spearman_p": 0.1625,
+    "pearson_r": 0.136,
+    "pearson_p": 0.0605,
+    "spearman_r": 0.113,
+    "spearman_p": 0.1191,
     "verdict": "orthogonal"
   }
 }

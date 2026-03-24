@@ -1,7 +1,7 @@
 {
   "num_pairs": 190,
   "thresholds": {
-    "discourse_median": 0.4468716233968735,
+    "discourse_median": 0.44922636449337006,
     "tag_median": 0.1445906432748538
   },
   "basilect": [
@@ -28,12 +28,6 @@
       "b": "neil_young",
       "discourse": 0.5340493321418762,
       "tag": 0.0
-    },
-    {
-      "a": "nujabes",
-      "b": "ween",
-      "discourse": 0.5782040357589722,
-      "tag": 0.05381944444444444
     },
     {
       "a": "aphex_twin",
@@ -66,22 +60,10 @@
       "tag": 0.0
     },
     {
-      "a": "alex_g",
-      "b": "yasuaki_shimizu",
-      "discourse": 0.48058152198791504,
-      "tag": 0.0
-    },
-    {
-      "a": "neil_young",
-      "b": "nujabes",
-      "discourse": 0.474494606256485,
-      "tag": 0.0
-    },
-    {
-      "a": "neil_young",
-      "b": "yasuaki_shimizu",
-      "discourse": 0.4600743055343628,
-      "tag": 0.0
+      "a": "animal_collective",
+      "b": "bill_evans",
+      "discourse": 0.4736068844795227,
+      "tag": 0.014102564102564105
     },
     {
       "a": "earl_sweatshirt",
@@ -126,16 +108,22 @@
       "tag": 0.06837606837606837
     },
     {
+      "a": "alex_g",
+      "b": "nujabes",
+      "discourse": 0.46615809202194214,
+      "tag": 0.022222222222222223
+    },
+    {
+      "a": "animal_collective",
+      "b": "bladee",
+      "discourse": 0.5470927953720093,
+      "tag": 0.10344827586206896
+    },
+    {
       "a": "badbadnotgood",
       "b": "faye_webster",
       "discourse": 0.50600266456604,
       "tag": 0.07017543859649122
-    },
-    {
-      "a": "danny_brown",
-      "b": "fishmans",
-      "discourse": 0.44902241230010986,
-      "tag": 0.018018018018018018
     },
     {
       "a": "aphex_twin",
@@ -156,21 +144,9 @@
       "tag": 0.05405405405405406
     },
     {
-      "a": "animal_collective",
-      "b": "aphex_twin",
-      "discourse": 0.542874813079834,
-      "tag": 0.12837837837837837
-    },
-    {
       "a": "alex_g",
       "b": "bladee",
       "discourse": 0.5167648792266846,
-      "tag": 0.10344827586206896
-    },
-    {
-      "a": "animal_collective",
-      "b": "bladee",
-      "discourse": 0.5144507884979248,
       "tag": 0.10344827586206896
     },
     {
@@ -211,9 +187,27 @@
     },
     {
       "a": "bladee",
+      "b": "fishmans",
+      "discourse": 0.5116407871246338,
+      "tag": 0.11904761904761904
+    },
+    {
+      "a": "animal_collective",
+      "b": "aphex_twin",
+      "discourse": 0.5177996754646301,
+      "tag": 0.12837837837837837
+    },
+    {
+      "a": "bladee",
       "b": "skrillex",
       "discourse": 0.5017477869987488,
       "tag": 0.11392405063291139
+    },
+    {
+      "a": "animal_collective",
+      "b": "yung_lean",
+      "discourse": 0.4949007034301758,
+      "tag": 0.10897435897435896
     },
     {
       "a": "alex_g",
@@ -230,7 +224,7 @@
     {
       "a": "animal_collective",
       "b": "skrillex",
-      "discourse": 0.47427284717559814,
+      "discourse": 0.47404205799102783,
       "tag": 0.09289617486338798
     },
     {
@@ -240,10 +234,10 @@
       "tag": 0.07619047619047618
     },
     {
-      "a": "nujabes",
-      "b": "skrillex",
-      "discourse": 0.5035762190818787,
-      "tag": 0.14141414141414144
+      "a": "aphex_twin",
+      "b": "fishmans",
+      "discourse": 0.4822324812412262,
+      "tag": 0.11428571428571428
     },
     {
       "a": "faye_webster",
@@ -302,28 +296,22 @@
       "tag": 0.5
     },
     {
-      "a": "badbadnotgood",
-      "b": "nujabes",
-      "discourse": 0.5070685148239136,
-      "tag": 0.4208333333333334
-    },
-    {
       "a": "alex_g",
       "b": "faye_webster",
       "discourse": 0.5494557619094849,
       "tag": 0.37209302325581395
     },
     {
+      "a": "fishmans",
+      "b": "ween",
+      "discourse": 0.49286288022994995,
+      "tag": 0.4268292682926829
+    },
+    {
       "a": "alex_g",
       "b": "mgmt",
       "discourse": 0.4664875864982605,
       "tag": 0.4416666666666666
-    },
-    {
-      "a": "fishmans",
-      "b": "ween",
-      "discourse": 0.47521325945854187,
-      "tag": 0.4268292682926829
     },
     {
       "a": "earl_sweatshirt",
@@ -344,16 +332,28 @@
       "tag": 0.2857142857142857
     },
     {
-      "a": "haruomi_hosono",
-      "b": "yasuaki_shimizu",
-      "discourse": 0.4541139006614685,
-      "tag": 0.42
+      "a": "animal_collective",
+      "b": "fishmans",
+      "discourse": 0.5515135526657104,
+      "tag": 0.32105263157894737
     },
     {
       "a": "badbadnotgood",
       "b": "earl_sweatshirt",
       "discourse": 0.4803049862384796,
       "tag": 0.39166666666666666
+    },
+    {
+      "a": "fishmans",
+      "b": "haruomi_hosono",
+      "discourse": 0.4807127118110657,
+      "tag": 0.37037037037037035
+    },
+    {
+      "a": "alex_g",
+      "b": "animal_collective",
+      "discourse": 0.46766746044158936,
+      "tag": 0.38125
     },
     {
       "a": "brian_eno",
@@ -368,28 +368,10 @@
       "tag": 0.3235294117647059
     },
     {
-      "a": "alex_g",
-      "b": "animal_collective",
-      "discourse": 0.4473026692867279,
-      "tag": 0.38125
-    },
-    {
       "a": "badbadnotgood",
       "b": "danny_brown",
       "discourse": 0.4774639308452606,
       "tag": 0.3480392156862745
-    },
-    {
-      "a": "badbadnotgood",
-      "b": "yasuaki_shimizu",
-      "discourse": 0.4948418140411377,
-      "tag": 0.32795698924731187
-    },
-    {
-      "a": "danny_brown",
-      "b": "nujabes",
-      "discourse": 0.4592408835887909,
-      "tag": 0.356060606060606
     },
     {
       "a": "neil_young",
@@ -404,10 +386,10 @@
       "tag": 0.2809523809523809
     },
     {
-      "a": "alex_g",
-      "b": "fishmans",
-      "discourse": 0.5071313381195068,
-      "tag": 0.2894736842105263
+      "a": "badbadnotgood",
+      "b": "yasuaki_shimizu",
+      "discourse": 0.45838552713394165,
+      "tag": 0.32795698924731187
     },
     {
       "a": "faye_webster",
@@ -422,16 +404,16 @@
       "tag": 0.2796296296296296
     },
     {
+      "a": "alex_g",
+      "b": "fishmans",
+      "discourse": 0.4725528657436371,
+      "tag": 0.2894736842105263
+    },
+    {
       "a": "badbadnotgood",
       "b": "bill_evans",
       "discourse": 0.5190570950508118,
       "tag": 0.2269503546099291
-    },
-    {
-      "a": "animal_collective",
-      "b": "neil_young",
-      "discourse": 0.5353237390518188,
-      "tag": 0.2
     },
     {
       "a": "bladee",
@@ -440,16 +422,16 @@
       "tag": 0.260233918128655
     },
     {
-      "a": "brian_eno",
-      "b": "yasuaki_shimizu",
-      "discourse": 0.46254467964172363,
-      "tag": 0.2647058823529412
-    },
-    {
       "a": "haruomi_hosono",
       "b": "neil_young",
       "discourse": 0.4496017396450043,
       "tag": 0.2708333333333333
+    },
+    {
+      "a": "brian_eno",
+      "b": "yasuaki_shimizu",
+      "discourse": 0.453391969203949,
+      "tag": 0.2647058823529412
     },
     {
       "a": "skrillex",
@@ -471,21 +453,9 @@
     },
     {
       "a": "animal_collective",
-      "b": "badbadnotgood",
-      "discourse": 0.5014364719390869,
-      "tag": 0.2119047619047619
-    },
-    {
-      "a": "aphex_twin",
-      "b": "yasuaki_shimizu",
-      "discourse": 0.45320194959640503,
-      "tag": 0.25757575757575757
-    },
-    {
-      "a": "fishmans",
-      "b": "nujabes",
-      "discourse": 0.46970295906066895,
-      "tag": 0.24031007751937983
+      "b": "neil_young",
+      "discourse": 0.5067684650421143,
+      "tag": 0.2
     },
     {
       "a": "badbadnotgood",
@@ -494,16 +464,40 @@
       "tag": 0.19736842105263158
     },
     {
+      "a": "fishmans",
+      "b": "nujabes",
+      "discourse": 0.46036699414253235,
+      "tag": 0.24031007751937983
+    },
+    {
       "a": "animal_collective",
       "b": "yasuaki_shimizu",
-      "discourse": 0.4711194634437561,
+      "discourse": 0.48523348569869995,
       "tag": 0.2152777777777778
     },
     {
-      "a": "aphex_twin",
-      "b": "nujabes",
-      "discourse": 0.5329341888427734,
-      "tag": 0.15079365079365079
+      "a": "animal_collective",
+      "b": "badbadnotgood",
+      "discourse": 0.4869595170021057,
+      "tag": 0.2119047619047619
+    },
+    {
+      "a": "bill_evans",
+      "b": "yasuaki_shimizu",
+      "discourse": 0.5175495147705078,
+      "tag": 0.17361111111111108
+    },
+    {
+      "a": "fishmans",
+      "b": "yasuaki_shimizu",
+      "discourse": 0.46849024295806885,
+      "tag": 0.22058823529411764
+    },
+    {
+      "a": "fishmans",
+      "b": "skrillex",
+      "discourse": 0.5220603942871094,
+      "tag": 0.15819209039548024
     },
     {
       "a": "aphex_twin",
@@ -512,10 +506,10 @@
       "tag": 0.2270114942528736
     },
     {
-      "a": "fishmans",
-      "b": "neil_young",
-      "discourse": 0.524481475353241,
-      "tag": 0.15151515151515152
+      "a": "animal_collective",
+      "b": "faye_webster",
+      "discourse": 0.454131543636322,
+      "tag": 0.21899224806201553
     },
     {
       "a": "mgmt",
@@ -524,16 +518,16 @@
       "tag": 0.16346153846153846
     },
     {
-      "a": "fishmans",
-      "b": "skrillex",
-      "discourse": 0.503510057926178,
-      "tag": 0.15819209039548024
-    },
-    {
       "a": "alex_g",
       "b": "brian_eno",
       "discourse": 0.5057119131088257,
       "tag": 0.14473684210526316
+    },
+    {
+      "a": "fishmans",
+      "b": "neil_young",
+      "discourse": 0.4986092448234558,
+      "tag": 0.15151515151515152
     },
     {
       "a": "earl_sweatshirt",
@@ -542,16 +536,22 @@
       "tag": 0.17881944444444442
     },
     {
+      "a": "aphex_twin",
+      "b": "nujabes",
+      "discourse": 0.4960791766643524,
+      "tag": 0.15079365079365079
+    },
+    {
       "a": "bladee",
       "b": "mgmt",
       "discourse": 0.4657641649246216,
       "tag": 0.1810344827586207
     },
     {
-      "a": "alex_g",
-      "b": "haruomi_hosono",
-      "discourse": 0.44885098934173584,
-      "tag": 0.1896551724137931
+      "a": "nujabes",
+      "b": "yung_lean",
+      "discourse": 0.4547165632247925,
+      "tag": 0.19005847953216373
     },
     {
       "a": "badbadnotgood",
@@ -592,22 +592,40 @@
       "tag": 0.36742424242424243
     },
     {
+      "a": "badbadnotgood",
+      "b": "nujabes",
+      "discourse": 0.3540797829627991,
+      "tag": 0.4208333333333334
+    },
+    {
       "a": "animal_collective",
       "b": "ween",
-      "discourse": 0.4295060932636261,
+      "discourse": 0.4117332696914673,
       "tag": 0.4670542635658915
+    },
+    {
+      "a": "haruomi_hosono",
+      "b": "yasuaki_shimizu",
+      "discourse": 0.4023047685623169,
+      "tag": 0.42
+    },
+    {
+      "a": "animal_collective",
+      "b": "mgmt",
+      "discourse": 0.4116126298904419,
+      "tag": 0.425
     },
     {
       "a": "fishmans",
       "b": "mgmt",
-      "discourse": 0.38514360785484314,
+      "discourse": 0.41672050952911377,
       "tag": 0.42105263157894735
     },
     {
-      "a": "animal_collective",
-      "b": "mgmt",
-      "discourse": 0.41888228058815,
-      "tag": 0.425
+      "a": "nujabes",
+      "b": "yasuaki_shimizu",
+      "discourse": 0.3420279622077942,
+      "tag": 0.32926829268292684
     },
     {
       "a": "the_garden",
@@ -616,16 +634,16 @@
       "tag": 0.3979591836734694
     },
     {
+      "a": "earl_sweatshirt",
+      "b": "nujabes",
+      "discourse": 0.3736165463924408,
+      "tag": 0.34333333333333327
+    },
+    {
       "a": "aphex_twin",
       "b": "haruomi_hosono",
       "discourse": 0.4217357039451599,
       "tag": 0.38461538461538464
-    },
-    {
-      "a": "fishmans",
-      "b": "haruomi_hosono",
-      "discourse": 0.408285528421402,
-      "tag": 0.37037037037037035
     },
     {
       "a": "haruomi_hosono",
@@ -634,40 +652,22 @@
       "tag": 0.2857142857142857
     },
     {
-      "a": "animal_collective",
-      "b": "haruomi_hosono",
-      "discourse": 0.39578956365585327,
-      "tag": 0.31896551724137934
+      "a": "danny_brown",
+      "b": "nujabes",
+      "discourse": 0.42572155594825745,
+      "tag": 0.356060606060606
     },
     {
       "a": "animal_collective",
       "b": "brian_eno",
-      "discourse": 0.4073445796966553,
+      "discourse": 0.4349587559700012,
       "tag": 0.3267543859649123
     },
     {
-      "a": "earl_sweatshirt",
-      "b": "nujabes",
-      "discourse": 0.44644057750701904,
-      "tag": 0.34333333333333327
-    },
-    {
       "a": "animal_collective",
-      "b": "fishmans",
-      "discourse": 0.4255492687225342,
-      "tag": 0.32105263157894737
-    },
-    {
-      "a": "nujabes",
-      "b": "yasuaki_shimizu",
-      "discourse": 0.43622323870658875,
-      "tag": 0.32926829268292684
-    },
-    {
-      "a": "haruomi_hosono",
-      "b": "nujabes",
-      "discourse": 0.3567653298377991,
-      "tag": 0.24509803921568624
+      "b": "haruomi_hosono",
+      "discourse": 0.4321470260620117,
+      "tag": 0.31896551724137934
     },
     {
       "a": "brian_eno",
@@ -680,6 +680,12 @@
       "b": "ween",
       "discourse": 0.3982975482940674,
       "tag": 0.28125
+    },
+    {
+      "a": "the_garden",
+      "b": "yasuaki_shimizu",
+      "discourse": 0.28354382514953613,
+      "tag": 0.15476190476190477
     },
     {
       "a": "aphex_twin",
@@ -700,16 +706,28 @@
       "tag": 0.22875816993464052
     },
     {
-      "a": "fishmans",
-      "b": "yasuaki_shimizu",
-      "discourse": 0.3757234811782837,
-      "tag": 0.22058823529411764
+      "a": "nujabes",
+      "b": "the_garden",
+      "discourse": 0.3153933882713318,
+      "tag": 0.16176470588235295
     },
     {
-      "a": "brian_eno",
-      "b": "fishmans",
-      "discourse": 0.4258131980895996,
-      "tag": 0.26851851851851855
+      "a": "haruomi_hosono",
+      "b": "nujabes",
+      "discourse": 0.4052913188934326,
+      "tag": 0.24509803921568624
+    },
+    {
+      "a": "animal_collective",
+      "b": "the_garden",
+      "discourse": 0.3954477310180664,
+      "tag": 0.23514492753623187
+    },
+    {
+      "a": "aphex_twin",
+      "b": "yasuaki_shimizu",
+      "discourse": 0.4197108745574951,
+      "tag": 0.25757575757575757
     },
     {
       "a": "mgmt",
@@ -718,16 +736,16 @@
       "tag": 0.2608695652173913
     },
     {
-      "a": "badbadnotgood",
-      "b": "fishmans",
-      "discourse": 0.3415960669517517,
-      "tag": 0.16161616161616163
+      "a": "fishmans",
+      "b": "the_garden",
+      "discourse": 0.37433815002441406,
+      "tag": 0.196969696969697
     },
     {
-      "a": "the_garden",
-      "b": "yasuaki_shimizu",
-      "discourse": 0.33546024560928345,
-      "tag": 0.15476190476190477
+      "a": "brian_eno",
+      "b": "fishmans",
+      "discourse": 0.44595927000045776,
+      "tag": 0.26851851851851855
     },
     {
       "a": "badbadnotgood",
@@ -742,28 +760,10 @@
       "tag": 0.22474747474747472
     },
     {
-      "a": "nujabes",
-      "b": "the_garden",
-      "discourse": 0.34720003604888916,
-      "tag": 0.16176470588235295
-    },
-    {
-      "a": "fishmans",
-      "b": "the_garden",
-      "discourse": 0.3856390714645386,
-      "tag": 0.196969696969697
-    },
-    {
-      "a": "animal_collective",
-      "b": "the_garden",
-      "discourse": 0.43217194080352783,
-      "tag": 0.23514492753623187
-    },
-    {
-      "a": "animal_collective",
-      "b": "faye_webster",
-      "discourse": 0.42652904987335205,
-      "tag": 0.21899224806201553
+      "a": "bill_evans",
+      "b": "nujabes",
+      "discourse": 0.3918556272983551,
+      "tag": 0.19298245614035087
     },
     {
       "a": "mgmt",
@@ -772,16 +772,16 @@
       "tag": 0.22131147540983606
     },
     {
+      "a": "bladee",
+      "b": "nujabes",
+      "discourse": 0.3883471190929413,
+      "tag": 0.16666666666666666
+    },
+    {
       "a": "haruomi_hosono",
       "b": "mgmt",
       "discourse": 0.39497190713882446,
       "tag": 0.1724137931034483
-    },
-    {
-      "a": "bladee",
-      "b": "nujabes",
-      "discourse": 0.3934206962585449,
-      "tag": 0.16666666666666666
     },
     {
       "a": "badbadnotgood",
@@ -790,28 +790,16 @@
       "tag": 0.18686868686868685
     },
     {
-      "a": "nujabes",
-      "b": "yung_lean",
-      "discourse": 0.42169448733329773,
-      "tag": 0.19005847953216373
-    },
-    {
       "a": "alex_g",
       "b": "the_garden",
       "discourse": 0.4062952995300293,
       "tag": 0.15579710144927536
     },
     {
-      "a": "bill_evans",
-      "b": "nujabes",
-      "discourse": 0.44406527280807495,
-      "tag": 0.19298245614035087
-    },
-    {
-      "a": "bill_evans",
-      "b": "yasuaki_shimizu",
-      "discourse": 0.4292849898338318,
-      "tag": 0.17361111111111108
+      "a": "alex_g",
+      "b": "haruomi_hosono",
+      "discourse": 0.44885098934173584,
+      "tag": 0.1896551724137931
     },
     {
       "a": "badbadnotgood",
@@ -844,6 +832,12 @@
       "tag": 0.16666666666666666
     },
     {
+      "a": "badbadnotgood",
+      "b": "fishmans",
+      "discourse": 0.44730573892593384,
+      "tag": 0.16161616161616163
+    },
+    {
       "a": "ween",
       "b": "yung_lean",
       "discourse": 0.43948906660079956,
@@ -852,6 +846,12 @@
   ],
   "unrelated": [
     {
+      "a": "earl_sweatshirt",
+      "b": "fishmans",
+      "discourse": 0.26716041564941406,
+      "tag": 0.0
+    },
+    {
       "a": "bill_evans",
       "b": "haruomi_hosono",
       "discourse": 0.2959786057472229,
@@ -859,9 +859,15 @@
     },
     {
       "a": "earl_sweatshirt",
-      "b": "fishmans",
-      "discourse": 0.31819069385528564,
-      "tag": 0.0
+      "b": "yasuaki_shimizu",
+      "discourse": 0.2076319456100464,
+      "tag": 0.08943089430894309
+    },
+    {
+      "a": "yasuaki_shimizu",
+      "b": "yung_lean",
+      "discourse": 0.2633073329925537,
+      "tag": 0.03472222222222222
     },
     {
       "a": "earl_sweatshirt",
@@ -870,28 +876,22 @@
       "tag": 0.06862745098039215
     },
     {
-      "a": "earl_sweatshirt",
+      "a": "neil_young",
       "b": "yasuaki_shimizu",
-      "discourse": 0.24678468704223633,
-      "tag": 0.08943089430894309
+      "discourse": 0.32874807715415955,
+      "tag": 0.0
     },
     {
-      "a": "bill_evans",
-      "b": "fishmans",
-      "discourse": 0.3322642743587494,
-      "tag": 0.013333333333333332
+      "a": "danny_brown",
+      "b": "yasuaki_shimizu",
+      "discourse": 0.31517571210861206,
+      "tag": 0.019047619047619046
     },
     {
-      "a": "yasuaki_shimizu",
-      "b": "yung_lean",
-      "discourse": 0.3139305114746094,
-      "tag": 0.03472222222222222
-    },
-    {
-      "a": "animal_collective",
-      "b": "danny_brown",
-      "discourse": 0.32527557015419006,
-      "tag": 0.03376068376068376
+      "a": "ween",
+      "b": "yasuaki_shimizu",
+      "discourse": 0.27690887451171875,
+      "tag": 0.0641025641025641
     },
     {
       "a": "bill_evans",
@@ -900,22 +900,28 @@
       "tag": 0.02413793103448276
     },
     {
+      "a": "faye_webster",
+      "b": "yasuaki_shimizu",
+      "discourse": 0.3194231390953064,
+      "tag": 0.05128205128205128
+    },
+    {
+      "a": "skrillex",
+      "b": "yasuaki_shimizu",
+      "discourse": 0.3523729145526886,
+      "tag": 0.03508771929824561
+    },
+    {
       "a": "bill_evans",
       "b": "danny_brown",
       "discourse": 0.3496573567390442,
       "tag": 0.0522875816993464
     },
     {
-      "a": "animal_collective",
-      "b": "earl_sweatshirt",
-      "discourse": 0.33538153767585754,
-      "tag": 0.0685185185185185
-    },
-    {
-      "a": "ween",
+      "a": "alex_g",
       "b": "yasuaki_shimizu",
-      "discourse": 0.3485139012336731,
-      "tag": 0.0641025641025641
+      "discourse": 0.40422797203063965,
+      "tag": 0.0
     },
     {
       "a": "brian_eno",
@@ -930,16 +936,10 @@
       "tag": 0.03125
     },
     {
-      "a": "alex_g",
-      "b": "nujabes",
-      "discourse": 0.39805394411087036,
-      "tag": 0.022222222222222223
-    },
-    {
-      "a": "danny_brown",
+      "a": "mgmt",
       "b": "yasuaki_shimizu",
-      "discourse": 0.4019545912742615,
-      "tag": 0.019047619047619046
+      "discourse": 0.3120817244052887,
+      "tag": 0.1111111111111111
     },
     {
       "a": "danny_brown",
@@ -948,22 +948,16 @@
       "tag": 0.023809523809523808
     },
     {
-      "a": "skrillex",
-      "b": "yasuaki_shimizu",
-      "discourse": 0.3968777656555176,
-      "tag": 0.03508771929824561
-    },
-    {
-      "a": "faye_webster",
+      "a": "bill_evans",
       "b": "fishmans",
-      "discourse": 0.3834562301635742,
-      "tag": 0.04878048780487805
+      "discourse": 0.4174962639808655,
+      "tag": 0.013333333333333332
     },
     {
-      "a": "faye_webster",
-      "b": "yasuaki_shimizu",
-      "discourse": 0.38320350646972656,
-      "tag": 0.05128205128205128
+      "a": "danny_brown",
+      "b": "fishmans",
+      "discourse": 0.4178285598754883,
+      "tag": 0.018018018018018018
     },
     {
       "a": "brian_eno",
@@ -990,6 +984,12 @@
       "tag": 0.03287671232876712
     },
     {
+      "a": "animal_collective",
+      "b": "earl_sweatshirt",
+      "discourse": 0.3753713369369507,
+      "tag": 0.0685185185185185
+    },
+    {
       "a": "bill_evans",
       "b": "neil_young",
       "discourse": 0.4014386832714081,
@@ -997,9 +997,21 @@
     },
     {
       "a": "animal_collective",
-      "b": "bill_evans",
-      "discourse": 0.4322090148925781,
-      "tag": 0.014102564102564105
+      "b": "danny_brown",
+      "discourse": 0.41078510880470276,
+      "tag": 0.03376068376068376
+    },
+    {
+      "a": "neil_young",
+      "b": "nujabes",
+      "discourse": 0.44796037673950195,
+      "tag": 0.0
+    },
+    {
+      "a": "nujabes",
+      "b": "ween",
+      "discourse": 0.39589548110961914,
+      "tag": 0.05381944444444444
     },
     {
       "a": "bill_evans",
@@ -1020,6 +1032,12 @@
       "tag": 0.018518518518518517
     },
     {
+      "a": "faye_webster",
+      "b": "fishmans",
+      "discourse": 0.4112280607223511,
+      "tag": 0.04878048780487805
+    },
+    {
       "a": "brian_eno",
       "b": "earl_sweatshirt",
       "discourse": 0.37689879536628723,
@@ -1032,22 +1050,10 @@
       "tag": 0.035460992907801414
     },
     {
-      "a": "animal_collective",
-      "b": "nujabes",
-      "discourse": 0.3988814651966095,
-      "tag": 0.07222222222222222
-    },
-    {
       "a": "aphex_twin",
       "b": "yung_lean",
       "discourse": 0.43297111988067627,
       "tag": 0.04081632653061224
-    },
-    {
-      "a": "brian_eno",
-      "b": "nujabes",
-      "discourse": 0.38863176107406616,
-      "tag": 0.08914728682170542
     },
     {
       "a": "badbadnotgood",
@@ -1056,28 +1062,34 @@
       "tag": 0.125
     },
     {
-      "a": "mgmt",
-      "b": "yasuaki_shimizu",
-      "discourse": 0.3754804730415344,
-      "tag": 0.1111111111111111
+      "a": "animal_collective",
+      "b": "nujabes",
+      "discourse": 0.41003063321113586,
+      "tag": 0.07222222222222222
     },
     {
       "a": "bladee",
       "b": "yasuaki_shimizu",
-      "discourse": 0.4192940294742584,
+      "discourse": 0.41930195689201355,
       "tag": 0.06790123456790123
     },
     {
-      "a": "mgmt",
+      "a": "brian_eno",
       "b": "nujabes",
-      "discourse": 0.3811682462692261,
-      "tag": 0.1111111111111111
+      "discourse": 0.3998883366584778,
+      "tag": 0.08914728682170542
     },
     {
       "a": "faye_webster",
       "b": "skrillex",
       "discourse": 0.4166954457759857,
       "tag": 0.078125
+    },
+    {
+      "a": "mgmt",
+      "b": "nujabes",
+      "discourse": 0.3881729543209076,
+      "tag": 0.1111111111111111
     },
     {
       "a": "alex_g",
@@ -1098,6 +1110,12 @@
       "tag": 0.11350574712643678
     },
     {
+      "a": "nujabes",
+      "b": "skrillex",
+      "discourse": 0.37516334652900696,
+      "tag": 0.14141414141414144
+    },
+    {
       "a": "bill_evans",
       "b": "faye_webster",
       "discourse": 0.44200265407562256,
@@ -1116,39 +1134,21 @@
       "tag": 0.08928571428571429
     },
     {
-      "a": "animal_collective",
-      "b": "yung_lean",
-      "discourse": 0.42637360095977783,
-      "tag": 0.10897435897435896
-    },
-    {
       "a": "faye_webster",
       "b": "haruomi_hosono",
       "discourse": 0.4326285719871521,
       "tag": 0.10416666666666667
     },
     {
-      "a": "aphex_twin",
-      "b": "fishmans",
-      "discourse": 0.4266003966331482,
-      "tag": 0.11428571428571428
-    },
-    {
-      "a": "bladee",
-      "b": "fishmans",
-      "discourse": 0.4371236562728882,
-      "tag": 0.11904761904761904
-    },
-    {
       "a": "fishmans",
       "b": "yung_lean",
-      "discourse": 0.43346041440963745,
+      "discourse": 0.4246278405189514,
       "tag": 0.12333333333333332
     },
     {
       "a": "faye_webster",
       "b": "nujabes",
-      "discourse": 0.42864182591438293,
+      "discourse": 0.4256010055541992,
       "tag": 0.13090277777777778
     }
   ]

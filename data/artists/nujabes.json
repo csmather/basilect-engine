@@ -29,7 +29,7 @@
     "japan",
     "jazz fusion"
   ],
-  "discourse_profile": "Sampling as devotion to the source material. Nujabes treated beat-making as the art of finding and amplifying the emotional core of a record — his favorite phrase was reportedly \"I want to find the best two bars.\" Rather than chopping or rearranging, he preferred bold melodic loops that preserved the original's harmonic arc, drawing heavily on jazz (Pharoah Sanders, Miles Davis, Chet Baker) and Brazilian music. The approach was contemplative rather than technical: beats that provoke emotional response beyond head-nodding, closer to meditation than song. He was deeply selective about what got released, shelving anything that didn't meet his standard. His spiritual orientation — rooted in Buddhism and a belief in music's healing capacity — informed a production philosophy that prioritized serenity and introspective space. Limited primary interview material exists; Nujabes was private and died in 2010, so the discourse record is thin and partly reconstructed from collaborator testimony (Funky DL, Pase Rock, Uyama Hiroto).",
+  "discourse_profile": "Nujabes began making tracks because he 'wanted to hear music that sampled the old soul and jazz I liked' — production as curation of a personal canon. His method centered on finding what his A&R Takeuchi called 'the best two bars' — isolating the emotional peak of a jazz or soul record and building outward from that loop, prioritizing the melodic arc of the source over rhythmic chopping. He rejected formula explicitly: 'Track makers often fail to see a lot of it. It's like they're conforming to a certain formula... they're unable to detach their music from those commercial aspects.' His Shibuya record shop Guinness stocked underground hip-hop and sample sources almost exclusively — Pase Rock recalls that 'Jun didn't really like the commercial hip-hop, so if it wasn't like DJ Premier, Pete Rock, or Five Deez, he wasn't with it.' Collaboration was face-to-face and non-negotiable: he flew MCs like Shing02, Substantial, and Cise Starr to Tokyo rather than exchanging files, sitting next to them during recording to direct flow and phrasing despite limited English — 'I don't want my music being used by randoms that don't understand my music.' He resisted the 'jazzy hip-hop' genre label — 'Isn't simply calling it hip-hop good?' — and by Modal Soul was pivoting from sample-based production toward live instrumentation with Uyama Hiroto, declaring 'I'm going to make my own orchestra.' Each song took at least a year from inception to release; Funky DL describes him as 'very selective in what would be released, even though he'd record a lot of songs.'",
   "sources": [
     {
       "url": "https://www.somestudies.com/studies/nujabes",
@@ -40,9 +40,24 @@
       "url": "https://atwoodmagazine.com/aapihm2205-nujabes-nohidea-essay-aapi-heritage-month/",
       "type": "critical_essay",
       "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://stevem335782753.wordpress.com/2018/12/24/nujabes-interview-2003/",
+      "type": "interview",
+      "fetched": "2026-03-24"
+    },
+    {
+      "url": "https://www.kqed.org/arts/13877640/how-shing02-and-nujabes-linked-west-coast-and-japanese-hip-hop",
+      "type": "interview",
+      "fetched": "2026-03-24"
+    },
+    {
+      "url": "https://quintuskingjazzhop.wordpress.com/2020/05/11/tokyo-in-the-90s-how-one-young-man-went-by-the-name-of-nujabes-and-became-a-hitmaker/",
+      "type": "critical_essay",
+      "fetched": "2026-03-24"
     }
   ],
-  "confidence": "medium",
+  "confidence": "high",
   "tag_sources": {
     "lastfm_artist": [
       "hip-hop",
