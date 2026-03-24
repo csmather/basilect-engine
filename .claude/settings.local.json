@@ -5,7 +5,8 @@
       "Bash(python scripts/:*)",
       "Bash(python:*)",
       "WebSearch",
-      "WebFetch(domain:*)"
+      "WebFetch(domain:*)",
+      "Bash(ls -lh /c/Users/mathe/projects/basilect-engine/data/*.npy /c/Users/mathe/projects/basilect-engine/data/*.json)"
     ]
   }
 }
