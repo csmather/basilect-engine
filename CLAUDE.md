@@ -156,6 +156,23 @@ Run `python scripts/stats.py`. Outputs:
 - Orthogonality test: Pearson and Spearman correlation between Φ_sim and P_prox
 - Distribution stats for both similarity measures
 
+### `snapshot [label]`
+
+Save the current computed state to `data/baseline/` before recomputing.
+
+1. Create `data/baseline/` if it doesn't exist.
+2. Copy these files with a `_v{label}` suffix:
+   - `data/stats.json` → `data/baseline/stats_v{label}.json`
+   - `data/discoveries.json` → `data/baseline/discoveries_v{label}.json`
+   - `data/discourse_sim.npy` → `data/baseline/discourse_sim_v{label}.npy`
+   - `data/tag_prox.npy` → `data/baseline/tag_prox_v{label}.npy`
+   - `data/tag_prox_hard.npy` → `data/baseline/tag_prox_hard_v{label}.npy`
+   - `data/embeddings.npy` → `data/baseline/embeddings_v{label}.npy`
+   - `data/embedding_ids.json` → `data/baseline/embedding_ids_v{label}.json`
+3. Confirm what was saved and the label used.
+
+If no label is provided, auto-increment from the highest existing `_v{N}` in baseline.
+
 ---
 
 ## What This Engine Does NOT Do
