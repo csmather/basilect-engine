@@ -1,0 +1,24 @@
+{
+  "id": "bladee",
+  "name": "Bladee",
+  "country": "SE",
+  "tags": [
+    "cloud rap",
+    "trap",
+    "drain",
+    "hip-hop",
+    "hip hop",
+    "rap",
+    "swedish",
+    "emo rap",
+    "drain gang",
+    "hyperpop"
+  ],
+  "discourse_profile": "Bladee treats music-making as world-building — visual before sonic, spiritual before technical. He describes wanting to 'make a picture' rather than a song, and cites painter Hilma af Klint's autonomous symbolic systems as a primary inspiration: 'She made systems of all this stuff, which was really inspiring to me.' His lyrics have moved toward radical minimalism — 'The more I do it, the more I want to say basically nothing. It's more like a pure reflection' — pursuing economy of language as a form of universality rather than obscurity. He rejects genre as a frame ('Genre is limiting yourself. Just be yourself and let that be the genre'), positioning Drain Gang's output as a self-contained universe with its own logic rather than a contribution to any existing tradition. The concept of 'drain' itself operates as a metaphysics of exchange — loss and gain, emotional catharsis, extraction of essence. Post-2020, his work is explicitly rooted in spirituality — his own syncretic system drawn from Buddhism, Christianity, and personal cosmology — with the persona 'Bladee' functioning as 'me on a higher dimension.' The creative process is improvised: lyrics written in-studio, top-of-mind, bar by bar, with songs built in single sessions around mantric repetition.",
+  "sources": [
+    { "url": "https://bombmagazine.org/articles/2021/07/30/bladee-and-mechatok-interviewed-by-alexander-iadarola/", "type": "interview", "fetched": "2026-03-23" },
+    { "url": "https://www.thefader.com/2019/09/17/bladee-interview-drain-gang-trash-island", "type": "interview", "fetched": "2026-03-23" },
+    { "url": "https://www.interviewmagazine.com/music/bladees-drug-of-choice-is-god", "type": "interview", "fetched": "2026-03-23" }
+  ],
+  "confidence": "high"
+}

@@ -40,7 +40,7 @@ The hypothesis: the most rewarding music discoveries happen when two artists are
 ```
 
 - **id**: lowercase slug, underscores for spaces. e.g. `brian_eno`, `badbadnotgood`.
-- **tags**: from Last.fm `artist.getTopTags`. Include all tags with non-zero weight — typically ~10 per artist (the API's weight distribution drops off steeply). Lowercase, as returned by the API.
+- **tags**: from Last.fm `artist.getTopTags`. Include all tags with non-zero weight — typically ~10 per artist (the API's weight distribution drops off steeply). Lowercase, as returned by the API. **Drop obvious joke/vandal tags** (e.g. meme phrases, slurs, troll entries). If a tag is clearly not a genre, style, scene, or nationality descriptor, leave it out — the Jaccard scores are garbage-in-garbage-out.
 - **discourse_profile**: synthesized from source research. See writing instructions below.
 - **sources**: breadcrumbs only — url, type, fetch date. No summaries stored.
 - **confidence**: `high` (3+ quality sources, profile well-grounded), `medium` (1-2 sources, reasonable but thin), `low` (inferred from context, limited primary material).
@@ -85,11 +85,12 @@ Search for and read source material about the artist's intent, philosophy, and a
 - At least one query **must** be exploratory — a lesser-known work, a label, a scene, a collaborator, a compilation that might surface context your training data doesn't emphasize. This is not optional.
 - For non-anglophone artists, target English-language specialty publications (Bandcamp Daily, The Wire, Japan Times, Vinyl Factory, Red Bull Music Academy) and search for translated interviews. English-language material will be thinner — if confidence lands at `medium`, say why honestly rather than padding the profile with inference.
 - If your findings are unexpected compared to your training data, you're probably doing a good job.
+- **Flag when the exploratory search changed the profile.** If the exploratory query surfaced material that shifted your understanding of the artist — a collaboration, a scene connection, a lesser-known work that reframes their intent — note it briefly in the discourse profile or as a comment during the add. If the exploratory search only confirmed what you already knew, that's fine, but the distinction matters for evaluating whether the search strategy is actually working.
 
 **Source reading workflow:**
 
 - Fetch a source → extract the relevant discourse signals into scratch notes → move on to the next source.
-- If a fetch fails (403, empty page, TLS error), search for an alternative source rather than falling back on search result summaries. Search snippets are leads, not sources.
+- If a fetch fails (403, empty page, TLS error), search for an alternative source rather than falling back on search result summaries. Search snippets are leads, not sources. **A 200 response with no extractable text counts as a failed fetch** — many sites return full HTML/CSS/JS blobs with no readable content. Don't treat these as sourced; move on and find an alternative.
 - Do NOT store source summaries as persistent data. The discourse profile is the output; the source list is the receipt.
 - Working notes are context-management tools, not data.
 
