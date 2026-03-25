@@ -32,15 +32,18 @@
   ],
   "confidence": "high",
   "genres": [
-    "lo-fi",
-    "singer-songwriter",
-    "indie rock",
-    "indie",
-    "indie folk",
-    "indie pop",
     "bedroom pop",
-    "acoustic",
-    "folk",
-    "american"
-  ]
+    "indie folk",
+    "indie rock",
+    "lo-fi",
+    "singer-songwriter"
+  ],
+  "discourse_chunks": [
+    "Giannascoli describes himself as a producer more than a singer-songwriter, treating GarageBand and the laptop as his primary instruments — tools for pitch-shifting, layering, and textural manipulation rather than just capture.",
+    "His songwriting is aggressively intuitive: 'I just go off of intuition.",
+    "The words that come into my head are what I put down,' and he deliberately avoids music theory to preserve the gut-level judgment of 'does it sound good?' He aligns his approach with Impressionism over realism — giving the listener a scene rather than a statement, using Sherwood Anderson's method of blowing single human traits out of proportion to create characters that are technically autobiographical but emotionally distorted.",
+    "His governing principle is sustained self-engagement: 'the whole time I'm just trying to keep myself feeling something,' scrapping or reworking material that fails to provoke a reaction.",
+    "His prolific early Bandcamp output established a practice of treating recording as continuous private activity rather than event, and his film scoring work extends the same logic — atmosphere and intimacy over narrative legibility, giving 'this thin tip of the iceberg, and hopefully the listener can pick up that there is something under the surface.'"
+  ],
+  "mbid": "7df4c4de-3181-4a69-bd36-9d663970cebb"
 }

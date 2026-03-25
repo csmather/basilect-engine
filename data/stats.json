@@ -12,10 +12,10 @@
   },
   "distribution": {
     "discourse_sim": {
-      "mean": 0.444,
-      "std": 0.071,
-      "min": 0.208,
-      "max": 0.62
+      "mean": 0.585,
+      "std": 0.057,
+      "min": 0.437,
+      "max": 0.726
     },
     "genre_prox": {
       "mean": 0.073,
@@ -25,10 +25,10 @@
     }
   },
   "orthogonality": {
-    "pearson_r": 0.151,
-    "pearson_p": 0.0377,
-    "spearman_r": 0.089,
-    "spearman_p": 0.2198,
+    "pearson_r": 0.17,
+    "pearson_p": 0.0192,
+    "spearman_r": 0.063,
+    "spearman_p": 0.3897,
     "verdict": "orthogonal"
   }
 }

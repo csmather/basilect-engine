@@ -37,15 +37,20 @@
   ],
   "confidence": "high",
   "genres": [
-    "hip-hop",
-    "rap",
-    "underground hip-hop",
-    "detroit",
-    "hardcore hip-hop",
-    "hip hop",
-    "experimental hip-hop",
-    "experimental hip hop",
+    "gangsta rap",
+    "glitch hop",
     "hardcore hip hop",
-    "american"
-  ]
+    "hip hop",
+    "trap"
+  ],
+  "discourse_chunks": [
+    "Brown positions originality as a non-negotiable first principle — he seeks out production nobody else would rap over, and frames each album as a challenge to outdo the last rather than to consolidate a sound.",
+    "He explicitly rejects being boxed as a drug rapper or a party rapper, stripping away expected content on uknowhatimsayin¿ to test whether he could \"still be dope\" without the persona, and views rap as a mental sport where age is an asset, not a liability.",
+    "His naming of Atrocity Exhibition after the Joy Division song reflects a felt identification with Ian Curtis's experience of being a spectacle — \"you feel like some type of freak show, sideshow.",
+    "I related to that\" — an articulation of performance as alienation rather than celebration.",
+    "Detroit runs through his creative metabolism concretely: his father was a DJ who raised him on hip-hop and house, ghetto tech was formative, and he frames the city's intertwining of electronic music and drug culture as inseparable context for his work.",
+    "Quaranta functions as a spiritual bookend to XXX, marking a turn from music-as-therapy-and-trauma-dump toward wanting to make people \"feel happy or inspired,\" a shift catalyzed by rehab and reconnection with faith.",
+    "By Stardust he had adopted Julia Cameron's Artist's Way practices to relearn writing from scratch, collaborating with hyperpop producers while insisting he remained \"rooted in hip-hop\" — a pattern of seeking unfamiliar production contexts to force new approaches rather than retreating to proven ground."
+  ],
+  "mbid": "960afc67-9c21-46dd-9c7f-ff2b509e3150"
 }

@@ -68,25 +68,37 @@ def main():
     d_median = float(np.median(d_scores))
     t_median = float(np.median(t_scores))
 
+    # When genre proximity median collapses to 0 (most pairs share no genres),
+    # median-based splitting puts everything in "high genre". Use > 0 instead —
+    # any shared genre vs. none is the natural and most interpretable split.
+    t_threshold = t_median if t_median > 0 else 0.0
+    genre_high = lambda p: p["genre"] > t_threshold
+    genre_low  = lambda p: p["genre"] <= t_threshold
+
     print(f"Pairs: {len(pairs)}")
     print(f"Discourse sim median: {d_median:.3f}")
-    print(f"Genre proximity median: {t_median:.3f}")
+    print(f"Genre proximity median: {t_median:.3f}  (threshold: {'> 0' if t_threshold == 0 else f'>= {t_threshold:.3f}'})")
 
     # Basilect discoveries: high discourse, low genre
-    basilect = [p for p in pairs if p["discourse"] >= d_median and p["genre"] < t_median]
+    basilect = [p for p in pairs if p["discourse"] >= d_median and genre_low(p)]
     basilect.sort(key=lambda p: p["discourse"] - p["genre"], reverse=True)
 
     # Deep scene connections: high discourse, high genre
-    deep = [p for p in pairs if p["discourse"] >= d_median and p["genre"] >= t_median]
+    deep = [p for p in pairs if p["discourse"] >= d_median and genre_high(p)]
     deep.sort(key=lambda p: p["discourse"] + p["genre"], reverse=True)
 
     # Surface-only: low discourse, high genre
-    surface = [p for p in pairs if p["discourse"] < d_median and p["genre"] >= t_median]
+    surface = [p for p in pairs if p["discourse"] < d_median and genre_high(p)]
     surface.sort(key=lambda p: p["genre"] - p["discourse"], reverse=True)
+
+    # Unrelated: low discourse, low genre
+    unrelated = [p for p in pairs if p["discourse"] < d_median and genre_low(p)]
+    unrelated.sort(key=lambda p: p["discourse"] + p["genre"])
 
     print_list("BASILECT DISCOVERIES (high discourse, low genre)", basilect, names)
     print_list("DEEP SCENE CONNECTIONS (high discourse, high genre)", deep, names)
     print_list("SURFACE-ONLY CONNECTIONS (low discourse, high genre)", surface, names)
+    print_list("UNRELATED (low discourse, low genre)", unrelated, names)
 
     # Save structured output
     output = {
@@ -95,6 +107,7 @@ def main():
         "basilect": basilect,
         "deep_scene": deep,
         "surface_only": surface,
+        "unrelated": unrelated,
     }
     out_path = DATA_DIR / "discoveries.json"
     with open(out_path, "w", encoding="utf-8") as f:

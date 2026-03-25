@@ -16,9 +16,9 @@ The hypothesis: the most rewarding music discoveries happen when two artists are
 1. Artist nodes are built individually — genres from MusicBrainz, discourse profiles from web research.
 2. Discourse profiles are embedded via sentence-transformers.
 3. Pairwise scores are computed for all artist pairs: genre Jaccard (proximity) and cosine similarity of embeddings (discourse).
-4. Pairs are ranked and surfaced. The human curator evaluates by ear.
+4. Pairs are ranked and surfaced for exploration.
 
-**Connections are computed, not authored.** There are no edge files. There is no `connect` command. The engine does not decide which artists are related — it computes two scores and the curator interprets the output.
+**Connections are computed, not authored.** There are no edge files. There is no `connect` command. The engine does not decide which artists are related — it computes two scores and the output is exploratory.
 
 ---
 
@@ -83,7 +83,7 @@ Search for and read source material about the artist's intent, philosophy, and a
 
 1. **Artist's own words** — interviews, liner notes, artist statements. These ground the profile in intent, not inference.
 2. **Longform critical writing** — essays or reviews that analyze approach and philosophy, not just rate the music.
-3. **Scene/label/compilation context** — curatorial framing that positions the artist within a tradition.
+3. **Scene/label/compilation context** — framing that positions the artist within a tradition.
 4. **Biography and review pages** — useful for facts, weak for discourse.
 
 **Search strategy:**
@@ -148,6 +148,7 @@ Run `python scripts/discover.py`. Outputs ranked pair lists:
 - Basilect discoveries (high discourse sim, low genre proximity)
 - Deep scene connections (high discourse sim, high genre proximity)
 - Surface-only connections (low discourse sim, high genre proximity)
+- Unrelated (low discourse sim, low genre proximity)
 
 ### `stats`
 
@@ -161,10 +162,22 @@ Run `python scripts/stats.py`. Outputs:
 
 ## What This Engine Does NOT Do
 
-- **It does not decide which artists are connected.** It computes scores. The curator interprets.
+- **It does not decide which artists are connected.** It computes scores. The output is exploratory, not prescriptive.
 - **It does not hear music.** All discourse claims are mediated by language — what artists say, what critics write. Flag when you're uncertain about actual sound.
-- **It does not curate.** There are no curation principles, no "what makes a good connection" guidelines. The engine builds nodes and runs math. Curation happens downstream, by a human, with ears.
-- **It does not author connection reasoning.** v1 wrote paragraphs explaining why two artists were related. v2 produces numbers. If a pair scores high, the curator can read both profiles and decide if the connection is real.
+- **It does not curate.** There are no curation principles, no "what makes a good connection" guidelines. The engine builds nodes and runs math.
+- **It does not author connection reasoning.** v1 wrote paragraphs explaining why two artists were related. v2 produces numbers. If a pair scores high, both profiles can be read to understand why.
+
+## Evaluation Philosophy
+
+This is an exploratory tool. There is no ground truth for "correct" artist connections — the engine surfaces patterns for interpretation, not answers to validate.
+
+**Evaluation is stability testing, not accuracy testing:**
+
+- Do the top-ranked pairs stay roughly the same across pipeline changes? (If the whole list shuffles, the signal is noise)
+- Does a given change (chunking, model swap) produce meaningfully different rankings, or just minor reordering?
+- Are certain artists dominating the top of every list? (Suggests generically written profiles, not real connections)
+
+**Do not hand-label expected outputs.** That bakes assumptions into the test and defeats the purpose of exploration. Measure whether the pipeline is stable and whether the two axes remain orthogonal.
 
 ---
 
