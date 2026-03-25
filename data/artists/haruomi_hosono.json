@@ -2,7 +2,26 @@
   "id": "haruomi_hosono",
   "name": "Haruomi Hosono",
   "country": "JP",
-  "tags": [
+  "discourse_profile": "Hosono's defining orientation is toward musical boundaries — 'where different things collide,' the shorelines where 'jazz and rock music came to be.' Growing up in post-occupation Tokyo, he absorbed American pop, exotica, and country as a child of cultural collision, then spent decades interrogating that absorption. His 'soy sauce music' concept — taking sounds from around the world and adding a Japanese inflection — is playful and self-aware, as interested in how Japan exoticizes the world as the reverse. He sees through 'the eyes of a stranger,' a deliberate Brechtian estrangement that keeps each genre fresh rather than borrowed. The constant reinvention — Happy End's folk-rock, Tropical Dandy's exotica, YMO's techno-pop, ambient commissions for Muji, late-period electronic miniatures — isn't restlessness but a single method applied to different materials. By the late '80s he framed the work explicitly as 'spiritual searching' beyond information overload, and post-2011 as a 'dynamic museum of the past that lives and changes in the present' — recovering lost sounds from the '40s and earlier, envisioning the future by returning to the past. His relationship to technology is collaborative, not fetishistic: 'humanity, frailty and spirit, made in collaboration with the best machines.'",
+  "sources": [
+    {
+      "url": "https://www.thevinylfactory.com/features/david-toop-on-haruomi-hosono",
+      "type": "critical_essay",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://www.vice.com/en/article/haruomi-hosono-interview-hochono-house/",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://scrmbl.com/post/haruomi-hosono-tropical-dandy-50",
+      "type": "critical_essay",
+      "fetched": "2026-03-23"
+    }
+  ],
+  "confidence": "high",
+  "genres": [
     "japanese",
     "electronic",
     "ambient",
@@ -13,12 +32,5 @@
     "japan",
     "soundtrack",
     "rock"
-  ],
-  "discourse_profile": "Hosono's defining orientation is toward musical boundaries — 'where different things collide,' the shorelines where 'jazz and rock music came to be.' Growing up in post-occupation Tokyo, he absorbed American pop, exotica, and country as a child of cultural collision, then spent decades interrogating that absorption. His 'soy sauce music' concept — taking sounds from around the world and adding a Japanese inflection — is playful and self-aware, as interested in how Japan exoticizes the world as the reverse. He sees through 'the eyes of a stranger,' a deliberate Brechtian estrangement that keeps each genre fresh rather than borrowed. The constant reinvention — Happy End's folk-rock, Tropical Dandy's exotica, YMO's techno-pop, ambient commissions for Muji, late-period electronic miniatures — isn't restlessness but a single method applied to different materials. By the late '80s he framed the work explicitly as 'spiritual searching' beyond information overload, and post-2011 as a 'dynamic museum of the past that lives and changes in the present' — recovering lost sounds from the '40s and earlier, envisioning the future by returning to the past. His relationship to technology is collaborative, not fetishistic: 'humanity, frailty and spirit, made in collaboration with the best machines.'",
-  "sources": [
-    { "url": "https://www.thevinylfactory.com/features/david-toop-on-haruomi-hosono", "type": "critical_essay", "fetched": "2026-03-23" },
-    { "url": "https://www.vice.com/en/article/haruomi-hosono-interview-hochono-house/", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://scrmbl.com/post/haruomi-hosono-tropical-dandy-50", "type": "critical_essay", "fetched": "2026-03-23" }
-  ],
-  "confidence": "high"
+  ]
 }

@@ -2,7 +2,21 @@
   "id": "brian_eno",
   "name": "Brian Eno",
   "country": "GB",
-  "tags": [
+  "discourse_profile": "Music as environment rather than event. Eno's founding ambient principle was that music should accommodate any level of attention without enforcing one — \"as ignorable as it is interesting.\" The studio is his instrument: once sound hits tape it becomes \"plastic material, malleable, like paint,\" and composition means designing systems rather than specifying notes — \"invention of a system for making music make itself.\" This extends to a control/surrender dialectic he compares to surfing: \"take control of the situation, then be carried, then take control,\" with attention itself as the primary creative tool. He coined \"scenius\" to argue that creative intelligence is communal, not individual, and uses arbitrary constraints (Oblique Strategies) to short-circuit habit. More recently he's reversed his own premise — since \"all music is now ambient music\" due to ubiquitous multitasking, he's moved toward demanding focused attention, trying to \"make a space where people can rest their attention in one place for a while.\"",
+  "sources": [
+    {
+      "url": "https://tapeop.com/interviews/85/brian-eno-bonus",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://www.theringer.com/2023/12/26/music/brian-eno-tour-career-retrospective",
+      "type": "critical_essay",
+      "fetched": "2026-03-23"
+    }
+  ],
+  "confidence": "high",
+  "genres": [
     "ambient",
     "experimental",
     "electronic",
@@ -13,11 +27,5 @@
     "british",
     "avant-garde",
     "rock"
-  ],
-  "discourse_profile": "Music as environment rather than event. Eno's founding ambient principle was that music should accommodate any level of attention without enforcing one — \"as ignorable as it is interesting.\" The studio is his instrument: once sound hits tape it becomes \"plastic material, malleable, like paint,\" and composition means designing systems rather than specifying notes — \"invention of a system for making music make itself.\" This extends to a control/surrender dialectic he compares to surfing: \"take control of the situation, then be carried, then take control,\" with attention itself as the primary creative tool. He coined \"scenius\" to argue that creative intelligence is communal, not individual, and uses arbitrary constraints (Oblique Strategies) to short-circuit habit. More recently he's reversed his own premise — since \"all music is now ambient music\" due to ubiquitous multitasking, he's moved toward demanding focused attention, trying to \"make a space where people can rest their attention in one place for a while.\"",
-  "sources": [
-    { "url": "https://tapeop.com/interviews/85/brian-eno-bonus", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://www.theringer.com/2023/12/26/music/brian-eno-tour-career-retrospective", "type": "critical_essay", "fetched": "2026-03-23" }
-  ],
-  "confidence": "high"
+  ]
 }

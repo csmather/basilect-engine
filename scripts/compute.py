@@ -1,4 +1,4 @@
-"""Compute pairwise discourse similarity and tag proximity matrices."""
+"""Compute pairwise discourse similarity and genre proximity matrices."""
 
 import json
 from pathlib import Path
@@ -18,19 +18,19 @@ def load_embeddings():
     return ids, embeddings
 
 
-def load_tags(ids):
-    """Load tag sets for each artist, in embedding ID order."""
-    tag_sets = []
+def load_genres(ids):
+    """Load genre sets for each artist, in embedding ID order."""
+    genre_sets = []
     for artist_id in ids:
         path = ARTISTS_DIR / f"{artist_id}.json"
         with open(path, encoding="utf-8") as f:
             node = json.load(f)
-        tag_sets.append(set(node["tags"]))
-    return tag_sets
+        genre_sets.append(set(node["genres"]))
+    return genre_sets
 
 
 def jaccard_matrix(tag_sets):
-    """Compute pairwise Jaccard similarity for a list of tag sets."""
+    """Compute pairwise Jaccard similarity for a list of sets."""
     n = len(tag_sets)
     matrix = np.zeros((n, n))
     for i in range(n):
@@ -53,11 +53,11 @@ def main():
     np.save(DATA_DIR / "discourse_sim.npy", discourse_sim)
     print(f"Saved discourse similarity matrix: {discourse_sim.shape}")
 
-    # Tag proximity: Jaccard similarity of tag sets
-    tag_sets = load_tags(ids)
-    tag_prox = jaccard_matrix(tag_sets)
-    np.save(DATA_DIR / "tag_prox.npy", tag_prox)
-    print(f"Saved tag proximity matrix: {tag_prox.shape}")
+    # Genre proximity: Jaccard similarity of genre sets
+    genre_sets = load_genres(ids)
+    genre_prox = jaccard_matrix(genre_sets)
+    np.save(DATA_DIR / "genre_prox.npy", genre_prox)
+    print(f"Saved genre proximity matrix: {genre_prox.shape}")
 
     # Quick summary
     n = len(ids)
@@ -66,8 +66,8 @@ def main():
     print(f"\n{num_pairs} unique pairs")
     print(f"Discourse sim  — mean: {discourse_sim[upper].mean():.3f}, "
           f"std: {discourse_sim[upper].std():.3f}")
-    print(f"Tag proximity  — mean: {tag_prox[upper].mean():.3f}, "
-          f"std: {tag_prox[upper].std():.3f}")
+    print(f"Genre proximity — mean: {genre_prox[upper].mean():.3f}, "
+          f"std: {genre_prox[upper].std():.3f}")
 
 
 if __name__ == "__main__":

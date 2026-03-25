@@ -2,7 +2,36 @@
   "id": "neil_young",
   "name": "Neil Young",
   "country": "CA",
-  "tags": [
+  "discourse_profile": "Young treats songwriting as a channeling act rather than a craft — 'as soon as I start thinking, I quit' — and insists the process should bypass conscious control entirely. His central paradox is that the rawest, most imperfect performance demands the highest-fidelity capture: 'the raw thing that we create is the soul of music and the stories and the feelings of being human; the technical thing that happens is trying to capture that.' This drove his Pono project and lifelong crusade against compressed digital audio — not audiophile fetishism but a belief that lossy formats strip the emotional signal from music. His relationship to genre is one of deliberate refusal to repeat: the Trans album buried his voice under a vocoder not as provocation but as an attempt to mirror the experience of communicating with his non-verbal son, revealing that his restless shifts between folk, grunge, electronic, and country are rooted in personal and philosophical necessity rather than eclecticism for its own sake. With Crazy Horse he seeks a specific quality — 'we're not trying to impress anybody' — where looseness and technical limitation become the vehicle for emotional reality rather than obstacles to it.",
+  "sources": [
+    {
+      "url": "https://www.npr.org/2019/10/23/772055382/a-legendary-collaboration-continues-neil-young-and-crazy-horse-reunite-for-color",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://www.musicradar.com/news/neil-young-songwriting-guitar-sound",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://audiophilestyle.com/ca/reviews/book-review-neil-youngs-to-feel-the-music-a-songwriters-mission-to-save-high-quality-audio-r834/",
+      "type": "critical_essay",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://www.udiscovermusic.com/stories/trans-the-overlooked-prescience-of-neil-youngs-electro-album/",
+      "type": "critical_essay",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://en.wikipedia.org/wiki/Trans_(album)",
+      "type": "reference",
+      "fetched": "2026-03-23"
+    }
+  ],
+  "confidence": "high",
+  "genres": [
     "classic rock",
     "singer-songwriter",
     "folk",
@@ -13,14 +42,5 @@
     "hard rock",
     "country",
     "70s"
-  ],
-  "discourse_profile": "Young treats songwriting as a channeling act rather than a craft — 'as soon as I start thinking, I quit' — and insists the process should bypass conscious control entirely. His central paradox is that the rawest, most imperfect performance demands the highest-fidelity capture: 'the raw thing that we create is the soul of music and the stories and the feelings of being human; the technical thing that happens is trying to capture that.' This drove his Pono project and lifelong crusade against compressed digital audio — not audiophile fetishism but a belief that lossy formats strip the emotional signal from music. His relationship to genre is one of deliberate refusal to repeat: the Trans album buried his voice under a vocoder not as provocation but as an attempt to mirror the experience of communicating with his non-verbal son, revealing that his restless shifts between folk, grunge, electronic, and country are rooted in personal and philosophical necessity rather than eclecticism for its own sake. With Crazy Horse he seeks a specific quality — 'we're not trying to impress anybody' — where looseness and technical limitation become the vehicle for emotional reality rather than obstacles to it.",
-  "sources": [
-    { "url": "https://www.npr.org/2019/10/23/772055382/a-legendary-collaboration-continues-neil-young-and-crazy-horse-reunite-for-color", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://www.musicradar.com/news/neil-young-songwriting-guitar-sound", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://audiophilestyle.com/ca/reviews/book-review-neil-youngs-to-feel-the-music-a-songwriters-mission-to-save-high-quality-audio-r834/", "type": "critical_essay", "fetched": "2026-03-23" },
-    { "url": "https://www.udiscovermusic.com/stories/trans-the-overlooked-prescience-of-neil-youngs-electro-album/", "type": "critical_essay", "fetched": "2026-03-23" },
-    { "url": "https://en.wikipedia.org/wiki/Trans_(album)", "type": "reference", "fetched": "2026-03-23" }
-  ],
-  "confidence": "high"
+  ]
 }

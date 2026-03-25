@@ -1,9 +1,9 @@
 {
   "nodes": {
     "count": 20,
-    "avg_tags": 9.8,
-    "min_tags": 7,
-    "max_tags": 10,
+    "avg_genres": 9.8,
+    "min_genres": 7,
+    "max_genres": 10,
     "confidence": {
       "high": 19,
       "medium": 1,
@@ -17,7 +17,7 @@
       "min": 0.208,
       "max": 0.62
     },
-    "tag_prox": {
+    "genre_prox": {
       "mean": 0.073,
       "std": 0.096,
       "min": 0.0,

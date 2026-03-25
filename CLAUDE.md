@@ -6,16 +6,16 @@ This file provides guidance to Claude Code when working in this repository.
 
 A dual-layer artist knowledge graph that measures two independent dimensions of artist relatedness:
 
-1. **Tag proximity** — genre, style, and scene overlap derived from Last.fm tags. This is the conventional layer: what a genre-matching system would see.
+1. **Genre proximity** — genre and style overlap derived from MusicBrainz genres. This is the control layer: what a conventional genre-matching system would see.
 2. **Discourse similarity** — what artists say about what they're doing, what critics identify as their intent, how they describe their relationship to sound. Extracted from interviews, critical writing, and liner notes, then embedded for semantic comparison.
 
-The hypothesis: the most rewarding music discoveries happen when two artists are far apart on tag proximity but close together on discourse similarity. The engine surfaces those pairs.
+The hypothesis: the most rewarding music discoveries happen when two artists are far apart on genre proximity but close together on discourse similarity. The engine surfaces those pairs.
 
 ## How It Works
 
-1. Artist nodes are built individually — tags from Last.fm, discourse profiles from web research.
+1. Artist nodes are built individually — genres from MusicBrainz, discourse profiles from web research.
 2. Discourse profiles are embedded via sentence-transformers.
-3. Pairwise scores are computed for all artist pairs: tag Jaccard (proximity) and cosine similarity of embeddings (discourse).
+3. Pairwise scores are computed for all artist pairs: genre Jaccard (proximity) and cosine similarity of embeddings (discourse).
 4. Pairs are ranked and surfaced. The human curator evaluates by ear.
 
 **Connections are computed, not authored.** There are no edge files. There is no `connect` command. The engine does not decide which artists are related — it computes two scores and the curator interprets the output.
@@ -28,8 +28,9 @@ The hypothesis: the most rewarding music discoveries happen when two artists are
 {
   "id": "artist_slug",
   "name": "Artist Name",
+  "mbid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
   "country": "XX",
-  "tags": ["tag1", "tag2", "tag3", ...],
+  "genres": ["genre1", "genre2", "genre3"],
   "discourse_profile": "...",
   "sources": [
     { "url": "https://...", "type": "interview", "fetched": "YYYY-MM-DD" },
@@ -40,7 +41,8 @@ The hypothesis: the most rewarding music discoveries happen when two artists are
 ```
 
 - **id**: lowercase slug, underscores for spaces. e.g. `brian_eno`, `badbadnotgood`.
-- **tags**: from Last.fm `artist.getTopTags`. Include all tags with non-zero weight — typically ~10 per artist (the API's weight distribution drops off steeply). Lowercase, as returned by the API. **Drop obvious joke/vandal tags** (e.g. meme phrases, slurs, troll entries). If a tag is clearly not a genre, style, scene, or nationality descriptor, leave it out — the Jaccard scores are garbage-in-garbage-out.
+- **mbid**: MusicBrainz artist ID. Used for direct genre lookups — bypasses search disambiguation. Can be provided at add time or confirmed from search results.
+- **genres**: from MusicBrainz `inc=genres` lookup. Community-voted, controlled vocabulary. Lowercase. If an artist has zero MB genres, manually assign 3-5 genres.
 - **discourse_profile**: synthesized from source research. See writing instructions below.
 - **sources**: breadcrumbs only — url, type, fetch date. No summaries stored.
 - **confidence**: `high` (3+ quality sources, profile well-grounded), `medium` (1-2 sources, reasonable but thin), `low` (inferred from context, limited primary material).
@@ -51,21 +53,27 @@ The hypothesis: the most rewarding music discoveries happen when two artists are
 
 ### `add [artist]`
 
-Build a new artist node. Three steps:
+Build a new artist node. Steps:
 
-**Step 1: Gather tags**
+**Step 1: Gather genres**
 
-Call the Last.fm API:
+Use `scripts/musicbrainz.py` to fetch genres from MusicBrainz.
 
+If an MBID is provided (recommended — avoids disambiguation errors):
 ```
-http://ws.audioscrobbler.com/2.0/?method=artist.getTopTags&artist=ARTIST_NAME&api_key=API_KEY&format=json
+python scripts/musicbrainz.py "Artist Name" --mbid <MBID>
 ```
 
-The API key is stored in `.env` as `LASTFM_API_KEY`. Use `scripts/lastfm.py` to fetch.
+If no MBID is provided, the script searches by name and shows candidates:
+```
+python scripts/musicbrainz.py "Artist Name"
+```
 
-Extract tag names. Keep all tags with non-zero weight (the API returns a weight 0-100, but the distribution drops off steeply — expect ~10 usable tags per artist). Store as a flat list of lowercase strings.
+The script hits the MusicBrainz API directly (`inc=genres`) and returns the curated genre list. Store as a flat list of lowercase strings. Store the MBID in the node.
 
-If the artist isn't found on Last.fm, note it and proceed — tags can be manually assigned from genre knowledge, but flag the node's proximity data as incomplete.
+If the artist has zero MusicBrainz genres, manually assign 3-5 genres based on genre knowledge. Note this in the node.
+
+**Rate limit:** MusicBrainz requires max 1 request per second. The script handles this.
 
 **Step 2: Research discourse**
 
@@ -131,22 +139,22 @@ Run `python scripts/embed.py`. Embeds all discourse profiles and saves to `data/
 
 ### `compute`
 
-Run `python scripts/compute.py`. Computes pairwise discourse similarity (cosine) and tag proximity (Jaccard) for all artist pairs. Saves matrices to `data/`.
+Run `python scripts/compute.py`. Computes pairwise discourse similarity (cosine) and genre proximity (Jaccard) for all artist pairs. Saves matrices to `data/`.
 
 ### `discover`
 
 Run `python scripts/discover.py`. Outputs ranked pair lists:
 
-- Basilect discoveries (high discourse sim, low tag proximity)
-- Deep scene connections (high discourse sim, high tag proximity)
-- Surface-only connections (low discourse sim, high tag proximity)
+- Basilect discoveries (high discourse sim, low genre proximity)
+- Deep scene connections (high discourse sim, high genre proximity)
+- Surface-only connections (low discourse sim, high genre proximity)
 
 ### `stats`
 
 Run `python scripts/stats.py`. Outputs:
 
-- Node count, average tags per node, confidence distribution
-- Orthogonality test: Pearson and Spearman correlation between Φ_sim and P_prox
+- Node count, average genres per node, confidence distribution
+- Orthogonality test: Pearson and Spearman correlation between discourse sim and genre proximity
 - Distribution stats for both similarity measures
 
 ---
@@ -163,5 +171,3 @@ Run `python scripts/stats.py`. Outputs:
 ## Platform Note
 
 This project runs on Windows. File paths use Windows conventions. Python scripts should use forward slashes or `pathlib` for cross-platform compatibility.
-
-The Last.fm API key is stored in `.env` and loaded via `python-dotenv` or read directly. Do not commit the API key.
