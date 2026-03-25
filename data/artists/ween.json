@@ -32,15 +32,29 @@
   ],
   "confidence": "high",
   "genres": [
-    "experimental",
-    "alternative",
-    "rock",
-    "indie",
     "alternative rock",
-    "indie rock",
+    "art rock",
+    "comedy",
+    "comedy rock",
+    "experimental",
     "experimental rock",
-    "psychedelic",
+    "funk rock",
+    "hardcore punk",
     "lo-fi",
-    "american"
-  ]
+    "neo-psychedelia",
+    "noise rock",
+    "pop rock",
+    "psychedelic rock",
+    "rock"
+  ],
+  "discourse_chunks": [
+    "Ween's central insistence is that their genre omnivory is not parody but sincere engagement — Dean Ween has explicitly distanced their approach from Zappa's, criticizing his work as 'not sincere enough for me' and stating flatly, 'We're not trying to parody music.",
+    "We're not trying to destroy music.",
+    "We're just trying to make good music.' The duo frames genre not as a conceptual device but as something they aren't even conscious of navigating: they don't set out to write a funk song or a metal song, they write songs and pick the best ones regardless of where they land stylistically.",
+    "Their recording philosophy is built on volume and spontaneity over craft — their stated motto is 'quantity, not quality,' a conviction that if a song requires laboring over, it's probably no good, and that the best performances come on the first or second take.",
+    "This extends to a preference for continuous recording over bounded studio sessions, generating enormous banks of material from which albums are curated rather than constructed.",
+    "The 12 Golden Country Greats sessions — where they used their major-label advance to record with Nashville's A-list session players — crystallize the method: total commitment to the form, executed with enough irreverence to unsettle expectations but never enough to undermine the music itself.",
+    "Gene Ween has described the partnership as more akin to a marriage than a band, and the creative unit's longevity is grounded in a shared refusal to treat any genre as beneath full investment."
+  ],
+  "mbid": "c0eee88b-47f2-4cd2-ac48-a045e902a432"
 }

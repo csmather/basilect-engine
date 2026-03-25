@@ -22,12 +22,21 @@
   ],
   "confidence": "high",
   "genres": [
-    "hip-hop",
+    "alternative r&b",
+    "art pop",
     "cloud rap",
-    "sad",
-    "rap",
-    "trap",
-    "swedish",
-    "hip hop"
-  ]
+    "experimental hip hop",
+    "hip hop",
+    "pop rap",
+    "trap"
+  ],
+  "discourse_chunks": [
+    "Yung Lean sees himself as 'a poet who does different genres' — hip-hop is circumstantial, not constitutive: 'If it was the '70s, I'd be a punk artist.",
+    "I was just born into hip-hop.' His core commitment is to emotional music over party music, and to minimalism as a Swedish creative inheritance — 'you want to do a little less possible but sounding as good as possible.' The Sad Boys aesthetic began as a postmodern play on internet-era sadness and consumer signifiers, but evolved through personal crisis (the Warlord period's substance abuse and hospitalization) into genuine introspection.",
+    "He describes his creative process as organic branching — 'little branches on a tree that just grows and grows' — rooted in writing lyrics and poetry, from which visual art, fashion, and performance naturally extend.",
+    "Later work explicitly breaks the fourth wall between persona and person, with the album Jonatan using his real name and aspiring toward Springsteen-style directness.",
+    "He frames artistic expression as compulsive rather than calculated: 'You have no choice.",
+    "It has to come out.'"
+  ],
+  "mbid": "757ed661-fbad-4e45-b1cd-a6b09f06f54a"
 }

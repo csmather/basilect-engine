@@ -22,15 +22,28 @@
   ],
   "confidence": "high",
   "genres": [
-    "hip-hop",
-    "rap",
-    "ofwgkta",
-    "underground hip-hop",
-    "swag",
+    "abstract hip hop",
+    "alternative hip hop",
+    "cloud rap",
+    "drumless hip hop",
+    "experimental",
+    "experimental hip hop",
+    "hardcore hip hop",
     "hip hop",
-    "alternative hip-hop",
-    "experimental hip-hop",
     "horrorcore",
-    "american"
-  ]
+    "lo-fi",
+    "underground hip hop",
+    "west coast hip hop"
+  ],
+  "discourse_chunks": [
+    "Earl Sweatshirt frames rap as recovery rather than expansion — not pushing the form outward but returning to what it already is.",
+    "He positions rap as \"the number zero, you can multiply it, throw anything in it,\" a vessel for black expression rooted in pain that parallels avant-garde jazz in its necessity.",
+    "His production philosophy is explicitly anti-overwriting: \"N***s be victims of overwriting, bro.",
+    "You can hear when it switches from the heart to the head\" — a commitment to emotional immediacy over technical polish.",
+    "He resists subgenre labels like \"drumless rap\" as marketing convenience that makes the work easier to commodify, insisting the music remain unsorted.",
+    "His creative arc moves from isolated introspection (Some Rap Songs as deliberate calm, a refusal of speed) toward community-embedded practice — his relationship with MIKE and the sLUms circle is framed as mutual recognition, not influence, and his later work treats collaboration as something that \"fortifies you\" rather than depletes.",
+    "He scrapped an entire 19-song album before Sick! because its optimism \"felt gross,\" a quality-control instinct driven by fidelity to emotional truth over productivity.",
+    "Across his career, the through-line is music as a form of directed honesty — selfish in the sense of refusing external expectations, transparent in making the healing process public."
+  ],
+  "mbid": "8b22acd6-20e6-4463-a75c-c14b5cfdb666"
 }

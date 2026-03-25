@@ -22,15 +22,26 @@
   ],
   "confidence": "high",
   "genres": [
-    "experimental",
-    "indie",
-    "freak folk",
-    "folk",
-    "indie rock",
-    "psychedelic",
-    "electronic",
-    "neo-psychedelia",
+    "avant-folk",
     "avant-garde",
+    "avant-garde pop",
+    "electronic",
+    "experimental",
+    "freak folk",
+    "neo-psychedelia",
+    "noise",
+    "psychedelic folk",
     "psychedelic pop"
-  ]
+  ],
+  "discourse_chunks": [
+    "Getting lost as creative method — both making and listening.",
+    "Portner frames their goal as \"creating something that people can get lost in by getting lost in the environment where we're creating it.\"",
+    "The band treats non-repetition as discipline: each record deliberately departs from the last, though they've accepted that certain instinctive signifiers will recur.",
+    "Dadaism and Cubism are explicit reference points — taking familiar things out of context, stitching elements into songs where you wouldn't expect them.",
+    "Vocals function as interlocking organisms rather than lead-and-harmony: \"two voices become one — without one singer it doesn't really work the same way, they dance with each other.\"",
+    "Sung Tongs tried to make acoustic guitars \"sound electronic\" through light touch and microtonal harmonics; Merriweather sampled the band playing acoustic instruments and rebuilt the songs from those loops.",
+    "Panda Bear describes a \"really specific, pure sense of joy\" in the moment a song comes to life that hasn't changed since his first recordings on an eight-track — childlike wonder as a persistent creative engine rather than an aesthetic pose.",
+    "The song comes above everything else in collaboration; personal expression serves the collective output."
+  ],
+  "mbid": "0c751690-c784-4a4f-b1e4-c1de27d47581"
 }

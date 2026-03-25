@@ -1,7 +1,7 @@
 # Discourse Upgrade Plan
 
-**Date:** 2026-03-24
-**Starting from:** v2 baseline (20 artists, plain Jaccard proximity, MiniLM whole-profile embedding)
+**Date:** 2026-03-25 (revised)
+**Starting from:** v2 baseline with MusicBrainz genre proximity
 **Archived:** v3 overcomplicated implementation at `archive/v3` branch
 
 ---
@@ -10,7 +10,7 @@
 
 V3 over-invested in proximity (album tags, MusicBrainz tags, soft Jaccard, synonym maps) when proximity is just the control axis. Meanwhile discourse — the novel axis — stayed coarse: one long paragraph per artist, single-shot MiniLM embedding.
 
-V2's proximity is already right: plain Jaccard on ~10 Last.fm artist tags. Leave it alone.
+Proximity is now settled: plain Jaccard on MusicBrainz genres.
 
 **All new complexity goes to discourse.**
 
@@ -43,39 +43,35 @@ V2's proximity is already right: plain Jaccard on ~10 Last.fm artist tags. Leave
 - Discourse similarity still = cosine of artist-level vectors
 - Optional: also compute max chunk-to-chunk similarity per pair (captures "these two artists share one very specific idea" even if their overall profiles diverge)
 
-### 3. Add a small eval harness
+### 3. Stability testing
 
 **Problem:** With n=20 and 190 pairs, median thresholding is noisy. No way to tell if a pipeline change actually improved results vs. just shuffled the noise.
 
-**Change:** Create `data/eval_pairs.json` — a hand-labeled set of ~30 pairs with expected quadrant assignments:
-- ~10 pairs expected basilect (high discourse, low tag)
-- ~10 pairs expected deep scene (high discourse, high tag)
-- ~10 pairs expected surface-only (low discourse, high tag)
+**Approach:** Stability testing, not accuracy testing. This is an exploratory tool — there is no ground truth for "correct" connections. Do not hand-label expected outputs.
 
-Add `scripts/eval.py`:
-- Load eval pairs and computed matrices
-- Report how many pairs land in their expected quadrant
-- Report ranking stability: does the pair's relative position hold across runs / model swaps?
-
-This is the ground truth the project currently lacks. Without it, every change is vibes.
+Add `scripts/stability.py`:
+- Snapshot ranked pair lists before and after a pipeline change
+- Report: how many of the top-N pairs are shared between runs?
+- Report: what's the average rank displacement for pairs across runs?
+- Flag artists that dominate top rankings (suggests generically written profiles)
 
 ### 4. Test embedding model sensitivity
 
-**After** chunks + eval harness are in place:
-- Run eval with `all-MiniLM-L6-v2` (current)
-- Run eval with one larger model (e.g., `all-mpnet-base-v2`)
-- Compare eval scores
+**After** chunks + stability testing are in place:
+- Snapshot current rankings (whole-profile MiniLM)
+- Run with chunked embeddings → compare stability
+- Optionally swap to a larger model (e.g., `all-mpnet-base-v2`) → compare stability
 
-Don't swap models until you can measure the difference. The eval harness has to come first.
+Don't swap models until you can measure the difference.
 
 ---
 
 ## What this plan does NOT do
 
 - Touch proximity. It's a control variable. Plain Jaccard stays.
-- Add tag enrichment, album tags, MusicBrainz, soft Jaccard, synonym maps. That's what v3 did. It was wrong.
 - Scale the artist set. Stay at 20 until the pipeline is validated.
-- Add visualization, curation layers, or UI. Downstream of validation.
+- Add visualization or UI. Downstream of validation.
+- Hand-label expected outputs or introduce a curation step.
 
 ---
 
@@ -83,11 +79,11 @@ Don't swap models until you can measure the difference. The eval harness has to 
 
 1. **Chunk profiles** — update node schema, write chunks for all 20 artists
 2. **Update embed.py** — chunk-level embedding + median aggregation
-3. **Build eval pairs** — hand-label ~30 pairs from current results + listening
-4. **Write eval.py** — quadrant accuracy + ranking stability
-5. **Re-run pipeline** — embed → compute → discover → eval
-6. **Compare** — do chunked embeddings score better on eval than whole-profile?
-7. **Model swap test** — only if step 6 shows the pipeline is eval-stable
+3. **Write stability.py** — ranking comparison across pipeline configs
+4. **Snapshot pre-chunk rankings** — baseline for comparison
+5. **Re-run pipeline** — embed → compute → discover
+6. **Compare** — are chunked rankings stable and meaningfully different from whole-profile?
+7. **Model swap test** — only if step 6 shows the pipeline is stable
 
 Each step is independently testable. No step depends on a later step.
 
@@ -95,7 +91,7 @@ Each step is independently testable. No step depends on a later step.
 
 ## Success criteria
 
-- Eval harness exists and produces a repeatable score
-- Chunked discourse embeddings score >= whole-profile on eval (or we learn why not)
+- Stability script exists and produces repeatable comparison metrics
+- Chunked discourse embeddings produce stable rankings
 - Orthogonality test still shows r < 0.3 (discourse and proximity remain independent axes)
 - No new complexity in the proximity pipeline
