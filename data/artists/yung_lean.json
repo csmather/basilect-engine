@@ -2,7 +2,26 @@
   "id": "yung_lean",
   "name": "Yung Lean",
   "country": "SE",
-  "tags": [
+  "discourse_profile": "Yung Lean sees himself as 'a poet who does different genres' — hip-hop is circumstantial, not constitutive: 'If it was the '70s, I'd be a punk artist. I was just born into hip-hop.' His core commitment is to emotional music over party music, and to minimalism as a Swedish creative inheritance — 'you want to do a little less possible but sounding as good as possible.' The Sad Boys aesthetic began as a postmodern play on internet-era sadness and consumer signifiers, but evolved through personal crisis (the Warlord period's substance abuse and hospitalization) into genuine introspection. He describes his creative process as organic branching — 'little branches on a tree that just grows and grows' — rooted in writing lyrics and poetry, from which visual art, fashion, and performance naturally extend. Later work explicitly breaks the fourth wall between persona and person, with the album Jonatan using his real name and aspiring toward Springsteen-style directness. He frames artistic expression as compulsive rather than calculated: 'You have no choice. It has to come out.'",
+  "sources": [
+    {
+      "url": "https://www.interviewmagazine.com/music/for-a-moment-you-become-the-art-yung-lean-by-vincent-cassell",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://www.thefader.com/2016/06/16/yung-lean-warlord-interview",
+      "type": "interview",
+      "fetched": "2026-03-23"
+    },
+    {
+      "url": "https://www.thefader.com/2014/07/03/social-anxiety-yung-lean-the-sad-boys-and-the-evolution-of-the-outsider-stance",
+      "type": "critical_essay",
+      "fetched": "2026-03-23"
+    }
+  ],
+  "confidence": "high",
+  "genres": [
     "hip-hop",
     "cloud rap",
     "sad",
@@ -10,12 +29,5 @@
     "trap",
     "swedish",
     "hip hop"
-  ],
-  "discourse_profile": "Yung Lean sees himself as 'a poet who does different genres' — hip-hop is circumstantial, not constitutive: 'If it was the '70s, I'd be a punk artist. I was just born into hip-hop.' His core commitment is to emotional music over party music, and to minimalism as a Swedish creative inheritance — 'you want to do a little less possible but sounding as good as possible.' The Sad Boys aesthetic began as a postmodern play on internet-era sadness and consumer signifiers, but evolved through personal crisis (the Warlord period's substance abuse and hospitalization) into genuine introspection. He describes his creative process as organic branching — 'little branches on a tree that just grows and grows' — rooted in writing lyrics and poetry, from which visual art, fashion, and performance naturally extend. Later work explicitly breaks the fourth wall between persona and person, with the album Jonatan using his real name and aspiring toward Springsteen-style directness. He frames artistic expression as compulsive rather than calculated: 'You have no choice. It has to come out.'",
-  "sources": [
-    { "url": "https://www.interviewmagazine.com/music/for-a-moment-you-become-the-art-yung-lean-by-vincent-cassell", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://www.thefader.com/2016/06/16/yung-lean-warlord-interview", "type": "interview", "fetched": "2026-03-23" },
-    { "url": "https://www.thefader.com/2014/07/03/social-anxiety-yung-lean-the-sad-boys-and-the-evolution-of-the-outsider-stance", "type": "critical_essay", "fetched": "2026-03-23" }
-  ],
-  "confidence": "high"
+  ]
 }

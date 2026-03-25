@@ -13,8 +13,8 @@ def load_data():
     with open(DATA_DIR / "embedding_ids.json", encoding="utf-8") as f:
         ids = json.load(f)
     discourse_sim = np.load(DATA_DIR / "discourse_sim.npy")
-    tag_prox = np.load(DATA_DIR / "tag_prox.npy")
-    return ids, discourse_sim, tag_prox
+    genre_prox = np.load(DATA_DIR / "genre_prox.npy")
+    return ids, discourse_sim, genre_prox
 
 
 def load_names(ids):
@@ -28,7 +28,7 @@ def load_names(ids):
     return names
 
 
-def get_pairs(ids, discourse_sim, tag_prox):
+def get_pairs(ids, discourse_sim, genre_prox):
     """Extract all unique pairs with both scores."""
     n = len(ids)
     pairs = []
@@ -38,7 +38,7 @@ def get_pairs(ids, discourse_sim, tag_prox):
                 "a": ids[i],
                 "b": ids[j],
                 "discourse": float(discourse_sim[i, j]),
-                "tag": float(tag_prox[i, j]),
+                "genre": float(genre_prox[i, j]),
             })
     return pairs
 
@@ -52,46 +52,46 @@ def print_list(title, pairs, names, limit=15):
         name_a = names[p["a"]]
         name_b = names[p["b"]]
         print(f"  {rank:2d}. {name_a} × {name_b}")
-        print(f"      discourse: {p['discourse']:.3f}  |  tag: {p['tag']:.3f}")
+        print(f"      discourse: {p['discourse']:.3f}  |  genre: {p['genre']:.3f}")
     if len(pairs) > limit:
         print(f"  ... and {len(pairs) - limit} more pairs")
 
 
 def main():
-    ids, discourse_sim, tag_prox = load_data()
+    ids, discourse_sim, genre_prox = load_data()
     names = load_names(ids)
-    pairs = get_pairs(ids, discourse_sim, tag_prox)
+    pairs = get_pairs(ids, discourse_sim, genre_prox)
 
     # Compute thresholds from distribution
     d_scores = [p["discourse"] for p in pairs]
-    t_scores = [p["tag"] for p in pairs]
+    t_scores = [p["genre"] for p in pairs]
     d_median = float(np.median(d_scores))
     t_median = float(np.median(t_scores))
 
     print(f"Pairs: {len(pairs)}")
     print(f"Discourse sim median: {d_median:.3f}")
-    print(f"Tag proximity median: {t_median:.3f}")
+    print(f"Genre proximity median: {t_median:.3f}")
 
-    # Basilect discoveries: high discourse, low tag
-    basilect = [p for p in pairs if p["discourse"] >= d_median and p["tag"] < t_median]
-    basilect.sort(key=lambda p: p["discourse"] - p["tag"], reverse=True)
+    # Basilect discoveries: high discourse, low genre
+    basilect = [p for p in pairs if p["discourse"] >= d_median and p["genre"] < t_median]
+    basilect.sort(key=lambda p: p["discourse"] - p["genre"], reverse=True)
 
-    # Deep scene connections: high discourse, high tag
-    deep = [p for p in pairs if p["discourse"] >= d_median and p["tag"] >= t_median]
-    deep.sort(key=lambda p: p["discourse"] + p["tag"], reverse=True)
+    # Deep scene connections: high discourse, high genre
+    deep = [p for p in pairs if p["discourse"] >= d_median and p["genre"] >= t_median]
+    deep.sort(key=lambda p: p["discourse"] + p["genre"], reverse=True)
 
-    # Surface-only: low discourse, high tag
-    surface = [p for p in pairs if p["discourse"] < d_median and p["tag"] >= t_median]
-    surface.sort(key=lambda p: p["tag"] - p["discourse"], reverse=True)
+    # Surface-only: low discourse, high genre
+    surface = [p for p in pairs if p["discourse"] < d_median and p["genre"] >= t_median]
+    surface.sort(key=lambda p: p["genre"] - p["discourse"], reverse=True)
 
-    print_list("BASILECT DISCOVERIES (high discourse, low tag)", basilect, names)
-    print_list("DEEP SCENE CONNECTIONS (high discourse, high tag)", deep, names)
-    print_list("SURFACE-ONLY CONNECTIONS (low discourse, high tag)", surface, names)
+    print_list("BASILECT DISCOVERIES (high discourse, low genre)", basilect, names)
+    print_list("DEEP SCENE CONNECTIONS (high discourse, high genre)", deep, names)
+    print_list("SURFACE-ONLY CONNECTIONS (low discourse, high genre)", surface, names)
 
     # Save structured output
     output = {
         "num_pairs": len(pairs),
-        "thresholds": {"discourse_median": d_median, "tag_median": t_median},
+        "thresholds": {"discourse_median": d_median, "genre_median": t_median},
         "basilect": basilect,
         "deep_scene": deep,
         "surface_only": surface,

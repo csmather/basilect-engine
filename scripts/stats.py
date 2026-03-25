@@ -15,38 +15,38 @@ def load_data():
     with open(DATA_DIR / "embedding_ids.json", encoding="utf-8") as f:
         ids = json.load(f)
     discourse_sim = np.load(DATA_DIR / "discourse_sim.npy")
-    tag_prox = np.load(DATA_DIR / "tag_prox.npy")
-    return ids, discourse_sim, tag_prox
+    genre_prox = np.load(DATA_DIR / "genre_prox.npy")
+    return ids, discourse_sim, genre_prox
 
 
 def node_stats(ids):
     """Compute basic node statistics."""
-    tag_counts = []
+    genre_counts = []
     confidence_dist = {"high": 0, "medium": 0, "low": 0}
     for artist_id in ids:
         path = ARTISTS_DIR / f"{artist_id}.json"
         with open(path, encoding="utf-8") as f:
             node = json.load(f)
-        tag_counts.append(len(node["tags"]))
+        genre_counts.append(len(node["genres"]))
         conf = node.get("confidence", "unknown")
         confidence_dist[conf] = confidence_dist.get(conf, 0) + 1
-    return tag_counts, confidence_dist
+    return genre_counts, confidence_dist
 
 
 def main():
-    ids, discourse_sim, tag_prox = load_data()
+    ids, discourse_sim, genre_prox = load_data()
     n = len(ids)
     upper = np.triu_indices(n, k=1)
     d_scores = discourse_sim[upper]
-    t_scores = tag_prox[upper]
+    t_scores = genre_prox[upper]
     num_pairs = len(d_scores)
 
     # Node stats
-    tag_counts, confidence_dist = node_stats(ids)
+    genre_counts, confidence_dist = node_stats(ids)
     print("NODE STATS")
     print(f"  Artists: {n}")
-    print(f"  Avg tags/node: {np.mean(tag_counts):.1f} "
-          f"(min {min(tag_counts)}, max {max(tag_counts)})")
+    print(f"  Avg genres/node: {np.mean(genre_counts):.1f} "
+          f"(min {min(genre_counts)}, max {max(genre_counts)})")
     print(f"  Confidence: {confidence_dist}")
 
     # Distribution stats
@@ -55,7 +55,7 @@ def main():
     print(f"    mean={d_scores.mean():.3f}  std={d_scores.std():.3f}  "
           f"min={d_scores.min():.3f}  max={d_scores.max():.3f}")
     print(f"    quartiles: {np.percentile(d_scores, [25, 50, 75])}")
-    print(f"  Tag proximity (P_prox):")
+    print(f"  Genre proximity (P_prox):")
     print(f"    mean={t_scores.mean():.3f}  std={t_scores.std():.3f}  "
           f"min={t_scores.min():.3f}  max={t_scores.max():.3f}")
     print(f"    quartiles: {np.percentile(t_scores, [25, 50, 75])}")
@@ -82,9 +82,9 @@ def main():
     output = {
         "nodes": {
             "count": n,
-            "avg_tags": round(float(np.mean(tag_counts)), 1),
-            "min_tags": min(tag_counts),
-            "max_tags": max(tag_counts),
+            "avg_genres": round(float(np.mean(genre_counts)), 1),
+            "min_genres": min(genre_counts),
+            "max_genres": max(genre_counts),
             "confidence": confidence_dist,
         },
         "distribution": {
@@ -94,7 +94,7 @@ def main():
                 "min": round(float(d_scores.min()), 3),
                 "max": round(float(d_scores.max()), 3),
             },
-            "tag_prox": {
+            "genre_prox": {
                 "mean": round(float(t_scores.mean()), 3),
                 "std": round(float(t_scores.std()), 3),
                 "min": round(float(t_scores.min()), 3),
