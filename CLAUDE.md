@@ -23,23 +23,16 @@ embedded and compared. No critic voice, no Claude-authored summaries.
 
 ## Artist node schema
 
-`data/artists/{artist_id}.json`
+`data/artists/{artist_id}/quotes.json`
 ```json
 {
-  "id": "artist_slug",
-  "name": "Artist Name",
   "quotes": [
-    {
-      "text": "...",
-      "publication": "The Wire",
-      "url": "https://...",
-      "date": "2019"
-    }
+    { "text": "...", "publication": "...", "url": "...", "date": "..." }
   ],
   "corpus_meta": {
-    "quote_count": 11,
+    "quote_count": 12,
     "source_count": 4,
-    "date_range": ["2014", "2023"],
+    "date_range": ["2014", "2021"],
     "corpus_valid": true
   }
 }
@@ -64,17 +57,18 @@ embedded and compared. No critic voice, no Claude-authored summaries.
 
 ## Searching for interview URLs
 
+command: `search artist`
 Claude's only role in the pipeline is finding interview URLs.
 
 ### What to find
 - Long-form interviews where the artist speaks extensively
 - Covers creative process, philosophy, influences, or intent
-- 4–6 URLs per artist
+- 2–6 URLs per artist
 - Different publications and different years where possible
 
 ### What to avoid
 - Album reviews, news pieces, quote roundups
-- Heavy coverage of a single album cycle
+- Heavy coverage of a single album cycle across sources
 - Paywalled articles
 
 ### Output format
@@ -89,6 +83,8 @@ Claude's only role in the pipeline is finding interview URLs.
 ]
 ```
 
+Save results to `data/artists/{artist_id}/sources.json` (create dir if needed). This is what `scrape.py` reads from.
+
 ### What Claude does NOT do
 - Judge quote quality or relevance (the pipeline handles this)
 - Summarize or paraphrase anything
@@ -100,7 +96,7 @@ The probe string used in `scripts/extract.py` to score sentences:
 
 `"musician describing their creative process, philosophy, and approach to making music"`
 
-Threshold: 0.3 (cosine similarity). Minimum sentence length: 15 words.
+Threshold: 0.3 (cosine similarity). Minimum sentence length: 8 words.
 
 ---
 
