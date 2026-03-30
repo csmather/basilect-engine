@@ -54,9 +54,16 @@ command: `search {artist}`
 
 `artist_id`: lowercase, spaces to underscores, strip punctuation. E.g. "BadBadNotGood" → `badbadnotgood`, "Yung Lean" → `yung_lean`, "clipping." → `clipping`
 
-Target ≥3 URLs (up to 6), ≤2 per publication, different years where possible. Text-based only — trafilatura can't scrape video/audio (written transcripts are fine). If temporal diversity isn't achievable, report the gap; don't fabricate dates.
+### What to find
+- Interviews where the artist speaks at length in their own words about how or why they make music — not promotional context or biographical background
+- Target ≥3 URLs (up to 6), ≤2 per publication, different years where possible
+- Text-based only — trafilatura can't scrape video/audio (written transcripts are fine)
+- If temporal diversity isn't achievable, report the gap; don't fabricate dates
 
-**Avoid:** album reviews, news pieces, quote roundups, single-album-cycle concentration, paywalled articles.
+### What to avoid
+- Album reviews, news pieces, quote roundups
+- Heavy coverage of a single album cycle across sources
+- Paywalled articles
 
 **Pitchfork:** Anthropic's crawler is blocked — don't include Pitchfork URLs. User will add manually; trafilatura can scrape them fine from a direct URL.
 
@@ -76,7 +83,7 @@ command: `extract {artist_id}`
 Read from `sources.json` entries with a `text` field. If none, stop and report scraping hasn't run. Overwrite `quotes.json` on every extraction (always a full pass). If zero quotes, write empty quotes.json with `corpus_valid: false`.
 
 ### What to extract
-Verbatim quotes where the **target artist** speaks about making music — process, philosophy, influences, or how they position themselves as a practitioner (not biographical background).
+Verbatim quotes where the **target artist** speaks about making music — process, philosophy, influences, or how they position themselves as a practitioner making choices (not biographical background).
 
 - Keep exact wording — typos, grammatical errors, transcription artifacts. Do not correct anything.
 - Strip non-speech insertions: `[laughs]`, `[pause]`, `[gestures around the room]`.
@@ -109,8 +116,10 @@ Then read `/tmp/{artist_id}_sources.txt`. Do not WebFetch live URLs — use stor
 
 ### Output format
 Each quote inherits `publication`, `url`, `date` from its source (omit `date` if absent). Compute `corpus_meta`:
-- `quote_count`, `source_count` (distinct URLs), `date_range` [earliest, latest] from dated sources only
-- `corpus_valid`: true if all thresholds met (undated sources don't count toward the 2-year threshold)
+- `quote_count`: total quotes extracted
+- `source_count`: distinct source URLs that contributed quotes
+- `date_range`: [earliest year, latest year] from dated sources only — undated sources excluded from range and don't count toward the ≥2 years threshold
+- `corpus_valid`: true if all three thresholds are met
 
 Internal double-quotes must be escaped as `\"`:
 ```json
@@ -139,7 +148,7 @@ Fix and rewrite if invalid — do not leave a broken file.
 
 ## Known limitations
 - **embed.py is global-only.** Re-embeds all artists every run. Fine for current scale (<50 artists).
-- **extract.py is legacy.** Catches journalist voice and wrong speakers. Kept as fallback, not primary path.
+- **extract.py is legacy.** Sentence-transformer probe has precision issues (catches journalist voice, wrong speakers). Kept as fallback, not primary path.
 - **Un-crawlable publications:** Interview Magazine, Clash Music. Don't add to sources.json.
 
 ---
