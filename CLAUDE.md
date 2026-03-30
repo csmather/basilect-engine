@@ -1,70 +1,66 @@
 # Basilect Engine
 
-A music artist similarity engine that surfaces non-obvious connections 
-between artists based on how they talk about making music. Two artists 
-are "basilect-connected" if their creative philosophy is similar but 
-their genre/scene is not.
+A music artist similarity engine that surfaces non-obvious connections between artists based on how they talk about making music. Two artists are "basilect-connected" if their creative philosophy is similar but their genre/scene is not.
 
-The signal is artist self-discourse: verbatim quotes from interviews, 
-embedded and compared. No critic voice, no Claude-authored summaries.
+The signal is artist self-discourse: verbatim quotes from interviews, embedded and compared. No critic voice, no Claude-authored summaries.
 
 ---
 
 ## Pipeline
 
 1. **Search** — Claude finds interview URLs per artist (see below)
-2. **Scrape** — trafilatura extracts clean article text from URLs
-3. **Extract** — sentence-transformer probe pulls relevant quotes
-4. **Embed** — quotes embedded and aggregated per artist
-5. **Compute** — pairwise cosine similarity across artists
-6. **Discover** — surface high-similarity, low-proximity pairs
+2. **Scrape** — `scripts/scrape.py` fetches article text via trafilatura
+3. **Extract** — Claude pulls verbatim artist quotes from scraped text (see below)
+4. **Embed** — `scripts/embed.py` embeds quotes and aggregates per artist
+5. **Compute** — `scripts/compute.py` builds pairwise cosine similarity matrix
+6. **Discover** — `scripts/discover.py` surfaces ranked artist pairs
+
+Steps 1–3 run **per artist**. Steps 4–6 run **globally** across all artists.
 
 ---
 
 ## Artist node schema
 
-`data/artists/{artist_id}/quotes.json`
+`data/artists/{artist_id}/sources.json` — interview URLs and scraped text
+```json
+[{ "url": "https://...", "publication": "The Wire", "date": "2019", "title": "...", "text": "..." }]
+```
+
+`data/artists/{artist_id}/quotes.json` — extracted quotes and corpus metadata
 ```json
 {
-  "quotes": [
-    { "text": "...", "publication": "...", "url": "...", "date": "..." }
-  ],
-  "corpus_meta": {
-    "quote_count": 12,
-    "source_count": 4,
-    "date_range": ["2014", "2021"],
-    "corpus_valid": true
-  }
+  "quotes": [{ "text": "...", "publication": "...", "url": "...", "date": "..." }],
+  "corpus_meta": { "quote_count": 12, "source_count": 4, "date_range": ["2014", "2021"], "corpus_valid": true }
 }
 ```
 
 ### corpus_valid thresholds
-- ≥5 quotes
-- ≥3 distinct sources
-- ≥2 distinct years
+- ≥5 quotes, ≥3 distinct sources, ≥2 distinct years
 
 ---
 
 ## Adding a new artist
 
-1. Run the search step to get URLs (see below)
-2. Run `scripts/scrape.py` to fetch article text
-3. Run `scripts/extract.py` to pull quotes into the node
-4. Check `corpus_valid` — if false, find more sources
-5. Run `scripts/embed.py` → `compute.py` → `discover.py`
+1. `search {artist}` — find interview URLs
+2. `python scripts/scrape.py {artist_id}` — fetch article text
+3. `extract {artist_id}` — pull quotes from scraped text
+4. Check `corpus_valid` — if false, find more sources and repeat 1–3
+5. Run `python scripts/embed.py` → `python scripts/compute.py` → `python scripts/discover.py` when ready (global; run as a batch, not per artist)
 
 ---
 
 ## Searching for interview URLs
 
-command: `search artist`
-Claude's only role in the pipeline is finding interview URLs.
+command: `search {artist}`
+
+`artist_id` is derived from the artist name: lowercase, spaces to hyphens, strip punctuation. E.g. "BadBadNotGood" → `badbadnotgood`, "Arca" → `arca`, "clipping." → `clipping`.
 
 ### What to find
-- Long-form interviews where the artist speaks extensively
-- Covers creative process, philosophy, influences, or intent
-- 2–6 URLs per artist
-- Different publications and different years where possible
+- Interviews where the artist speaks at length in their own words about how or why they make music — not promotional context or biographical background
+- Target ≥3 URLs (minimum to satisfy corpus_valid downstream); up to 6
+- No more than 2 URLs from the same publication
+- Different years where possible; if temporal diversity isn't achievable, report the gap to the user — do not encode it in sources.json
+- Text-based articles only; exclude video and audio-only sources (trafilatura cannot scrape them — written transcripts of audio interviews are fine)
 
 ### What to avoid
 - Album reviews, news pieces, quote roundups
@@ -73,30 +69,56 @@ Claude's only role in the pipeline is finding interview URLs.
 
 ### Output format
 ```json
-[
-  {
-    "url": "https://...",
-    "publication": "The Wire",
-    "date": "2019",
-    "title": "..."
-  }
-]
+[{ "url": "https://...", "publication": "The Wire", "date": "2019", "title": "..." }]
 ```
 
-Save results to `data/artists/{artist_id}/sources.json` (create dir if needed). This is what `scrape.py` reads from.
+`date` is year only (e.g. `"2019"`). If the year is unknown, omit the field.
 
-### What Claude does NOT do
-- Judge quote quality or relevance (the pipeline handles this)
-- Summarize or paraphrase anything
-- Write any content that goes into artist nodes
+If `sources.json` already exists, append new entries — do not overwrite existing ones, and skip any URLs already present in the file.
 
-## Quote extraction probe
+Save to `data/artists/{artist_id}/sources.json` (create dir if needed).
 
-The probe string used in `scripts/extract.py` to score sentences:
+### Known limitation: Pitchfork
+Anthropic's crawler is blocked by Pitchfork. Do not include Pitchfork URLs in output — even if they appear in search results. Trafilatura can scrape them fine given a direct URL; the user will manually add Pitchfork URLs to sources.json when appropriate.
 
-`"musician describing their creative process, philosophy, and approach to making music"`
+---
 
-Threshold: 0.3 (cosine similarity). Minimum sentence length: 8 words.
+## Extracting quotes from scraped text
+
+command: `extract {artist_id}`
+
+Read scraped text from `data/artists/{artist_id}/sources.json` (entries with a `text` field). If no entries have a `text` field, stop and report that scraping has not been run yet. Extract verbatim quotes; overwrite `data/artists/{artist_id}/quotes.json` (re-extraction is always a full pass over all sources). If extraction yields zero quotes, write an empty quotes.json with `corpus_valid: false` and report the result.
+
+### What to extract
+Verbatim quotes where the **target artist** speaks about making music — process, philosophy, influences, or how they position themselves relative to genre, scene, or tradition as a practitioner making choices (not biographical background).
+
+If a quote is split by a journalist interjection — meaning a non-speech description inserted mid-quote (e.g., narrator describing a pause or gesture) — rejoin it into one statement. Do not merge separate quotes from different parts of an article — if it's unclear whether two fragments are one interrupted quote or two distinct ones, include both as separate entries.
+
+Keep the artist's exact wording. Strip non-speech editorial insertions like `[laughs]`, `[pause]`, `[gestures around the room]`. Preserve ellipses as-is — do not use them as a split signal. Extract all quotes that match — do not filter by perceived quality.
+
+### What to exclude
+- **Interviewer/journalist questions or narrative** — not spoken by the artist
+- **Indirect speech** — journalist paraphrase of artist statements (e.g., "He said texture mattered more than melody")
+- **Other speakers** — in multi-person interviews, only the target artist
+- **Biographical facts without creative content** — tour dates, sales figures, personal life
+- **Promotional fluff** — generic hype about upcoming releases
+
+### Speaker attribution
+Many articles mix artist quotes with journalist prose. Use context clues to confirm the target artist is speaking:
+- Direct quotes in quotation marks attributed to the artist
+- Dialogue with speaker labels (e.g., "Bladee:", "B:")
+- First-person statements in Q&A format following a question
+
+If it's ambiguous who's speaking, skip it. This conservatism applies to speaker identity only — don't use it as a reason to filter content.
+
+### Output format
+Write `data/artists/{artist_id}/quotes.json` with the schema above. Each quote inherits `publication`, `url`, and `date` from its source entry. If a source has no `date`, omit that field from the quote.
+
+Compute `corpus_meta` (thresholds: ≥5 quotes, ≥3 distinct sources, ≥2 distinct years):
+- `quote_count`: total quotes extracted
+- `source_count`: distinct source URLs that contributed quotes
+- `date_range`: [earliest year, latest year] derived from source publication dates — sources with no date are excluded from the range and do not count toward the ≥2 years threshold
+- `corpus_valid`: true if all three thresholds are met
 
 ---
 
@@ -105,17 +127,22 @@ Threshold: 0.3 (cosine similarity). Minimum sentence length: 8 words.
 | Script | Purpose |
 |---|---|
 | `scripts/scrape.py` | Fetch article text via trafilatura |
-| `scripts/extract.py` | Pull quotes via sentence-transformer probe |
-| `scripts/embed.py` | Embed quotes, aggregate per artist |
+| `scripts/extract.py` | Legacy: sentence-transformer probe extraction (fallback only) |
+| `scripts/embed.py` | Embed quotes, aggregate per artist via median |
 | `scripts/compute.py` | Pairwise cosine similarity matrix |
-| `scripts/discover.py` | Surface high-sim low-proximity pairs |
-| `scripts/stats.py` | Corpus health + orthogonality stats |
+| `scripts/discover.py` | Surface ranked artist pairs |
+| `scripts/stats.py` | **Needs rewrite** — references old schema (genres, confidence) |
 
 ---
 
-## Deferred
+## Known limitations
+- **embed.py is global-only.** Re-embeds all artists every run. Fine for current scale (<50 artists); incremental mode deferred.
+- **extract.py is legacy.** Sentence-transformer probe has precision issues (catches journalist voice, wrong speakers). Kept as fallback, NOT primary extraction path.
 
+## Deferred
+- Full list of known un-crawlable URLs
 - Sonic validation via MAEST (post-hoc, later phase)
-- Influence citation extraction from same corpus
-- Scaling beyond 20 artists
+- Specific influence citation extraction from same corpus
+- Manual tag/genre proximity layer (removed for now, may return)
 - Visualization
+- Scaling beyond prototype
