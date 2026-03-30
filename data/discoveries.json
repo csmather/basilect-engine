@@ -1,0 +1,32 @@
+[
+  {
+    "a": "bladee",
+    "b": "yung_lean",
+    "score": 0.8257126212120056
+  },
+  {
+    "a": "bladee",
+    "b": "clairo",
+    "score": 0.8186524510383606
+  },
+  {
+    "a": "clairo",
+    "b": "yung_lean",
+    "score": 0.7816765904426575
+  },
+  {
+    "a": "badbadnotgood",
+    "b": "yung_lean",
+    "score": 0.7681161761283875
+  },
+  {
+    "a": "badbadnotgood",
+    "b": "bladee",
+    "score": 0.7554485201835632
+  },
+  {
+    "a": "badbadnotgood",
+    "b": "clairo",
+    "score": 0.7437525987625122
+  }
+]
