@@ -15,16 +15,18 @@ The signal is artist self-discourse: verbatim quotes from interviews, embedded a
 
 Steps 1–3 run **per artist**. Steps 4–6 run **globally** across all artists.
 
+**Prototype rule: do not delegate steps 1–3 to subagents.** Run them directly in the main conversation — one artist at a time. Subagents have been unreliable (WebFetching live URLs instead of using stored text, writing invalid JSON, silently correcting verbatim quotes).
+
 ---
 
 ## Artist node schema
 
-`data/artists/{artist_id}/sources.json` — interview URLs and scraped text
+`data/artists/{artist_id}/sources.json`
 ```json
-[{ "url": "https://...", "publication": "The Wire", "date": "2019", "title": "...", "text": "..." }]
+[{ "url": "...", "publication": "The Wire", "date": "2019", "title": "...", "text": "..." }]
 ```
 
-`data/artists/{artist_id}/quotes.json` — extracted quotes and corpus metadata
+`data/artists/{artist_id}/quotes.json`
 ```json
 {
   "quotes": [{ "text": "...", "publication": "...", "url": "...", "date": "..." }],
@@ -32,8 +34,7 @@ Steps 1–3 run **per artist**. Steps 4–6 run **globally** across all artists.
 }
 ```
 
-### corpus_valid thresholds
-- ≥5 quotes, ≥3 distinct sources, ≥2 distinct years
+**corpus_valid thresholds:** ≥5 quotes, ≥3 distinct sources, ≥2 distinct years
 
 ---
 
@@ -43,7 +44,7 @@ Steps 1–3 run **per artist**. Steps 4–6 run **globally** across all artists.
 2. `python scripts/scrape.py {artist_id}` — fetch article text
 3. `extract {artist_id}` — pull quotes from scraped text
 4. Check `corpus_valid` — if false, find more sources and repeat 1–3
-5. Run `python scripts/embed.py` → `python scripts/compute.py` → `python scripts/discover.py` when ready (global; run as a batch, not per artist)
+5. Run `python scripts/embed.py` → `python scripts/compute.py` → `python scripts/discover.py` when ready (global; run as a batch)
 
 ---
 
@@ -51,31 +52,20 @@ Steps 1–3 run **per artist**. Steps 4–6 run **globally** across all artists.
 
 command: `search {artist}`
 
-`artist_id` is derived from the artist name: lowercase, spaces to underscores, strip punctuation. E.g. "BadBadNotGood" → `badbadnotgood`, "Yung Lean" → `yung_lean`, "clipping." → `clipping`
+`artist_id`: lowercase, spaces to underscores, strip punctuation. E.g. "BadBadNotGood" → `badbadnotgood`, "Yung Lean" → `yung_lean`, "clipping." → `clipping`
 
-### What to find
-- Interviews where the artist speaks at length in their own words about how or why they make music — not promotional context or biographical background
-- Target ≥3 URLs (minimum to satisfy corpus_valid downstream); up to 6
-- No more than 2 URLs from the same publication
-- Different years where possible; if temporal diversity isn't achievable, report the gap to the user in the response only — do not fabricate dates
-- Text-based articles only; exclude video and audio-only sources (trafilatura cannot scrape them — written transcripts of audio interviews are fine)
-### What to avoid
-- Album reviews, news pieces, quote roundups
-- Heavy coverage of a single album cycle across sources
-- Paywalled articles
+Target ≥3 URLs (up to 6), ≤2 per publication, different years where possible. Text-based only — trafilatura can't scrape video/audio (written transcripts are fine). If temporal diversity isn't achievable, report the gap; don't fabricate dates.
 
-### Output format
+**Avoid:** album reviews, news pieces, quote roundups, single-album-cycle concentration, paywalled articles.
+
+**Pitchfork:** Anthropic's crawler is blocked — don't include Pitchfork URLs. User will add manually; trafilatura can scrape them fine from a direct URL.
+
+Output (`date` is year only; omit if unknown):
 ```json
-[{ "url": "https://...", "publication": "The Wire", "date": "2019", "title": "..." }]
+[{ "url": "...", "publication": "The Wire", "date": "2019", "title": "..." }]
 ```
 
-`date` is year only (e.g. `"2019"`). If the year is unknown, omit the field.
-
-If `sources.json` already exists, append new entries — do not overwrite existing ones, and skip any URLs already present in the file.
-Save to `data/artists/{artist_id}/sources.json` (create dir if needed).
-
-### Known limitation: Pitchfork
-Anthropic's crawler is blocked by Pitchfork. Do not include Pitchfork URLs in output — even if they appear in search results. Trafilatura can scrape them fine given a direct URL; the user will manually add Pitchfork URLs to sources.json when appropriate.
+If `sources.json` already exists, append — don't overwrite, skip duplicates. Save to `data/artists/{artist_id}/sources.json` (create dir if needed).
 
 ---
 
@@ -83,32 +73,23 @@ Anthropic's crawler is blocked by Pitchfork. Do not include Pitchfork URLs in ou
 
 command: `extract {artist_id}`
 
-Read scraped text from `data/artists/{artist_id}/sources.json` (entries with a `text` field). If no entries have a `text` field, stop and report that scraping has not been run yet. Extract verbatim quotes; overwrite `data/artists/{artist_id}/quotes.json` (re-extraction is always a full pass over all sources). If extraction yields zero quotes, write an empty quotes.json with `corpus_valid: false` and report the result.
+Read from `sources.json` entries with a `text` field. If none, stop and report scraping hasn't run. Overwrite `quotes.json` on every extraction (always a full pass). If zero quotes, write empty quotes.json with `corpus_valid: false`.
 
 ### What to extract
-Verbatim quotes where the **target artist** speaks about making music — process, philosophy, influences, or how they position themselves relative to genre, scene, or tradition as a practitioner making choices (not biographical background).
+Verbatim quotes where the **target artist** speaks about making music — process, philosophy, influences, or how they position themselves as a practitioner (not biographical background).
 
-If a quote is split by a journalist interjection — meaning a non-speech description inserted mid-quote (e.g., narrator describing a pause or gesture) — rejoin it into one statement. Do not merge separate quotes from different parts of an article — if it's unclear whether two fragments are one interrupted quote or two distinct ones, include both as separate entries.
+- Keep exact wording — typos, grammatical errors, transcription artifacts. Do not correct anything.
+- Strip non-speech insertions: `[laughs]`, `[pause]`, `[gestures around the room]`.
+- Preserve ellipses — don't use them as a split signal.
+- If a quote is interrupted by a journalist interjection (e.g., narrator describing a gesture), rejoin it. Don't merge separate quotes from different parts of an article; if unclear, include both as separate entries.
+- Extract all matches — don't filter by quality.
 
-Keep the artist's exact wording — including typos, grammatical errors, and transcription artifacts. Do not silently "correct" anything. Strip non-speech editorial insertions like `[laughs]`, `[pause]`, `[gestures around the room]`. Preserve ellipses as-is — do not use them as a split signal. Extract all quotes that match — do not filter by perceived quality.
+**Exclude:** interviewer questions/narrative, indirect speech (journalist paraphrase), other speakers in multi-person interviews, biographical facts without creative content, promotional fluff.
 
-### What to exclude
-- **Interviewer/journalist questions or narrative** — not spoken by the artist
-- **Indirect speech** — journalist paraphrase of artist statements (e.g., "He said texture mattered more than melody")
-- **Other speakers** — in multi-person interviews, only the target artist
-- **Biographical facts without creative content** — tour dates, sales figures, personal life
-- **Promotional fluff** — generic hype about upcoming releases
-
-### Speaker attribution
-Many articles mix artist quotes with journalist prose. Use context clues to confirm the target artist is speaking:
-- Direct quotes in quotation marks attributed to the artist
-- Dialogue with speaker labels (e.g., "Bladee:", "B:")
-- First-person statements in Q&A format following a question
-
-If it's ambiguous who's speaking, skip it. This conservatism applies to speaker identity only — don't use it as a reason to filter content.
+**Speaker attribution:** confirm target artist is speaking via quotation marks with attribution, speaker labels (e.g., "Bladee:", "B:"), or Q&A context. Skip if ambiguous — but this conservatism applies to *speaker identity only*.
 
 ### How to read source text
-Do NOT use the Read tool directly on `sources.json` — the embedded text fields are long and will hit token limits. Instead, use Bash to dump the text to a flat file first, then read that file:
+Do NOT use the Read tool on `sources.json` — embedded text fields will hit token limits. Dump to a flat file first:
 
 ```bash
 python3 -c "
@@ -124,30 +105,23 @@ for s in sources:
 " > /tmp/{artist_id}_sources.txt
 ```
 
-Then read `/tmp/{artist_id}_sources.txt`. Do not use WebFetch to re-fetch live URLs — use only the stored text.
+Then read `/tmp/{artist_id}_sources.txt`. Do not WebFetch live URLs — use stored text only.
 
 ### Output format
-Write `data/artists/{artist_id}/quotes.json` with the schema above. Each quote inherits `publication`, `url`, and `date` from its source entry. If a source has no `date`, omit that field from the quote.
+Each quote inherits `publication`, `url`, `date` from its source (omit `date` if absent). Compute `corpus_meta`:
+- `quote_count`, `source_count` (distinct URLs), `date_range` [earliest, latest] from dated sources only
+- `corpus_valid`: true if all thresholds met (undated sources don't count toward the 2-year threshold)
 
-Compute `corpus_meta` (thresholds: ≥5 quotes, ≥3 distinct sources, ≥2 distinct years):
-- `quote_count`: total quotes extracted
-- `source_count`: distinct source URLs that contributed quotes
-- `date_range`: [earliest year, latest year] derived from source publication dates — sources with no date are excluded from the range and do not count toward the ≥2 years threshold
-- `corpus_valid`: true if all three thresholds are met
-
-### JSON safety
-Quote text often contains double-quote characters. These MUST be escaped as `\"` in the JSON output or the file will be invalid. Example:
-
+Internal double-quotes must be escaped as `\"`:
 ```json
 { "text": "We were like \"I don't know if it makes sense.\" But it grew on me." }
 ```
 
-After writing quotes.json, always validate with:
+Validate after writing:
 ```bash
 python3 -c "import json; json.load(open('data/artists/{artist_id}/quotes.json')); print('valid')"
 ```
-
-If validation fails, fix the escaping and rewrite — do not leave an invalid file.
+Fix and rewrite if invalid — do not leave a broken file.
 
 ---
 
@@ -156,7 +130,7 @@ If validation fails, fix the escaping and rewrite — do not leave an invalid fi
 | Script | Purpose |
 |---|---|
 | `scripts/scrape.py` | Fetch article text via trafilatura |
-| `scripts/extract.py` | LEGACY: sentence-transformer probe extraction (fallback only) |
+| `scripts/extract.py` | LEGACY: sentence-transformer probe (fallback only; precision issues) |
 | `scripts/embed.py` | Embed quotes, aggregate per artist via median |
 | `scripts/compute.py` | Pairwise cosine similarity matrix |
 | `scripts/discover.py` | Surface ranked artist pairs |
@@ -164,11 +138,13 @@ If validation fails, fix the escaping and rewrite — do not leave an invalid fi
 ---
 
 ## Known limitations
-- **embed.py is global-only.** Re-embeds all artists every run. Fine for current scale (<50 artists); incremental mode deferred.
-- **extract.py is legacy.** Sentence-transformer probe has precision issues (catches journalist voice, wrong speakers). Kept as fallback, NOT primary extraction path.
-- **Un-crawlable publications (trafilatura returns no text):** Interview Magazine, Clash Music. Do not include these in sources.json going forward.
+- **embed.py is global-only.** Re-embeds all artists every run. Fine for current scale (<50 artists).
+- **extract.py is legacy.** Catches journalist voice and wrong speakers. Kept as fallback, not primary path.
+- **Un-crawlable publications:** Interview Magazine, Clash Music. Don't add to sources.json.
+
+---
+
 ## Deferred
-- Full list of known un-crawlable URLs
 - Sonic validation via MAEST (post-hoc, later phase)
 - Specific influence citation extraction from same corpus
 - Manual tag/genre proximity layer (removed for now, may return)
