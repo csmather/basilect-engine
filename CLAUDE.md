@@ -90,7 +90,7 @@ Verbatim quotes where the **target artist** speaks about making music — proces
 
 If a quote is split by a journalist interjection — meaning a non-speech description inserted mid-quote (e.g., narrator describing a pause or gesture) — rejoin it into one statement. Do not merge separate quotes from different parts of an article — if it's unclear whether two fragments are one interrupted quote or two distinct ones, include both as separate entries.
 
-Keep the artist's exact wording. Strip non-speech editorial insertions like `[laughs]`, `[pause]`, `[gestures around the room]`. Preserve ellipses as-is — do not use them as a split signal. Extract all quotes that match — do not filter by perceived quality.
+Keep the artist's exact wording — including typos, grammatical errors, and transcription artifacts. Do not silently "correct" anything. Strip non-speech editorial insertions like `[laughs]`, `[pause]`, `[gestures around the room]`. Preserve ellipses as-is — do not use them as a split signal. Extract all quotes that match — do not filter by perceived quality.
 
 ### What to exclude
 - **Interviewer/journalist questions or narrative** — not spoken by the artist
@@ -107,6 +107,25 @@ Many articles mix artist quotes with journalist prose. Use context clues to conf
 
 If it's ambiguous who's speaking, skip it. This conservatism applies to speaker identity only — don't use it as a reason to filter content.
 
+### How to read source text
+Do NOT use the Read tool directly on `sources.json` — the embedded text fields are long and will hit token limits. Instead, use Bash to dump the text to a flat file first, then read that file:
+
+```bash
+python3 -c "
+import json
+with open('data/artists/{artist_id}/sources.json') as f:
+    sources = json.load(f)
+for s in sources:
+    if s.get('text'):
+        print(f'=== SOURCE | {s[\"publication\"]} | {s.get(\"date\",\"\")} ===')
+        print(s['url'])
+        print(s['text'])
+        print()
+" > /tmp/{artist_id}_sources.txt
+```
+
+Then read `/tmp/{artist_id}_sources.txt`. Do not use WebFetch to re-fetch live URLs — use only the stored text.
+
 ### Output format
 Write `data/artists/{artist_id}/quotes.json` with the schema above. Each quote inherits `publication`, `url`, and `date` from its source entry. If a source has no `date`, omit that field from the quote.
 
@@ -115,6 +134,20 @@ Compute `corpus_meta` (thresholds: ≥5 quotes, ≥3 distinct sources, ≥2 dist
 - `source_count`: distinct source URLs that contributed quotes
 - `date_range`: [earliest year, latest year] derived from source publication dates — sources with no date are excluded from the range and do not count toward the ≥2 years threshold
 - `corpus_valid`: true if all three thresholds are met
+
+### JSON safety
+Quote text often contains double-quote characters. These MUST be escaped as `\"` in the JSON output or the file will be invalid. Example:
+
+```json
+{ "text": "We were like \"I don't know if it makes sense.\" But it grew on me." }
+```
+
+After writing quotes.json, always validate with:
+```bash
+python3 -c "import json; json.load(open('data/artists/{artist_id}/quotes.json')); print('valid')"
+```
+
+If validation fails, fix the escaping and rewrite — do not leave an invalid file.
 
 ---
 
@@ -133,6 +166,7 @@ Compute `corpus_meta` (thresholds: ≥5 quotes, ≥3 distinct sources, ≥2 dist
 ## Known limitations
 - **embed.py is global-only.** Re-embeds all artists every run. Fine for current scale (<50 artists); incremental mode deferred.
 - **extract.py is legacy.** Sentence-transformer probe has precision issues (catches journalist voice, wrong speakers). Kept as fallback, NOT primary extraction path.
+- **Un-crawlable publications (trafilatura returns no text):** Interview Magazine, Clash Music. Do not include these in sources.json going forward.
 ## Deferred
 - Full list of known un-crawlable URLs
 - Sonic validation via MAEST (post-hoc, later phase)
