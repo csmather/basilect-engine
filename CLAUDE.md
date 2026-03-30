@@ -1,7 +1,5 @@
 # Basilect Engine
-
 A music artist similarity engine that surfaces non-obvious connections between artists based on how they talk about making music. Two artists are "basilect-connected" if their creative philosophy is similar but their genre/scene is not.
-
 The signal is artist self-discourse: verbatim quotes from interviews, embedded and compared. No critic voice, no Claude-authored summaries.
 
 ---
@@ -53,15 +51,14 @@ Steps 1–3 run **per artist**. Steps 4–6 run **globally** across all artists.
 
 command: `search {artist}`
 
-`artist_id` is derived from the artist name: lowercase, spaces to hyphens, strip punctuation. E.g. "BadBadNotGood" → `badbadnotgood`, "Arca" → `arca`, "clipping." → `clipping`.
+`artist_id` is derived from the artist name: lowercase, spaces to underscores, strip punctuation. E.g. "BadBadNotGood" → `badbadnotgood`, "Yung Lean" → `yung_lean`, "clipping." → `clipping`
 
 ### What to find
 - Interviews where the artist speaks at length in their own words about how or why they make music — not promotional context or biographical background
 - Target ≥3 URLs (minimum to satisfy corpus_valid downstream); up to 6
 - No more than 2 URLs from the same publication
-- Different years where possible; if temporal diversity isn't achievable, report the gap to the user — do not encode it in sources.json
+- Different years where possible; if temporal diversity isn't achievable, report the gap to the user in the response only — do not fabricate dates
 - Text-based articles only; exclude video and audio-only sources (trafilatura cannot scrape them — written transcripts of audio interviews are fine)
-
 ### What to avoid
 - Album reviews, news pieces, quote roundups
 - Heavy coverage of a single album cycle across sources
@@ -75,7 +72,6 @@ command: `search {artist}`
 `date` is year only (e.g. `"2019"`). If the year is unknown, omit the field.
 
 If `sources.json` already exists, append new entries — do not overwrite existing ones, and skip any URLs already present in the file.
-
 Save to `data/artists/{artist_id}/sources.json` (create dir if needed).
 
 ### Known limitation: Pitchfork
@@ -127,18 +123,16 @@ Compute `corpus_meta` (thresholds: ≥5 quotes, ≥3 distinct sources, ≥2 dist
 | Script | Purpose |
 |---|---|
 | `scripts/scrape.py` | Fetch article text via trafilatura |
-| `scripts/extract.py` | Legacy: sentence-transformer probe extraction (fallback only) |
+| `scripts/extract.py` | LEGACY: sentence-transformer probe extraction (fallback only) |
 | `scripts/embed.py` | Embed quotes, aggregate per artist via median |
 | `scripts/compute.py` | Pairwise cosine similarity matrix |
 | `scripts/discover.py` | Surface ranked artist pairs |
-| `scripts/stats.py` | **Needs rewrite** — references old schema (genres, confidence) |
 
 ---
 
 ## Known limitations
 - **embed.py is global-only.** Re-embeds all artists every run. Fine for current scale (<50 artists); incremental mode deferred.
 - **extract.py is legacy.** Sentence-transformer probe has precision issues (catches journalist voice, wrong speakers). Kept as fallback, NOT primary extraction path.
-
 ## Deferred
 - Full list of known un-crawlable URLs
 - Sonic validation via MAEST (post-hoc, later phase)
