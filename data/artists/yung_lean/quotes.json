@@ -229,12 +229,6 @@
       "date": "2020"
     },
     {
-      "text": "Yung Lean believes that the largeness of the spirit should be the only measure of an artist's achievement.",
-      "publication": "PAPER Magazine",
-      "url": "https://www.papermag.com/yung-lean-interview-starz-prophecy",
-      "date": "2020"
-    },
-    {
       "text": "You've got to be fearless. You have to provoke something. It doesn't have to be provocative in that sense, but you have to provoke someone's feelings or something, you know. You have to get someone to feel something. And if they feel hate? I'm happy. And if they feel love? I'm happy. They're both very strong emotions. But if they say it's just okay, I can't stand it.",
       "publication": "PAPER Magazine",
       "url": "https://www.papermag.com/yung-lean-interview-starz-prophecy",
@@ -296,7 +290,7 @@
     }
   ],
   "corpus_meta": {
-    "quote_count": 50,
+    "quote_count": 49,
     "source_count": 6,
     "date_range": ["2014", "2025"],
     "corpus_valid": true
