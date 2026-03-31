@@ -149,7 +149,7 @@ Fix and rewrite if invalid — do not leave a broken file.
 ## Known limitations
 - **embed.py is global-only.** Re-embeds all artists every run. Fine for current scale (<50 artists).
 - **extract.py is legacy.** Sentence-transformer probe has precision issues (catches journalist voice, wrong speakers). Kept as fallback, not primary path.
-- **Un-crawlable publications:** Interview Magazine, Clash Music. Don't add to sources.json.
+- **Un-crawlable domains:** See `data/blocked_domains.md`.
 
 ---
 
