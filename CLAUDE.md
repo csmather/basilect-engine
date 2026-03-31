@@ -65,7 +65,7 @@ command: `search {artist}`
 - Heavy coverage of a single album cycle across sources
 - Paywalled articles
 
-**Pitchfork:** Anthropic's crawler is blocked — don't include Pitchfork URLs. User will add manually; trafilatura can scrape them fine from a direct URL.
+**Blocked domains:** See `data/blocked_domains.md` — don't include URLs from those domains.
 
 Output (`date` is year only; omit if unknown):
 ```json
