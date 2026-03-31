@@ -1,12 +1,6 @@
 {
   "quotes": [
     {
-      "text": "Charm is a feeling you have. When you're charmed, it's that perfect blend of being goofy-eyed over a person – platonically, romantically – and not knowing how long it will last",
-      "publication": "Crack Magazine",
-      "url": "https://crackmagazine.net/article/profiles/clairo-cover-story-interview/",
-      "date": "2024"
-    },
-    {
       "text": "He helped me find the sound I've always wanted. When I listen to the records he's worked on, I don't know how he does it – I can't recognise anything, it all sounds so different.",
       "publication": "Crack Magazine",
       "url": "https://crackmagazine.net/article/profiles/clairo-cover-story-interview/",
@@ -281,7 +275,7 @@
     }
   ],
   "corpus_meta": {
-    "quote_count": 57,
+    "quote_count": 56,
     "source_count": 6,
     "date_range": ["2019", "2025"],
     "corpus_valid": true
