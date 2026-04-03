@@ -40,97 +40,29 @@ Steps 1–3 run **per artist**. Steps 4–6 run **globally** across all artists.
 
 ## Adding a new artist
 
-1. `search {artist}` — find interview URLs
+1. `/search-artist {artist}` — find interview URLs
 2. `python scripts/scrape.py {artist_id}` — fetch article text
-3. `extract {artist_id}` — pull quotes from scraped text
-4. Check `corpus_valid` — if false, find more sources and repeat 1–3
-5. Run `python scripts/embed.py` → `python scripts/compute.py` → `python scripts/discover.py` when ready (global; run as a batch)
+3. `/extract-artist {artist_id}` — pull quotes from scraped text
+4. Check `corpus_valid`
+5. `/run-pipeline` when ready — runs embed → compute → discover globally
 
 ---
 
 ## Searching for interview URLs
 
-command: `search {artist}`
+command: `/search-artist {artist}`
 
-`artist_id`: lowercase, spaces to underscores, strip punctuation. E.g. "BadBadNotGood" → `badbadnotgood`, "Yung Lean" → `yung_lean`, "clipping." → `clipping`
+Full instructions: `.claude/skills/search-artist/SKILL.md`
 
-### What to find
-- Interviews where the artist speaks at length in their own words about how or why they make music — not promotional context or biographical background
-- Target ≥3 URLs (up to 6), ≤2 per publication, different years where possible
-- Text-based only — trafilatura can't scrape video/audio (written transcripts are fine)
-- If temporal diversity isn't achievable, report the gap; don't fabricate dates
-
-### What to avoid
-- Album reviews, news pieces, quote roundups
-- Heavy coverage of a single album cycle across sources
-- Paywalled articles
-
-**Blocked domains:** See `data/blocked_domains.md` — don't include URLs from those domains.
-
-Output (`date` is year only; omit if unknown):
-```json
-[{ "url": "...", "publication": "The Wire", "date": "2019", "title": "..." }]
-```
-
-If `sources.json` already exists, append — don't overwrite, skip duplicates. Save to `data/artists/{artist_id}/sources.json` (create dir if needed).
+`artist_id`: lowercase, spaces to underscores, strip punctuation; e.g. "Artist Name!"->"artist_name"
 
 ---
 
 ## Extracting quotes from scraped text
 
-command: `extract {artist_id}`
+command: `/extract-artist {artist_id}`
 
-Read from `sources.json` entries with a `text` field. If none, stop and report scraping hasn't run. Overwrite `quotes.json` on every extraction (always a full pass). If zero quotes, write empty quotes.json with `corpus_valid: false`.
-
-### What to extract
-Verbatim quotes where the **target artist** speaks about making music — process, philosophy, influences, or how they position themselves as a practitioner making choices (not biographical background).
-
-- Keep exact wording — typos, grammatical errors, transcription artifacts. Do not correct anything.
-- Strip non-speech insertions: `[laughs]`, `[pause]`, `[gestures around the room]`.
-- Preserve ellipses — don't use them as a split signal.
-- If a quote is interrupted by a journalist interjection (e.g., narrator describing a gesture), rejoin it. Don't merge separate quotes from different parts of an article; if unclear, include both as separate entries.
-- Extract all matches — don't filter by quality.
-
-**Exclude:** interviewer questions/narrative, indirect speech (journalist paraphrase), other speakers in multi-person interviews, biographical facts without creative content, promotional fluff.
-
-**Speaker attribution:** confirm target artist is speaking via quotation marks with attribution, speaker labels (e.g., "Bladee:", "B:"), or Q&A context. Skip if ambiguous — but this conservatism applies to *speaker identity only*.
-
-### How to read source text
-Do NOT use the Read tool on `sources.json` — embedded text fields will hit token limits. Dump to a flat file first:
-
-```bash
-python3 -c "
-import json
-with open('data/artists/{artist_id}/sources.json') as f:
-    sources = json.load(f)
-for s in sources:
-    if s.get('text'):
-        print(f'=== SOURCE | {s[\"publication\"]} | {s.get(\"date\",\"\")} ===')
-        print(s['url'])
-        print(s['text'])
-        print()
-" > /tmp/{artist_id}_sources.txt
-```
-
-Then read `/tmp/{artist_id}_sources.txt`. Do not WebFetch live URLs — use stored text only.
-
-### Output format
-Each quote inherits `publication`, `url`, `date` from its source (omit `date` if absent). Compute `corpus_meta`:
-- `quote_count`: total quotes extracted
-- `source_count`: distinct source URLs that contributed quotes
-- `date_range`: [earliest year, latest year] from dated sources only — undated sources excluded from range and don't count toward the ≥2 years threshold
-- `corpus_valid`: true if all three thresholds are met
-
-Internal double-quotes must be escaped as `\"`:
-```json
-{ "text": "We were like \"I don't know if it makes sense.\" But it grew on me." }
-```
-
-Validate after writing:
-```bash
-python3 -c "import json; json.load(open('data/artists/{artist_id}/quotes.json')); print('valid')"
-```
-Fix and rewrite if invalid — do not leave a broken file.
+Full instructions: `.claude/skills/extract-artist/SKILL.md`
 
 ---
 
