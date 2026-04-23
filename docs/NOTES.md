@@ -33,10 +33,12 @@ Minor pollution in the others: reporter paraphrase ("Bjork said that…"), fragm
 
 Priority: **D → A → B → C**
 
-- **D (diagnostics) first** because: output currently reads as noisy, some pairs land well, but we don't know if that's signal or artifact. Before any rescrape / re-extract / model swap, confirm the engine has signal above noise. Fits the "stability not accuracy" validation frame.
-- **A (methodology upgrade) second** because: assuming D shows signal, the next highest-leverage change is model + aggregation + interpretability, not more data. The `all-MiniLM-L6-v2` encoder is a 2021-era 384-dim model; 12GB VRAM on the 5070 supports far better.
-- **B (corpus expansion via podcasts) third** because: interview text is a bounded well (<10 good long-form pieces per artist). Podcasts = same signal type, much more volume. But only after methodology is solid — don't pump new data into an unvalidated pipeline.
-- **C (audio orthogonality) last** because: adding signals prematurely is exactly what the fork got wrong. Pure audio via CLAP as a diagnostic ("is this pair actually genre-far?") — never a re-ranker. Also partially addresses the "orthogonality between similarity axes" gap the research doc flags.
+**Current status (2026-04-23):** D complete; count-adjustment shipped as a D-driven pipeline change. A is now the active priority.
+
+- **D (diagnostics)** — DONE. Findings: D2 stability passed (Jaccard@10=0.799); D1 sparsity artifact confirmed (ρ=+0.617) and corrected in-pipeline via `compute.py`'s `log(min_count)` adjustment rather than via a quote-count minimum (keeps underground artists in — they're the point); D3 compression still present but wider floor than before, motivating A.
+- **A (methodology upgrade) next** because: D confirmed signal survives but is ceiling-limited by MiniLM. Highest-leverage change is model + aggregation + interpretability. The `all-MiniLM-L6-v2` encoder is a 2021-era 384-dim model; 12GB VRAM on the 5070 supports far better.
+- **B (corpus expansion via podcasts)** after A because: interview text is a bounded well (<10 good long-form pieces per artist). Podcasts = same signal type, much more volume. But only after methodology is solid — don't pump new data into an unvalidated pipeline.
+- **C (audio orthogonality)** last because: adding signals prematurely is exactly what the fork got wrong. Pure audio via CLAP as a diagnostic ("is this pair actually genre-far?") — never a re-ranker. Also partially addresses the "orthogonality between similarity axes" gap the research doc flags.
 
 ---
 
@@ -83,6 +85,6 @@ Key takeaways:
 
 ## Known quirks
 
-- `all-MiniLM-L6-v2` (current encoder) is 384-dim, 2021-era, generic NLI training. Likely a major source of score compression (0.70–0.85 band).
-- Median-pooling over 30+ quotes per artist may smear signal toward a generic "interview discourse" centroid. Unconfirmed — D will help clarify.
-- Data sparsity may be partly driving current rankings: invalid-corpus artists (nujabes, arthur_verocai, bill_evans) cluster at the bottom of `discoveries.json`, which could be semantic OR could be a function of having fewer quotes. Rank-vs-quote-count correlation check will tell us. Note: most post-recompute `corpus_valid=False` flags are driven by missing source dates rather than quote scarcity — the flag tracks metadata completeness, not usability.
+- `all-MiniLM-L6-v2` (current encoder) is 384-dim, 2021-era, generic NLI training. Likely a major source of score compression — raw spread at n=25 is 0.45–0.89 with std 0.078. Motivates A.
+- Median-pooling over 30+ quotes per artist may smear signal toward a generic "interview discourse" centroid. Unconfirmed; could revisit once encoder is swapped (A).
+- Data sparsity WAS driving rankings — D1 measured Spearman(quote_count, mean_sim) = +0.617 (p=0.001). Corrected in-pipeline by `compute.py`: fits `score ~ log(min_count)` and residualizes to a median-depth baseline. Adjusted scores are what `discover.py` ranks on; raw is kept alongside as `score_raw`. Fit refits on every run. Note: `corpus_valid=False` still tracks metadata completeness (missing source dates), not usability — thin-corpus artists stay in the pipeline and get count-adjusted.
