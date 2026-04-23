@@ -115,8 +115,11 @@
   ],
   "corpus_meta": {
     "quote_count": 19,
-    "source_count": 4,
-    "date_range": ["2011", "2019"],
+    "source_count": 3,
+    "date_range": [
+      "2011",
+      "2019"
+    ],
     "corpus_valid": true
   }
 }

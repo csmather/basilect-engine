@@ -1,0 +1,8 @@
+{
+  "slope": 0.0773114421431792,
+  "intercept": 0.476632103486828,
+  "baseline": 0.7000909124196965,
+  "median_log_min_count": 2.8903717578961645,
+  "median_min_count": 17.999999999999996,
+  "predictor": "log(min(count_i, count_j))"
+}

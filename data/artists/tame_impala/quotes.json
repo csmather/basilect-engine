@@ -181,7 +181,10 @@
   "corpus_meta": {
     "quote_count": 33,
     "source_count": 4,
-    "date_range": ["2020", "2020"],
+    "date_range": [
+      "2020",
+      "2020"
+    ],
     "corpus_valid": false
   }
 }

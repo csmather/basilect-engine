@@ -275,9 +275,12 @@
     }
   ],
   "corpus_meta": {
-    "quote_count": 56,
+    "quote_count": 48,
     "source_count": 6,
-    "date_range": ["2019", "2025"],
+    "date_range": [
+      "2019",
+      "2025"
+    ],
     "corpus_valid": true
   }
 }
