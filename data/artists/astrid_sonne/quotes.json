@@ -202,9 +202,12 @@
     }
   ],
   "corpus_meta": {
-    "quote_count": 38,
+    "quote_count": 39,
     "source_count": 4,
-    "date_range": ["2019", "2019"],
+    "date_range": [
+      "2019",
+      "2019"
+    ],
     "corpus_valid": false
   }
 }

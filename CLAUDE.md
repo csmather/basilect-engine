@@ -10,8 +10,8 @@ The signal is artist self-discourse: verbatim quotes from interviews, embedded a
 2. **Scrape** — `scripts/scrape.py` fetches article text via trafilatura
 3. **Extract** — Claude pulls verbatim artist quotes from scraped text (see below)
 4. **Embed** — `scripts/embed.py` embeds quotes and aggregates per artist
-5. **Compute** — `scripts/compute.py` builds pairwise cosine similarity matrix
-6. **Discover** — `scripts/discover.py` surfaces ranked artist pairs
+5. **Compute** — `scripts/compute.py` builds raw + count-adjusted similarity matrices
+6. **Discover** — `scripts/discover.py` surfaces ranked artist pairs (ranked on adjusted score)
 
 Steps 1–3 run **per artist**. Steps 4–6 run **globally** across all artists.
 
@@ -35,6 +35,8 @@ Steps 1–3 run **per artist**. Steps 4–6 run **globally** across all artists.
 ```
 
 **corpus_valid thresholds:** ≥5 quotes, ≥3 distinct sources, ≥2 distinct years
+
+`corpus_valid` is a data-quality flag, not a usability flag. An artist failing it isn't excluded from the pipeline — it just means the source metadata is thin (often missing dates that weren't in the scraped articles).
 
 ---
 
@@ -73,8 +75,9 @@ Full instructions: `.claude/skills/extract-artist/SKILL.md`
 | `scripts/scrape.py` | Fetch article text via trafilatura |
 | `scripts/extract.py` | LEGACY: sentence-transformer probe (fallback only; precision issues) |
 | `scripts/embed.py` | Embed quotes, aggregate per artist via median |
-| `scripts/compute.py` | Pairwise cosine similarity matrix |
-| `scripts/discover.py` | Surface ranked artist pairs |
+| `scripts/compute.py` | Raw cosine + count-adjusted similarity matrix (sparsity-artifact correction, fit in `data/similarity_fit.json`) |
+| `scripts/discover.py` | Surface ranked artist pairs — ranked on adjusted, raw kept as `score_raw` |
+| `scripts/diagnose.py` | D-phase audit (sparsity / stability / spread) → `data/diagnostics.html` |
 
 ---
 

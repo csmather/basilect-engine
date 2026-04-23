@@ -58,7 +58,10 @@
   "corpus_meta": {
     "quote_count": 9,
     "source_count": 1,
-    "date_range": ["2003", "2003"],
+    "date_range": [
+      "2003",
+      "2003"
+    ],
     "corpus_valid": false
   }
 }

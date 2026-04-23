@@ -285,7 +285,10 @@
   "corpus_meta": {
     "quote_count": 48,
     "source_count": 3,
-    "date_range": ["2009", "2018"],
+    "date_range": [
+      "2009",
+      "2018"
+    ],
     "corpus_valid": true
   }
 }

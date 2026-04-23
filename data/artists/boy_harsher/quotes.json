@@ -153,7 +153,10 @@
   "corpus_meta": {
     "quote_count": 27,
     "source_count": 4,
-    "date_range": ["2019", "2022"],
+    "date_range": [
+      "2019",
+      "2022"
+    ],
     "corpus_valid": true
   }
 }

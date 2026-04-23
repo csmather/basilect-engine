@@ -112,7 +112,10 @@
   "corpus_meta": {
     "quote_count": 18,
     "source_count": 4,
-    "date_range": ["2003", "2019"],
+    "date_range": [
+      "2003",
+      "2019"
+    ],
     "corpus_valid": true
   }
 }
