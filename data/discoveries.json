@@ -2,1801 +2,1801 @@
   {
     "a": "skrillex",
     "b": "tame_impala",
-    "score": 0.848065435170757,
-    "score_raw": 0.8522454500198364
-  },
-  {
-    "a": "astrid_sonne",
-    "b": "radiohead",
-    "score": 0.8337878584861755,
-    "score_raw": 0.8337878584861755
-  },
-  {
-    "a": "astrid_sonne",
-    "b": "nujabes",
-    "score": 0.8307012881712872,
-    "score_raw": 0.7771130800247192
-  },
-  {
-    "a": "astrid_sonne",
-    "b": "skrillex",
-    "score": 0.8231517665382497,
-    "score_raw": 0.8273317813873291
-  },
-  {
-    "a": "animal_collective",
-    "b": "badbadnotgood",
-    "score": 0.8205037691935878,
-    "score_raw": 0.8896061182022095
+    "score": 0.8983314817056018,
+    "score_raw": 0.9016098380088806
   },
   {
     "a": "skrillex",
     "b": "sophie",
-    "score": 0.8196750276085012,
-    "score_raw": 0.8238550424575806
-  },
-  {
-    "a": "boy_harsher",
-    "b": "yung_lean",
-    "score": 0.8137963451389768,
-    "score_raw": 0.8451434373855591
+    "score": 0.8973648731812793,
+    "score_raw": 0.9006432294845581
   },
   {
     "a": "joanna_newsom",
-    "b": "radiohead",
-    "score": 0.8126393556594849,
-    "score_raw": 0.8126393556594849
+    "b": "kate_bush",
+    "score": 0.8963330215531861,
+    "score_raw": 0.8852779865264893
+  },
+  {
+    "a": "clairo",
+    "b": "kate_bush",
+    "score": 0.8910713023263489,
+    "score_raw": 0.8800162672996521
+  },
+  {
+    "a": "nujabes",
+    "b": "sophie",
+    "score": 0.8877467624229346,
+    "score_raw": 0.8457179069519043
+  },
+  {
+    "a": "clairo",
+    "b": "frank_ocean",
+    "score": 0.8835482597351074,
+    "score_raw": 0.8835482597351074
   },
   {
     "a": "astrid_sonne",
-    "b": "tame_impala",
-    "score": 0.8123874646490851,
-    "score_raw": 0.859248697757721
+    "b": "nujabes",
+    "score": 0.8834034911674414,
+    "score_raw": 0.8413746356964111
   },
   {
-    "a": "animal_collective",
-    "b": "nujabes",
-    "score": 0.8111138905959088,
-    "score_raw": 0.7575256824493408
+    "a": "bladee",
+    "b": "kate_bush",
+    "score": 0.8822644776422058,
+    "score_raw": 0.871209442615509
+  },
+  {
+    "a": "kate_bush",
+    "b": "tame_impala",
+    "score": 0.8822516626435791,
+    "score_raw": 0.8711966276168823
+  },
+  {
+    "a": "astrid_sonne",
+    "b": "skrillex",
+    "score": 0.8818092529877979,
+    "score_raw": 0.8850876092910767
+  },
+  {
+    "a": "danny_brown",
+    "b": "kate_bush",
+    "score": 0.8791027492600952,
+    "score_raw": 0.8680477142333984
+  },
+  {
+    "a": "bladee",
+    "b": "skrillex",
+    "score": 0.8790895526513416,
+    "score_raw": 0.8823679089546204
+  },
+  {
+    "a": "nujabes",
+    "b": "tame_impala",
+    "score": 0.8787556997817908,
+    "score_raw": 0.8367268443107605
+  },
+  {
+    "a": "bladee",
+    "b": "yung_lean",
+    "score": 0.8740033455297093,
+    "score_raw": 0.9239179491996765
   },
   {
     "a": "skrillex",
     "b": "yung_lean",
-    "score": 0.8101691596504323,
-    "score_raw": 0.8143491744995117
+    "score": 0.8727338497742969,
+    "score_raw": 0.8760122060775757
   },
   {
-    "a": "animal_collective",
-    "b": "boy_harsher",
-    "score": 0.8035680688862302,
-    "score_raw": 0.8349151611328125
-  },
-  {
-    "a": "radiohead",
-    "b": "tame_impala",
-    "score": 0.8004531860351562,
-    "score_raw": 0.8004531860351562
-  },
-  {
-    "a": "badbadnotgood",
-    "b": "radiohead",
-    "score": 0.7965837717056274,
-    "score_raw": 0.7965837717056274
-  },
-  {
-    "a": "nujabes",
-    "b": "tame_impala",
-    "score": 0.7961774434523541,
-    "score_raw": 0.7425892353057861
-  },
-  {
-    "a": "bladee",
-    "b": "boy_harsher",
-    "score": 0.7955588735584714,
-    "score_raw": 0.8269059658050537
-  },
-  {
-    "a": "clairo",
-    "b": "frank_ocean",
-    "score": 0.7939077615737915,
-    "score_raw": 0.7939077615737915
-  },
-  {
-    "a": "animal_collective",
-    "b": "burial",
-    "score": 0.7937856842034744,
-    "score_raw": 0.7686268091201782
-  },
-  {
-    "a": "bladee",
-    "b": "yung_lean",
-    "score": 0.7929597465062495,
-    "score_raw": 0.8566025495529175
-  },
-  {
-    "a": "animal_collective",
-    "b": "fishmans",
-    "score": 0.7928395200723098,
-    "score_raw": 0.7676806449890137
-  },
-  {
-    "a": "animal_collective",
-    "b": "radiohead",
-    "score": 0.7907133102416992,
-    "score_raw": 0.7907133102416992
-  },
-  {
-    "a": "joanna_newsom",
-    "b": "kate_bush",
-    "score": 0.7881301022162452,
-    "score_raw": 0.7740345597267151
-  },
-  {
-    "a": "joanna_newsom",
-    "b": "tame_impala",
-    "score": 0.7876332384413519,
-    "score_raw": 0.8344944715499878
-  },
-  {
-    "a": "badbadnotgood",
-    "b": "nujabes",
-    "score": 0.7874955501036602,
-    "score_raw": 0.7339073419570923
+    "a": "danny_brown",
+    "b": "earl_sweatshirt",
+    "score": 0.8711890294587733,
+    "score_raw": 0.9021628499031067
   },
   {
     "a": "astrid_sonne",
-    "b": "bladee",
-    "score": 0.7848885059874482,
-    "score_raw": 0.8446649312973022
-  },
-  {
-    "a": "bladee",
-    "b": "nujabes",
-    "score": 0.7845190729575116,
-    "score_raw": 0.7309308648109436
-  },
-  {
-    "a": "bladee",
     "b": "radiohead",
-    "score": 0.7844148874282837,
-    "score_raw": 0.7844148874282837
-  },
-  {
-    "a": "animal_collective",
-    "b": "tame_impala",
-    "score": 0.7841611486738959,
-    "score_raw": 0.8310223817825317
-  },
-  {
-    "a": "nujabes",
-    "b": "skrillex",
-    "score": 0.7826506461577374,
-    "score_raw": 0.7290624380111694
-  },
-  {
-    "a": "clairo",
-    "b": "skrillex",
-    "score": 0.782452642202007,
-    "score_raw": 0.7866326570510864
-  },
-  {
-    "a": "clairo",
-    "b": "joanna_newsom",
-    "score": 0.7823659808240516,
-    "score_raw": 0.8581953048706055
-  },
-  {
-    "a": "boy_harsher",
-    "b": "frank_ocean",
-    "score": 0.7820674180984497,
-    "score_raw": 0.7820674180984497
-  },
-  {
-    "a": "burial",
-    "b": "sophie",
-    "score": 0.7811535526269363,
-    "score_raw": 0.7559946775436401
-  },
-  {
-    "a": "nujabes",
-    "b": "sophie",
-    "score": 0.7808706726508099,
-    "score_raw": 0.7272824645042419
-  },
-  {
-    "a": "bladee",
-    "b": "frank_ocean",
-    "score": 0.780035138130188,
-    "score_raw": 0.780035138130188
-  },
-  {
-    "a": "badbadnotgood",
-    "b": "boy_harsher",
-    "score": 0.7785646356586912,
-    "score_raw": 0.8099117279052734
-  },
-  {
-    "a": "danny_brown",
-    "b": "nujabes",
-    "score": 0.7780585851149517,
-    "score_raw": 0.7244703769683838
-  },
-  {
-    "a": "danny_brown",
-    "b": "tame_impala",
-    "score": 0.7777956110304632,
-    "score_raw": 0.8246568441390991
-  },
-  {
-    "a": "astrid_sonne",
-    "b": "boy_harsher",
-    "score": 0.7777568735126951,
-    "score_raw": 0.8091039657592773
-  },
-  {
-    "a": "danny_brown",
-    "b": "skrillex",
-    "score": 0.7773521535392873,
-    "score_raw": 0.7815321683883667
-  },
-  {
-    "a": "animal_collective",
-    "b": "skrillex",
-    "score": 0.7772213213440053,
-    "score_raw": 0.7814013361930847
-  },
-  {
-    "a": "joanna_newsom",
-    "b": "skrillex",
-    "score": 0.7765074365135305,
-    "score_raw": 0.7806874513626099
-  },
-  {
-    "a": "bladee",
-    "b": "kate_bush",
-    "score": 0.7747668004622474,
-    "score_raw": 0.7606712579727173
+    "score": 0.87078857421875,
+    "score_raw": 0.87078857421875
   },
   {
     "a": "frank_ocean",
     "b": "yung_lean",
-    "score": 0.7743053436279297,
-    "score_raw": 0.7743053436279297
+    "score": 0.8704999089241028,
+    "score_raw": 0.8704999089241028
   },
   {
     "a": "astrid_sonne",
-    "b": "joanna_newsom",
-    "score": 0.7741823792975373,
-    "score_raw": 0.8339588046073914
+    "b": "tame_impala",
+    "score": 0.8701367408769527,
+    "score_raw": 0.9068896770477295
   },
   {
-    "a": "radiohead",
+    "a": "nujabes",
     "b": "skrillex",
-    "score": 0.7733715772628784,
-    "score_raw": 0.7733715772628784
-  },
-  {
-    "a": "danny_brown",
-    "b": "radiohead",
-    "score": 0.772635817527771,
-    "score_raw": 0.772635817527771
-  },
-  {
-    "a": "danny_brown",
-    "b": "yung_lean",
-    "score": 0.7716869742475135,
-    "score_raw": 0.8475162982940674
-  },
-  {
-    "a": "bladee",
-    "b": "skrillex",
-    "score": 0.7709036462303274,
-    "score_raw": 0.7750836610794067
-  },
-  {
-    "a": "boy_harsher",
-    "b": "radiohead",
-    "score": 0.7697865962982178,
-    "score_raw": 0.7697865962982178
+    "score": 0.8700917474311743,
+    "score_raw": 0.828062891960144
   },
   {
     "a": "clairo",
+    "b": "joanna_newsom",
+    "score": 0.8689006322254896,
+    "score_raw": 0.9283730387687683
+  },
+  {
+    "a": "burial",
+    "b": "yung_lean",
+    "score": 0.8681373498978245,
+    "score_raw": 0.8484054207801819
+  },
+  {
+    "a": "burial",
+    "b": "sophie",
+    "score": 0.8670026562752354,
+    "score_raw": 0.8472707271575928
+  },
+  {
+    "a": "bladee",
+    "b": "danny_brown",
+    "score": 0.8668760605260472,
+    "score_raw": 0.9167906641960144
+  },
+  {
+    "a": "frank_ocean",
+    "b": "joanna_newsom",
+    "score": 0.8668375015258789,
+    "score_raw": 0.8668375015258789
+  },
+  {
+    "a": "danny_brown",
+    "b": "skrillex",
+    "score": 0.8665958826646167,
+    "score_raw": 0.8698742389678955
+  },
+  {
+    "a": "bladee",
+    "b": "nujabes",
+    "score": 0.866086613325492,
+    "score_raw": 0.8240577578544617
+  },
+  {
+    "a": "sophie",
+    "b": "tame_impala",
+    "score": 0.8659227520959774,
+    "score_raw": 0.9026756882667542
+  },
+  {
+    "a": "burial",
+    "b": "danny_brown",
+    "score": 0.8653221033157933,
+    "score_raw": 0.8455901741981506
+  },
+  {
+    "a": "danny_brown",
+    "b": "frank_ocean",
+    "score": 0.8648723363876343,
+    "score_raw": 0.8648723363876343
+  },
+  {
+    "a": "bladee",
+    "b": "radiohead",
+    "score": 0.8639858961105347,
+    "score_raw": 0.8639858961105347
+  },
+  {
+    "a": "bladee",
+    "b": "frank_ocean",
+    "score": 0.8635716438293457,
+    "score_raw": 0.8635716438293457
+  },
+  {
+    "a": "bill_evans",
+    "b": "clairo",
+    "score": 0.8635042913885581,
+    "score_raw": 0.875671923160553
+  },
+  {
+    "a": "danny_brown",
+    "b": "nujabes",
+    "score": 0.8632012716812049,
+    "score_raw": 0.8211724162101746
+  },
+  {
+    "a": "clairo",
+    "b": "skrillex",
+    "score": 0.8627127592667896,
+    "score_raw": 0.8659911155700684
+  },
+  {
+    "a": "clairo",
+    "b": "nujabes",
+    "score": 0.8622169605773841,
+    "score_raw": 0.8201881051063538
+  },
+  {
+    "a": "bladee",
+    "b": "tame_impala",
+    "score": 0.8618259460466304,
+    "score_raw": 0.8985788822174072
+  },
+  {
+    "a": "bladee",
+    "b": "burial",
+    "score": 0.8616276286186803,
+    "score_raw": 0.8418956995010376
+  },
+  {
+    "a": "bladee",
+    "b": "boy_harsher",
+    "score": 0.8614662908122471,
+    "score_raw": 0.886051595211029
+  },
+  {
+    "a": "bladee",
+    "b": "clairo",
+    "score": 0.8606854625150303,
+    "score_raw": 0.9106000661849976
+  },
+  {
+    "a": "burial",
+    "b": "tame_impala",
+    "score": 0.8603660963120091,
+    "score_raw": 0.8406341671943665
+  },
+  {
+    "a": "badbadnotgood",
+    "b": "radiohead",
+    "score": 0.8601212501525879,
+    "score_raw": 0.8601212501525879
+  },
+  {
+    "a": "kate_bush",
+    "b": "yung_lean",
+    "score": 0.8598851985055481,
+    "score_raw": 0.8488301634788513
+  },
+  {
+    "a": "danny_brown",
+    "b": "tame_impala",
+    "score": 0.8596487671869197,
+    "score_raw": 0.8964017033576965
+  },
+  {
+    "a": "bill_evans",
+    "b": "brian_eno",
+    "score": 0.8582416780920493,
+    "score_raw": 0.8704093098640442
+  },
+  {
+    "a": "danny_brown",
+    "b": "yung_lean",
+    "score": 0.8574084394802809,
+    "score_raw": 0.9168808460235596
+  },
+  {
+    "a": "burial",
+    "b": "clairo",
+    "score": 0.85723184567114,
+    "score_raw": 0.8374999165534973
+  },
+  {
+    "a": "clairo",
+    "b": "tame_impala",
+    "score": 0.8570787937181392,
+    "score_raw": 0.893831729888916
+  },
+  {
+    "a": "arca",
+    "b": "frank_ocean",
+    "score": 0.8566480278968811,
+    "score_raw": 0.8566480278968811
+  },
+  {
+    "a": "joanna_newsom",
+    "b": "tame_impala",
+    "score": 0.8566098243730464,
+    "score_raw": 0.8933627605438232
+  },
+  {
+    "a": "astrid_sonne",
+    "b": "bladee",
+    "score": 0.8555068187778598,
+    "score_raw": 0.9023890495300293
+  },
+  {
+    "a": "earl_sweatshirt",
+    "b": "yung_lean",
+    "score": 0.8534162952935817,
+    "score_raw": 0.884390115737915
+  },
+  {
+    "a": "astrid_sonne",
     "b": "kate_bush",
-    "score": 0.7697269297232643,
-    "score_raw": 0.7556313872337341
+    "score": 0.8532982296067749,
+    "score_raw": 0.8422431945800781
+  },
+  {
+    "a": "joanna_newsom",
+    "b": "radiohead",
+    "score": 0.853094220161438,
+    "score_raw": 0.853094220161438
+  },
+  {
+    "a": "burial",
+    "b": "joanna_newsom",
+    "score": 0.8516518376412022,
+    "score_raw": 0.8319199085235596
+  },
+  {
+    "a": "radiohead",
+    "b": "tame_impala",
+    "score": 0.8505977988243103,
+    "score_raw": 0.8505977988243103
+  },
+  {
+    "a": "animal_collective",
+    "b": "skrillex",
+    "score": 0.8500163738831836,
+    "score_raw": 0.8532947301864624
+  },
+  {
+    "a": "badbadnotgood",
+    "b": "skrillex",
+    "score": 0.8493728821381885,
+    "score_raw": 0.8526512384414673
+  },
+  {
+    "a": "astrid_sonne",
+    "b": "sophie",
+    "score": 0.8491588048999912,
+    "score_raw": 0.8960410356521606
+  },
+  {
+    "a": "clairo",
+    "b": "danny_brown",
+    "score": 0.8484258406986952,
+    "score_raw": 0.9078982472419739
+  },
+  {
+    "a": "bjork",
+    "b": "sophie",
+    "score": 0.8483611326909438,
+    "score_raw": 0.8632240891456604
+  },
+  {
+    "a": "clairo",
+    "b": "radiohead",
+    "score": 0.8479838371276855,
+    "score_raw": 0.8479838371276855
+  },
+  {
+    "a": "arca",
+    "b": "kate_bush",
+    "score": 0.8477852171975647,
+    "score_raw": 0.8367301821708679
+  },
+  {
+    "a": "frank_ocean",
+    "b": "kate_bush",
+    "score": 0.8477463549691712,
+    "score_raw": 0.8366913199424744
+  },
+  {
+    "a": "burial",
+    "b": "skrillex",
+    "score": 0.8471298716606724,
+    "score_raw": 0.8273979425430298
+  },
+  {
+    "a": "astrid_sonne",
+    "b": "clairo",
+    "score": 0.8460038118427402,
+    "score_raw": 0.8928860425949097
   },
   {
     "a": "radiohead",
     "b": "yung_lean",
-    "score": 0.7694034576416016,
-    "score_raw": 0.7694034576416016
+    "score": 0.8458659052848816,
+    "score_raw": 0.8458659052848816
+  },
+  {
+    "a": "joanna_newsom",
+    "b": "skrillex",
+    "score": 0.8452404921159107,
+    "score_raw": 0.8485188484191895
   },
   {
     "a": "tame_impala",
     "b": "yung_lean",
-    "score": 0.7662568670576849,
-    "score_raw": 0.8131181001663208
-  },
-  {
-    "a": "kate_bush",
-    "b": "tame_impala",
-    "score": 0.765594122468473,
-    "score_raw": 0.7514985799789429
-  },
-  {
-    "a": "joanna_newsom",
-    "b": "nujabes",
-    "score": 0.7654365863280255,
-    "score_raw": 0.7118483781814575
-  },
-  {
-    "a": "clairo",
-    "b": "radiohead",
-    "score": 0.7648009061813354,
-    "score_raw": 0.7648009061813354
-  },
-  {
-    "a": "bladee",
-    "b": "tame_impala",
-    "score": 0.7643046957320013,
-    "score_raw": 0.8111659288406372
-  },
-  {
-    "a": "boy_harsher",
-    "b": "tame_impala",
-    "score": 0.7638328708652952,
-    "score_raw": 0.7951799631118774
-  },
-  {
-    "a": "danny_brown",
-    "b": "joanna_newsom",
-    "score": 0.7624698948430558,
-    "score_raw": 0.847405195236206
-  },
-  {
-    "a": "sophie",
-    "b": "tame_impala",
-    "score": 0.7604524475401678,
-    "score_raw": 0.8073136806488037
-  },
-  {
-    "a": "burial",
-    "b": "yung_lean",
-    "score": 0.7601287294381546,
-    "score_raw": 0.7349698543548584
-  },
-  {
-    "a": "animal_collective",
-    "b": "arthur_verocai",
-    "score": 0.7589283496636647,
-    "score_raw": 0.7208542823791504
-  },
-  {
-    "a": "frank_ocean",
-    "b": "joanna_newsom",
-    "score": 0.7570762634277344,
-    "score_raw": 0.7570762634277344
-  },
-  {
-    "a": "astrid_sonne",
-    "b": "clairo",
-    "score": 0.755572855524344,
-    "score_raw": 0.815349280834198
-  },
-  {
-    "a": "burial",
-    "b": "tame_impala",
-    "score": 0.7547588277810501,
-    "score_raw": 0.7295999526977539
-  },
-  {
-    "a": "danny_brown",
-    "b": "frank_ocean",
-    "score": 0.7541524171829224,
-    "score_raw": 0.7541524171829224
-  },
-  {
-    "a": "fishmans",
-    "b": "joanna_newsom",
-    "score": 0.7539206672662185,
-    "score_raw": 0.7287617921829224
-  },
-  {
-    "a": "bladee",
-    "b": "joanna_newsom",
-    "score": 0.7538776961827631,
-    "score_raw": 0.8175204992294312
-  },
-  {
-    "a": "astrid_sonne",
-    "b": "yung_lean",
-    "score": 0.7538524866621918,
-    "score_raw": 0.8136289119720459
-  },
-  {
-    "a": "danny_brown",
-    "b": "kate_bush",
-    "score": 0.7533652163138405,
-    "score_raw": 0.7392696738243103
-  },
-  {
-    "a": "boy_harsher",
-    "b": "clairo",
-    "score": 0.7533248104099729,
-    "score_raw": 0.7846719026565552
-  },
-  {
-    "a": "frank_ocean",
-    "b": "kate_bush",
-    "score": 0.7519962168326393,
-    "score_raw": 0.7379006743431091
-  },
-  {
-    "a": "astrid_sonne",
-    "b": "kate_bush",
-    "score": 0.7515553212752357,
-    "score_raw": 0.7374597787857056
-  },
-  {
-    "a": "bladee",
-    "b": "clairo",
-    "score": 0.7515462605023737,
-    "score_raw": 0.8151890635490417
-  },
-  {
-    "a": "boy_harsher",
-    "b": "joanna_newsom",
-    "score": 0.7511144913677671,
-    "score_raw": 0.7824615836143494
-  },
-  {
-    "a": "clairo",
-    "b": "tame_impala",
-    "score": 0.7504426819151678,
-    "score_raw": 0.7973039150238037
-  },
-  {
-    "a": "boy_harsher",
-    "b": "burial",
-    "score": 0.7503142286294388,
-    "score_raw": 0.7251553535461426
-  },
-  {
-    "a": "arthur_verocai",
-    "b": "astrid_sonne",
-    "score": 0.7502635628480214,
-    "score_raw": 0.7121894955635071
-  },
-  {
-    "a": "boy_harsher",
-    "b": "nujabes",
-    "score": 0.7499868239836651,
-    "score_raw": 0.6963986158370972
-  },
-  {
-    "a": "clairo",
-    "b": "nujabes",
-    "score": 0.7498395409064251,
-    "score_raw": 0.6962513327598572
-  },
-  {
-    "a": "nujabes",
-    "b": "yung_lean",
-    "score": 0.7495500411467511,
-    "score_raw": 0.6959618330001831
-  },
-  {
-    "a": "astrid_sonne",
-    "b": "sophie",
-    "score": 0.7494411469023652,
-    "score_raw": 0.8092175722122192
-  },
-  {
-    "a": "boy_harsher",
-    "b": "skrillex",
-    "score": 0.7480396621223562,
-    "score_raw": 0.7522196769714355
-  },
-  {
-    "a": "bladee",
-    "b": "danny_brown",
-    "score": 0.7478527990842219,
-    "score_raw": 0.8114956021308899
-  },
-  {
-    "a": "astrid_sonne",
-    "b": "frank_ocean",
-    "score": 0.7469250559806824,
-    "score_raw": 0.7469250559806824
-  },
-  {
-    "a": "astrid_sonne",
-    "b": "danny_brown",
-    "score": 0.7450995445769257,
-    "score_raw": 0.8048759698867798
-  },
-  {
-    "a": "animal_collective",
-    "b": "astrid_sonne",
-    "score": 0.7438515425246186,
-    "score_raw": 0.8036279678344727
-  },
-  {
-    "a": "astrid_sonne",
-    "b": "badbadnotgood",
-    "score": 0.7435745001357026,
-    "score_raw": 0.8033509254455566
-  },
-  {
-    "a": "boy_harsher",
-    "b": "fishmans",
-    "score": 0.7431644130700515,
-    "score_raw": 0.7180055379867554
-  },
-  {
-    "a": "astrid_sonne",
-    "b": "fishmans",
-    "score": 0.7431030798905777,
-    "score_raw": 0.7179442048072815
-  },
-  {
-    "a": "arthur_verocai",
-    "b": "badbadnotgood",
-    "score": 0.7429733783501882,
-    "score_raw": 0.7048993110656738
-  },
-  {
-    "a": "arthur_verocai",
-    "b": "tame_impala",
-    "score": 0.7407554895180959,
-    "score_raw": 0.7026814222335815
-  },
-  {
-    "a": "bjork",
-    "b": "boy_harsher",
-    "score": 0.7404553190505038,
-    "score_raw": 0.7594060897827148
-  },
-  {
-    "a": "boy_harsher",
-    "b": "danny_brown",
-    "score": 0.7396048940662839,
-    "score_raw": 0.7709519863128662
-  },
-  {
-    "a": "frank_ocean",
-    "b": "tame_impala",
-    "score": 0.7393609285354614,
-    "score_raw": 0.7393609285354614
-  },
-  {
-    "a": "arthur_verocai",
-    "b": "sophie",
-    "score": 0.7387412697572011,
-    "score_raw": 0.7006672024726868
-  },
-  {
-    "a": "fishmans",
-    "b": "tame_impala",
-    "score": 0.7386631299012588,
-    "score_raw": 0.7135042548179626
-  },
-  {
-    "a": "boy_harsher",
-    "b": "sophie",
-    "score": 0.7376006282810667,
-    "score_raw": 0.7689477205276489
-  },
-  {
-    "a": "nujabes",
-    "b": "radiohead",
-    "score": 0.736679610200401,
-    "score_raw": 0.683091402053833
-  },
-  {
-    "a": "clairo",
-    "b": "danny_brown",
-    "score": 0.736639681538163,
-    "score_raw": 0.8124690055847168
-  },
-  {
-    "a": "badbadnotgood",
-    "b": "skrillex",
-    "score": 0.7366190545555227,
-    "score_raw": 0.740799069404602
-  },
-  {
-    "a": "fishmans",
-    "b": "radiohead",
-    "score": 0.7365907360070633,
-    "score_raw": 0.7114318609237671
-  },
-  {
-    "a": "danny_brown",
-    "b": "earl_sweatshirt",
-    "score": 0.7362579713974055,
-    "score_raw": 0.7757506370544434
-  },
-  {
-    "a": "animal_collective",
-    "b": "sophie",
-    "score": 0.7355421216092689,
-    "score_raw": 0.8113714456558228
+    "score": 0.8448022634523311,
+    "score_raw": 0.8815551996231079
   },
   {
     "a": "brian_eno",
-    "b": "skrillex",
-    "score": 0.735516368627178,
-    "score_raw": 0.7396963834762573
+    "b": "frank_ocean",
+    "score": 0.8445194363594055,
+    "score_raw": 0.8445194363594055
   },
   {
-    "a": "badbadnotgood",
-    "b": "burial",
-    "score": 0.7350898910516189,
-    "score_raw": 0.7099310159683228
+    "a": "bladee",
+    "b": "joanna_newsom",
+    "score": 0.8440407462522129,
+    "score_raw": 0.8939553499221802
+  },
+  {
+    "a": "animal_collective",
+    "b": "nujabes",
+    "score": 0.8438721410316382,
+    "score_raw": 0.8018432855606079
   },
   {
     "a": "radiohead",
     "b": "sophie",
-    "score": 0.734696626663208,
-    "score_raw": 0.734696626663208
+    "score": 0.8435520529747009,
+    "score_raw": 0.8435520529747009
   },
   {
-    "a": "astrid_sonne",
-    "b": "burial",
-    "score": 0.734260313605635,
-    "score_raw": 0.7091014385223389
+    "a": "earl_sweatshirt",
+    "b": "joanna_newsom",
+    "score": 0.843117983583224,
+    "score_raw": 0.8740918040275574
+  },
+  {
+    "a": "burial",
+    "b": "earl_sweatshirt",
+    "score": 0.842531134897672,
+    "score_raw": 0.8227992057800293
+  },
+  {
+    "a": "animal_collective",
+    "b": "badbadnotgood",
+    "score": 0.8417180077482773,
+    "score_raw": 0.8959144949913025
+  },
+  {
+    "a": "animal_collective",
+    "b": "radiohead",
+    "score": 0.8407580852508545,
+    "score_raw": 0.8407580852508545
+  },
+  {
+    "a": "clairo",
+    "b": "yung_lean",
+    "score": 0.8398298972477675,
+    "score_raw": 0.8993023037910461
+  },
+  {
+    "a": "bill_evans",
+    "b": "yung_lean",
+    "score": 0.8397827156515586,
+    "score_raw": 0.8519503474235535
+  },
+  {
+    "a": "kate_bush",
+    "b": "skrillex",
+    "score": 0.8392947143632447,
+    "score_raw": 0.8282396793365479
+  },
+  {
+    "a": "brian_eno",
+    "b": "joanna_newsom",
+    "score": 0.8390255303208659,
+    "score_raw": 0.8739126324653625
+  },
+  {
+    "a": "arca",
+    "b": "clairo",
+    "score": 0.8388082736363173,
+    "score_raw": 0.898280680179596
+  },
+  {
+    "a": "nujabes",
+    "b": "yung_lean",
+    "score": 0.8387654534858618,
+    "score_raw": 0.7967365980148315
   },
   {
     "a": "bladee",
     "b": "fishmans",
-    "score": 0.7340719629281448,
-    "score_raw": 0.7089130878448486
+    "score": 0.8387271068634617,
+    "score_raw": 0.8189951777458191
+  },
+  {
+    "a": "clairo",
+    "b": "earl_sweatshirt",
+    "score": 0.8386391713655116,
+    "score_raw": 0.869612991809845
+  },
+  {
+    "a": "arca",
+    "b": "bladee",
+    "score": 0.838308209936295,
+    "score_raw": 0.8882228136062622
+  },
+  {
+    "a": "joanna_newsom",
+    "b": "nujabes",
+    "score": 0.8378917686027442,
+    "score_raw": 0.7958629131317139
+  },
+  {
+    "a": "danny_brown",
+    "b": "joanna_newsom",
+    "score": 0.8377466113093871,
+    "score_raw": 0.9043607711791992
+  },
+  {
+    "a": "bjork",
+    "b": "joanna_newsom",
+    "score": 0.8371241670346633,
+    "score_raw": 0.8519871234893799
   },
   {
     "a": "animal_collective",
-    "b": "bjork",
-    "score": 0.7337896124159823,
-    "score_raw": 0.7527403831481934
+    "b": "boy_harsher",
+    "score": 0.8369013093516758,
+    "score_raw": 0.8614866137504578
+  },
+  {
+    "a": "boy_harsher",
+    "b": "yung_lean",
+    "score": 0.8360451482341221,
+    "score_raw": 0.860630452632904
+  },
+  {
+    "a": "arca",
+    "b": "bill_evans",
+    "score": 0.835976124617623,
+    "score_raw": 0.8481437563896179
+  },
+  {
+    "a": "earl_sweatshirt",
+    "b": "frank_ocean",
+    "score": 0.835512638092041,
+    "score_raw": 0.835512638092041
   },
   {
     "a": "arthur_verocai",
-    "b": "nujabes",
-    "score": 0.7322034205870587,
-    "score_raw": 0.6786152124404907
+    "b": "clairo",
+    "score": 0.8351019740118405,
+    "score_raw": 0.8052407503128052
   },
   {
     "a": "fishmans",
-    "b": "yung_lean",
-    "score": 0.7318417955392288,
-    "score_raw": 0.7066829204559326
+    "b": "joanna_newsom",
+    "score": 0.8349578879418004,
+    "score_raw": 0.8152259588241577
   },
   {
     "a": "clairo",
     "b": "fishmans",
-    "score": 0.7316582728379654,
-    "score_raw": 0.7064993977546692
+    "score": 0.8349347613396275,
+    "score_raw": 0.8152028322219849
   },
   {
-    "a": "kate_bush",
-    "b": "yung_lean",
-    "score": 0.7314658141722694,
-    "score_raw": 0.7173702716827393
+    "a": "earl_sweatshirt",
+    "b": "kate_bush",
+    "score": 0.8348908251840149,
+    "score_raw": 0.8238357901573181
   },
   {
-    "a": "badbadnotgood",
-    "b": "tame_impala",
-    "score": 0.7314583641356268,
-    "score_raw": 0.7783195972442627
+    "a": "brian_eno",
+    "b": "kate_bush",
+    "score": 0.8347049182969605,
+    "score_raw": 0.8236498832702637
   },
   {
-    "a": "burial",
-    "b": "radiohead",
-    "score": 0.7281765867227005,
-    "score_raw": 0.7030177116394043
+    "a": "bill_evans",
+    "b": "joanna_newsom",
+    "score": 0.8344931014509666,
+    "score_raw": 0.8466607332229614
   },
   {
     "a": "arthur_verocai",
     "b": "danny_brown",
-    "score": 0.7275455505151052,
-    "score_raw": 0.6894714832305908
+    "score": 0.8336853504194638,
+    "score_raw": 0.8038241267204285
   },
   {
-    "a": "bill_evans",
-    "b": "clairo",
-    "score": 0.7273993437113105,
-    "score_raw": 0.7429134845733643
+    "a": "badbadnotgood",
+    "b": "nujabes",
+    "score": 0.8333522788566504,
+    "score_raw": 0.7913234233856201
   },
   {
-    "a": "burial",
-    "b": "danny_brown",
-    "score": 0.727386169528334,
-    "score_raw": 0.7022272944450378
+    "a": "bladee",
+    "b": "sophie",
+    "score": 0.8330234833165745,
+    "score_raw": 0.8829380869865417
   },
   {
-    "a": "arca",
-    "b": "frank_ocean",
-    "score": 0.7240062952041626,
-    "score_raw": 0.7240062952041626
-  },
-  {
-    "a": "astrid_sonne",
-    "b": "kaija_saariaho",
-    "score": 0.722880122720243,
-    "score_raw": 0.7087845802307129
-  },
-  {
-    "a": "burial",
-    "b": "skrillex",
-    "score": 0.7227441001885818,
-    "score_raw": 0.6975852251052856
+    "a": "bjork",
+    "b": "brian_eno",
+    "score": 0.8326372485852614,
+    "score_raw": 0.847500205039978
   },
   {
     "a": "animal_collective",
-    "b": "joanna_newsom",
-    "score": 0.7221591503224952,
-    "score_raw": 0.7979884743690491
+    "b": "tame_impala",
+    "score": 0.8324669034021297,
+    "score_raw": 0.8692198395729065
+  },
+  {
+    "a": "radiohead",
+    "b": "skrillex",
+    "score": 0.8324525356292725,
+    "score_raw": 0.8324525356292725
+  },
+  {
+    "a": "brian_eno",
+    "b": "burial",
+    "score": 0.8324291012825596,
+    "score_raw": 0.812697172164917
+  },
+  {
+    "a": "astrid_sonne",
+    "b": "frank_ocean",
+    "score": 0.8321162462234497,
+    "score_raw": 0.8321162462234497
+  },
+  {
+    "a": "bill_evans",
+    "b": "bladee",
+    "score": 0.8315437444181907,
+    "score_raw": 0.8437113761901855
+  },
+  {
+    "a": "brian_eno",
+    "b": "clairo",
+    "score": 0.8311038942162822,
+    "score_raw": 0.8659909963607788
+  },
+  {
+    "a": "kate_bush",
+    "b": "sophie",
+    "score": 0.8310512131768738,
+    "score_raw": 0.819996178150177
+  },
+  {
+    "a": "bjork",
+    "b": "bladee",
+    "score": 0.8310461621976272,
+    "score_raw": 0.8459091186523438
+  },
+  {
+    "a": "arca",
+    "b": "burial",
+    "score": 0.8308627508225072,
+    "score_raw": 0.8111308217048645
+  },
+  {
+    "a": "bjork",
+    "b": "burial",
+    "score": 0.8305779002251256,
+    "score_raw": 0.8108459711074829
+  },
+  {
+    "a": "frank_ocean",
+    "b": "tame_impala",
+    "score": 0.8295596837997437,
+    "score_raw": 0.8295596837997437
+  },
+  {
+    "a": "bill_evans",
+    "b": "danny_brown",
+    "score": 0.8292562373610007,
+    "score_raw": 0.8414238691329956
+  },
+  {
+    "a": "animal_collective",
+    "b": "burial",
+    "score": 0.8291302822174657,
+    "score_raw": 0.809398353099823
+  },
+  {
+    "a": "bjork",
+    "b": "clairo",
+    "score": 0.829066274712123,
+    "score_raw": 0.8439292311668396
+  },
+  {
+    "a": "astrid_sonne",
+    "b": "burial",
+    "score": 0.828910996729337,
+    "score_raw": 0.8091790676116943
+  },
+  {
+    "a": "boy_harsher",
+    "b": "clairo",
+    "score": 0.8286196611926487,
+    "score_raw": 0.8532049655914307
+  },
+  {
+    "a": "arthur_verocai",
+    "b": "astrid_sonne",
+    "score": 0.8284078955664059,
+    "score_raw": 0.7985466718673706
   },
   {
     "a": "joanna_newsom",
     "b": "yung_lean",
-    "score": 0.7205269963346107,
-    "score_raw": 0.7963563203811646
+    "score": 0.8273814671864271,
+    "score_raw": 0.8868538737297058
   },
   {
-    "a": "clairo",
-    "b": "yung_lean",
-    "score": 0.7202515036664588,
-    "score_raw": 0.7960808277130127
+    "a": "fishmans",
+    "b": "tame_impala",
+    "score": 0.8267086051048863,
+    "score_raw": 0.8069766759872437
+  },
+  {
+    "a": "boy_harsher",
+    "b": "frank_ocean",
+    "score": 0.8265661597251892,
+    "score_raw": 0.8265661597251892
+  },
+  {
+    "a": "astrid_sonne",
+    "b": "kaija_saariaho",
+    "score": 0.826168341072229,
+    "score_raw": 0.8151133060455322
+  },
+  {
+    "a": "boy_harsher",
+    "b": "radiohead",
+    "score": 0.8253309726715088,
+    "score_raw": 0.8253309726715088
+  },
+  {
+    "a": "astrid_sonne",
+    "b": "joanna_newsom",
+    "score": 0.825220864302457,
+    "score_raw": 0.8721030950546265
+  },
+  {
+    "a": "brian_eno",
+    "b": "earl_sweatshirt",
+    "score": 0.8249564483201625,
+    "score_raw": 0.8559302687644958
+  },
+  {
+    "a": "danny_brown",
+    "b": "radiohead",
+    "score": 0.8245350122451782,
+    "score_raw": 0.8245350122451782
   },
   {
     "a": "bladee",
-    "b": "burial",
-    "score": 0.7200901437753128,
-    "score_raw": 0.6949312686920166
+    "b": "earl_sweatshirt",
+    "score": 0.8245250299012782,
+    "score_raw": 0.8554988503456116
   },
   {
-    "a": "badbadnotgood",
-    "b": "fishmans",
-    "score": 0.7199453640931534,
-    "score_raw": 0.6947864890098572
+    "a": "boy_harsher",
+    "b": "burial",
+    "score": 0.8245190284790623,
+    "score_raw": 0.8047870993614197
+  },
+  {
+    "a": "astrid_sonne",
+    "b": "danny_brown",
+    "score": 0.8238926343982822,
+    "score_raw": 0.8707748651504517
   },
   {
     "a": "arthur_verocai",
-    "b": "clairo",
-    "score": 0.7193675548333425,
-    "score_raw": 0.6812934875488281
-  },
-  {
-    "a": "brian_eno",
-    "b": "frank_ocean",
-    "score": 0.7186659574508667,
-    "score_raw": 0.7186659574508667
-  },
-  {
-    "a": "kate_bush",
-    "b": "skrillex",
-    "score": 0.7185201621642128,
-    "score_raw": 0.7044246196746826
-  },
-  {
-    "a": "arthur_verocai",
-    "b": "burial",
-    "score": 0.7182931215066213,
-    "score_raw": 0.6802190542221069
-  },
-  {
-    "a": "badbadnotgood",
-    "b": "yung_lean",
-    "score": 0.7180604317530971,
-    "score_raw": 0.7871627807617188
+    "b": "bladee",
+    "score": 0.8233986616148373,
+    "score_raw": 0.793537437915802
   },
   {
     "a": "arca",
-    "b": "kate_bush",
-    "score": 0.7175173736205116,
-    "score_raw": 0.7034218311309814
+    "b": "earl_sweatshirt",
+    "score": 0.8232005550897242,
+    "score_raw": 0.8541743755340576
   },
   {
-    "a": "bjork",
-    "b": "nujabes",
-    "score": 0.7172153558211285,
-    "score_raw": 0.6636271476745605
+    "a": "fishmans",
+    "b": "yung_lean",
+    "score": 0.8221419952454198,
+    "score_raw": 0.8024100661277771
   },
   {
-    "a": "bjork",
-    "b": "sophie",
-    "score": 0.7166633502280245,
-    "score_raw": 0.7356141209602356
+    "a": "astrid_sonne",
+    "b": "yung_lean",
+    "score": 0.8220839910572177,
+    "score_raw": 0.8689662218093872
+  },
+  {
+    "a": "boy_harsher",
+    "b": "fishmans",
+    "score": 0.8217641017975438,
+    "score_raw": 0.8020321726799011
+  },
+  {
+    "a": "arthur_verocai",
+    "b": "joanna_newsom",
+    "score": 0.8217623353018185,
+    "score_raw": 0.7919011116027832
+  },
+  {
+    "a": "nujabes",
+    "b": "radiohead",
+    "score": 0.8212027064842139,
+    "score_raw": 0.7791738510131836
+  },
+  {
+    "a": "arca",
+    "b": "bjork",
+    "score": 0.8207421284413711,
+    "score_raw": 0.8356050848960876
   },
   {
     "a": "burial",
-    "b": "joanna_newsom",
-    "score": 0.7166380811685013,
-    "score_raw": 0.6914792060852051
+    "b": "nujabes",
+    "score": 0.8207330814880286,
+    "score_raw": 0.7787042260169983
   },
   {
-    "a": "badbadnotgood",
-    "b": "danny_brown",
-    "score": 0.7151251414164882,
-    "score_raw": 0.7842274904251099
+    "a": "brian_eno",
+    "b": "yung_lean",
+    "score": 0.8204208941285441,
+    "score_raw": 0.8553079962730408
   },
   {
     "a": "arca",
-    "b": "bill_evans",
-    "score": 0.7151073758425056,
-    "score_raw": 0.7306215167045593
+    "b": "brian_eno",
+    "score": 0.8204166621987651,
+    "score_raw": 0.8553037643432617
+  },
+  {
+    "a": "animal_collective",
+    "b": "fishmans",
+    "score": 0.8203444383682835,
+    "score_raw": 0.8006125092506409
+  },
+  {
+    "a": "bjork",
+    "b": "yung_lean",
+    "score": 0.8193668108678237,
+    "score_raw": 0.8342297673225403
+  },
+  {
+    "a": "burial",
+    "b": "frank_ocean",
+    "score": 0.819209863954984,
+    "score_raw": 0.7994779348373413
   },
   {
     "a": "brian_eno",
     "b": "radiohead",
-    "score": 0.7150487899780273,
-    "score_raw": 0.7150487899780273
-  },
-  {
-    "a": "animal_collective",
-    "b": "yung_lean",
-    "score": 0.7145059735379798,
-    "score_raw": 0.7903352975845337
-  },
-  {
-    "a": "bjork",
-    "b": "clairo",
-    "score": 0.7101456419264803,
-    "score_raw": 0.7290964126586914
-  },
-  {
-    "a": "frank_ocean",
-    "b": "skrillex",
-    "score": 0.7101014256477356,
-    "score_raw": 0.7101014256477356
-  },
-  {
-    "a": "arthur_verocai",
-    "b": "radiohead",
-    "score": 0.7095379740494985,
-    "score_raw": 0.6714639067649841
-  },
-  {
-    "a": "badbadnotgood",
-    "b": "bjork",
-    "score": 0.7093046203886996,
-    "score_raw": 0.7282553911209106
-  },
-  {
-    "a": "bjork",
-    "b": "joanna_newsom",
-    "score": 0.707227458122922,
-    "score_raw": 0.7261782288551331
-  },
-  {
-    "a": "bjork",
-    "b": "tame_impala",
-    "score": 0.7068324581419955,
-    "score_raw": 0.7257832288742065
-  },
-  {
-    "a": "bill_evans",
-    "b": "joanna_newsom",
-    "score": 0.7056586687387764,
-    "score_raw": 0.7211728096008301
-  },
-  {
-    "a": "arthur_verocai",
-    "b": "joanna_newsom",
-    "score": 0.7055512577790517,
-    "score_raw": 0.6674771904945374
-  },
-  {
-    "a": "fishmans",
-    "b": "skrillex",
-    "score": 0.7055380273812698,
-    "score_raw": 0.6803791522979736
-  },
-  {
-    "a": "arthur_verocai",
-    "b": "skrillex",
-    "score": 0.7053373367089528,
-    "score_raw": 0.6672632694244385
-  },
-  {
-    "a": "fishmans",
-    "b": "sophie",
-    "score": 0.7049633193963455,
-    "score_raw": 0.6798044443130493
+    "score": 0.8176301121711731,
+    "score_raw": 0.8176301121711731
   },
   {
     "a": "astrid_sonne",
     "b": "bjork",
-    "score": 0.7046340004241,
-    "score_raw": 0.723584771156311
+    "score": 0.8174105268216506,
+    "score_raw": 0.8322734832763672
+  },
+  {
+    "a": "arthur_verocai",
+    "b": "sophie",
+    "score": 0.8169067621244809,
+    "score_raw": 0.7870455384254456
   },
   {
     "a": "bill_evans",
-    "b": "yung_lean",
-    "score": 0.7037514393152534,
-    "score_raw": 0.7192655801773071
+    "b": "radiohead",
+    "score": 0.8168261647224426,
+    "score_raw": 0.8168261647224426
+  },
+  {
+    "a": "astrid_sonne",
+    "b": "fishmans",
+    "score": 0.8166175983490574,
+    "score_raw": 0.7968856692314148
+  },
+  {
+    "a": "astrid_sonne",
+    "b": "boy_harsher",
+    "score": 0.8156508229777745,
+    "score_raw": 0.8402361273765564
+  },
+  {
+    "a": "arthur_verocai",
+    "b": "tame_impala",
+    "score": 0.8152997016920468,
+    "score_raw": 0.7854384779930115
+  },
+  {
+    "a": "arca",
+    "b": "skrillex",
+    "score": 0.815158027897771,
+    "score_raw": 0.8184363842010498
+  },
+  {
+    "a": "bill_evans",
+    "b": "burial",
+    "score": 0.8151379130425084,
+    "score_raw": 0.7954059839248657
+  },
+  {
+    "a": "brian_eno",
+    "b": "danny_brown",
+    "score": 0.8145179481332133,
+    "score_raw": 0.84940505027771
+  },
+  {
+    "a": "animal_collective",
+    "b": "sophie",
+    "score": 0.8143570178379774,
+    "score_raw": 0.8738294243812561
   },
   {
     "a": "arca",
     "b": "boy_harsher",
-    "score": 0.7037381567005613,
-    "score_raw": 0.7350852489471436
+    "score": 0.8142409943149022,
+    "score_raw": 0.8388262987136841
+  },
+  {
+    "a": "badbadnotgood",
+    "b": "boy_harsher",
+    "score": 0.8142198942706517,
+    "score_raw": 0.8388051986694336
   },
   {
     "a": "astrid_sonne",
-    "b": "bill_evans",
-    "score": 0.7025914733232795,
-    "score_raw": 0.7181056141853333
-  },
-  {
-    "a": "brian_eno",
-    "b": "kate_bush",
-    "score": 0.7018091655364052,
-    "score_raw": 0.687713623046875
+    "b": "badbadnotgood",
+    "score": 0.8142056875293857,
+    "score_raw": 0.8610879182815552
   },
   {
     "a": "bill_evans",
-    "b": "bladee",
-    "score": 0.7016631905855476,
-    "score_raw": 0.7171773314476013
+    "b": "earl_sweatshirt",
+    "score": 0.813686908099221,
+    "score_raw": 0.8258545398712158
   },
   {
-    "a": "arca",
-    "b": "clairo",
-    "score": 0.7014501721463783,
-    "score_raw": 0.7772794961929321
-  },
-  {
-    "a": "badbadnotgood",
-    "b": "bladee",
-    "score": 0.7009191481137629,
-    "score_raw": 0.7645619511604309
-  },
-  {
-    "a": "arca",
-    "b": "bladee",
-    "score": 0.7005401221776362,
-    "score_raw": 0.7641829252243042
-  },
-  {
-    "a": "frank_ocean",
-    "b": "nujabes",
-    "score": 0.6996323432402569,
-    "score_raw": 0.646044135093689
-  },
-  {
-    "a": "kate_bush",
-    "b": "radiohead",
-    "score": 0.6992179728140846,
-    "score_raw": 0.6851224303245544
+    "a": "boy_harsher",
+    "b": "tame_impala",
+    "score": 0.8136129401729039,
+    "score_raw": 0.8381982445716858
   },
   {
     "a": "badbadnotgood",
+    "b": "bladee",
+    "score": 0.8131511755391697,
+    "score_raw": 0.863065779209137
+  },
+  {
+    "a": "boy_harsher",
     "b": "joanna_newsom",
-    "score": 0.6991854288920741,
-    "score_raw": 0.7682877779006958
-  },
-  {
-    "a": "animal_collective",
-    "b": "bladee",
-    "score": 0.6991446582341547,
-    "score_raw": 0.7627874612808228
-  },
-  {
-    "a": "bjork",
-    "b": "bladee",
-    "score": 0.6990682975089083,
-    "score_raw": 0.7180190682411194
-  },
-  {
-    "a": "arthur_verocai",
-    "b": "bladee",
-    "score": 0.698928585698058,
-    "score_raw": 0.6608545184135437
-  },
-  {
-    "a": "clairo",
-    "b": "kaija_saariaho",
-    "score": 0.6988838887801185,
-    "score_raw": 0.6847883462905884
+    "score": 0.8130807899043492,
+    "score_raw": 0.8376660943031311
   },
   {
     "a": "bladee",
+    "b": "brian_eno",
+    "score": 0.8129398555581401,
+    "score_raw": 0.8478269577026367
+  },
+  {
+    "a": "arca",
+    "b": "tame_impala",
+    "score": 0.8122381598489681,
+    "score_raw": 0.8489910960197449
+  },
+  {
+    "a": "fishmans",
     "b": "sophie",
-    "score": 0.6980420915150995,
-    "score_raw": 0.7616848945617676
+    "score": 0.8120692275108922,
+    "score_raw": 0.7923372983932495
   },
   {
-    "a": "badbadnotgood",
+    "a": "danny_brown",
+    "b": "fishmans",
+    "score": 0.8119441769661534,
+    "score_raw": 0.7922122478485107
+  },
+  {
+    "a": "clairo",
     "b": "sophie",
-    "score": 0.6980283835276943,
-    "score_raw": 0.7671307325363159
+    "score": 0.8116970413555861,
+    "score_raw": 0.8711694478988647
   },
   {
-    "a": "burial",
-    "b": "clairo",
-    "score": 0.6979102421754287,
-    "score_raw": 0.6727513670921326
+    "a": "arca",
+    "b": "joanna_newsom",
+    "score": 0.8115443498614806,
+    "score_raw": 0.8781585097312927
   },
   {
-    "a": "brian_eno",
-    "b": "clairo",
-    "score": 0.6970868700104839,
-    "score_raw": 0.7415691018104553
-  },
-  {
-    "a": "burial",
-    "b": "nujabes",
-    "score": 0.696478125043388,
-    "score_raw": 0.6428899168968201
+    "a": "boy_harsher",
+    "b": "skrillex",
+    "score": 0.8112971370324451,
+    "score_raw": 0.8145754933357239
   },
   {
     "a": "bill_evans",
-    "b": "brian_eno",
-    "score": 0.6958860103906929,
-    "score_raw": 0.7114001512527466
-  },
-  {
-    "a": "animal_collective",
-    "b": "danny_brown",
-    "score": 0.6957990557752235,
-    "score_raw": 0.7716283798217773
-  },
-  {
-    "a": "animal_collective",
     "b": "frank_ocean",
-    "score": 0.6953049302101135,
-    "score_raw": 0.6953049302101135
+    "score": 0.8111132979393005,
+    "score_raw": 0.8111132979393005
   },
   {
-    "a": "bjork",
-    "b": "skrillex",
-    "score": 0.6952852003570669,
-    "score_raw": 0.6994652152061462
-  },
-  {
-    "a": "frank_ocean",
-    "b": "radiohead",
-    "score": 0.6944351196289062,
-    "score_raw": 0.6944351196289062
-  },
-  {
-    "a": "arthur_verocai",
+    "a": "arca",
     "b": "yung_lean",
-    "score": 0.6908116847771901,
-    "score_raw": 0.6527376174926758
-  },
-  {
-    "a": "animal_collective",
-    "b": "clairo",
-    "score": 0.6902730495534523,
-    "score_raw": 0.7661023736000061
+    "score": 0.8110615366329909,
+    "score_raw": 0.8705339431762695
   },
   {
     "a": "boy_harsher",
     "b": "kate_bush",
-    "score": 0.6890978789916054,
-    "score_raw": 0.6750023365020752
+    "score": 0.8107887929994141,
+    "score_raw": 0.7997337579727173
   },
   {
-    "a": "bjork",
-    "b": "frank_ocean",
-    "score": 0.6890130043029785,
-    "score_raw": 0.6890130043029785
+    "a": "boy_harsher",
+    "b": "nujabes",
+    "score": 0.810295175699607,
+    "score_raw": 0.7682663202285767
   },
   {
-    "a": "brian_eno",
-    "b": "joanna_newsom",
-    "score": 0.6886175268250591,
-    "score_raw": 0.7330997586250305
+    "a": "boy_harsher",
+    "b": "danny_brown",
+    "score": 0.8100618742511204,
+    "score_raw": 0.8346471786499023
   },
   {
-    "a": "bjork",
-    "b": "radiohead",
-    "score": 0.6880816221237183,
-    "score_raw": 0.6880816221237183
+    "a": "bill_evans",
+    "b": "kate_bush",
+    "score": 0.8098419136125122,
+    "score_raw": 0.7987868785858154
   },
   {
     "a": "sophie",
     "b": "yung_lean",
-    "score": 0.6876279742322547,
-    "score_raw": 0.7634572982788086
+    "score": 0.8095933550228834,
+    "score_raw": 0.8690657615661621
   },
   {
-    "a": "burial",
-    "b": "fishmans",
-    "score": 0.6872682500832962,
-    "score_raw": 0.662109375
-  },
-  {
-    "a": "earl_sweatshirt",
-    "b": "yung_lean",
-    "score": 0.6865788112793024,
-    "score_raw": 0.7260714769363403
-  },
-  {
-    "a": "bjork",
-    "b": "fishmans",
-    "score": 0.6857515502923416,
-    "score_raw": 0.6605926752090454
-  },
-  {
-    "a": "arthur_verocai",
-    "b": "kaija_saariaho",
-    "score": 0.6849713832635183,
-    "score_raw": 0.6468973159790039
-  },
-  {
-    "a": "arthur_verocai",
-    "b": "boy_harsher",
-    "score": 0.6827738792199392,
-    "score_raw": 0.6446998119354248
-  },
-  {
-    "a": "danny_brown",
-    "b": "fishmans",
-    "score": 0.6826636720651077,
-    "score_raw": 0.6575047969818115
-  },
-  {
-    "a": "bjork",
-    "b": "yung_lean",
-    "score": 0.6825785533225069,
-    "score_raw": 0.701529324054718
-  },
-  {
-    "a": "arca",
-    "b": "radiohead",
-    "score": 0.6809437274932861,
-    "score_raw": 0.6809437274932861
-  },
-  {
-    "a": "arthur_verocai",
-    "b": "bjork",
-    "score": 0.679619184185912,
-    "score_raw": 0.6415451169013977
+    "a": "frank_ocean",
+    "b": "skrillex",
+    "score": 0.8090663552284241,
+    "score_raw": 0.8090663552284241
   },
   {
     "a": "astrid_sonne",
-    "b": "brian_eno",
-    "score": 0.6795599454003459,
-    "score_raw": 0.7240421772003174
+    "b": "bill_evans",
+    "score": 0.8083978303404319,
+    "score_raw": 0.8205654621124268
+  },
+  {
+    "a": "joanna_newsom",
+    "b": "kaija_saariaho",
+    "score": 0.807937426002649,
+    "score_raw": 0.7968823909759521
+  },
+  {
+    "a": "animal_collective",
+    "b": "bladee",
+    "score": 0.8074198313161473,
+    "score_raw": 0.8573344349861145
+  },
+  {
+    "a": "bjork",
+    "b": "skrillex",
+    "score": 0.8073017184838611,
+    "score_raw": 0.8105800747871399
   },
   {
     "a": "boy_harsher",
-    "b": "kaija_saariaho",
-    "score": 0.6788733578314796,
-    "score_raw": 0.6647778153419495
+    "b": "sophie",
+    "score": 0.805994930128806,
+    "score_raw": 0.8305802345275879
   },
   {
-    "a": "brian_eno",
-    "b": "fishmans",
-    "score": 0.6780742336266922,
-    "score_raw": 0.652915358543396
+    "a": "arthur_verocai",
+    "b": "yung_lean",
+    "score": 0.8057520508779904,
+    "score_raw": 0.7758908271789551
   },
   {
     "a": "arca",
     "b": "astrid_sonne",
-    "score": 0.6771634817641206,
-    "score_raw": 0.7369399070739746
+    "score": 0.8053818159168369,
+    "score_raw": 0.8522640466690063
+  },
+  {
+    "a": "kate_bush",
+    "b": "radiohead",
+    "score": 0.805266720684198,
+    "score_raw": 0.7942116856575012
+  },
+  {
+    "a": "bjork",
+    "b": "danny_brown",
+    "score": 0.8052623253560439,
+    "score_raw": 0.8201252818107605
+  },
+  {
+    "a": "animal_collective",
+    "b": "astrid_sonne",
+    "score": 0.8051579408710605,
+    "score_raw": 0.85204017162323
+  },
+  {
+    "a": "bjork",
+    "b": "nujabes",
+    "score": 0.8051405660194312,
+    "score_raw": 0.7631117105484009
+  },
+  {
+    "a": "frank_ocean",
+    "b": "nujabes",
+    "score": 0.8049807063621436,
+    "score_raw": 0.7629518508911133
+  },
+  {
+    "a": "earl_sweatshirt",
+    "b": "skrillex",
+    "score": 0.8046348278626758,
+    "score_raw": 0.8079131841659546
+  },
+  {
+    "a": "animal_collective",
+    "b": "kate_bush",
+    "score": 0.8041839427072083,
+    "score_raw": 0.7931289076805115
+  },
+  {
+    "a": "bjork",
+    "b": "frank_ocean",
+    "score": 0.8040763735771179,
+    "score_raw": 0.8040763735771179
+  },
+  {
+    "a": "brian_eno",
+    "b": "fishmans",
+    "score": 0.8040264747681248,
+    "score_raw": 0.7842945456504822
   },
   {
     "a": "arca",
+    "b": "nujabes",
+    "score": 0.8039959780258094,
+    "score_raw": 0.761967122554779
+  },
+  {
+    "a": "fishmans",
+    "b": "radiohead",
+    "score": 0.8037518165649998,
+    "score_raw": 0.7840198874473572
+  },
+  {
+    "a": "kaija_saariaho",
+    "b": "tame_impala",
+    "score": 0.8034256524163758,
+    "score_raw": 0.792370617389679
+  },
+  {
+    "a": "animal_collective",
     "b": "bjork",
-    "score": 0.6770587459837923,
-    "score_raw": 0.6960095167160034
+    "score": 0.8029881697392837,
+    "score_raw": 0.8178511261940002
   },
   {
-    "a": "bill_evans",
-    "b": "frank_ocean",
-    "score": 0.6751623153686523,
-    "score_raw": 0.6751623153686523
-  },
-  {
-    "a": "kaija_saariaho",
-    "b": "sophie",
-    "score": 0.675146398602964,
-    "score_raw": 0.6610508561134338
-  },
-  {
-    "a": "arthur_verocai",
-    "b": "fishmans",
-    "score": 0.6740974694985646,
-    "score_raw": 0.6360234022140503
-  },
-  {
-    "a": "kaija_saariaho",
+    "a": "badbadnotgood",
     "b": "tame_impala",
-    "score": 0.6739387488951698,
-    "score_raw": 0.6598432064056396
+    "score": 0.8028603822725215,
+    "score_raw": 0.8396133184432983
   },
   {
-    "a": "earl_sweatshirt",
-    "b": "joanna_newsom",
-    "score": 0.6736177812728937,
-    "score_raw": 0.7131104469299316
-  },
-  {
-    "a": "earl_sweatshirt",
-    "b": "frank_ocean",
-    "score": 0.67359459400177,
-    "score_raw": 0.67359459400177
-  },
-  {
-    "a": "badbadnotgood",
-    "b": "frank_ocean",
-    "score": 0.6726799607276917,
-    "score_raw": 0.6726799607276917
-  },
-  {
-    "a": "clairo",
-    "b": "sophie",
-    "score": 0.6716057688794715,
-    "score_raw": 0.7474350929260254
-  },
-  {
-    "a": "fishmans",
-    "b": "nujabes",
-    "score": 0.6695907678084332,
-    "score_raw": 0.6160025596618652
-  },
-  {
-    "a": "animal_collective",
-    "b": "kate_bush",
-    "score": 0.6683750129332557,
-    "score_raw": 0.6542794704437256
-  },
-  {
-    "a": "animal_collective",
-    "b": "kaija_saariaho",
-    "score": 0.6672573066344276,
-    "score_raw": 0.6531617641448975
+    "a": "bjork",
+    "b": "tame_impala",
+    "score": 0.8025907259679214,
+    "score_raw": 0.8174536824226379
   },
   {
     "a": "bill_evans",
-    "b": "radiohead",
-    "score": 0.6665381193161011,
-    "score_raw": 0.6665381193161011
+    "b": "fishmans",
+    "score": 0.80255495529791,
+    "score_raw": 0.7828230261802673
   },
   {
-    "a": "earl_sweatshirt",
+    "a": "arca",
+    "b": "fishmans",
+    "score": 0.8024857543053258,
+    "score_raw": 0.7827538251876831
+  },
+  {
+    "a": "bjork",
+    "b": "earl_sweatshirt",
+    "score": 0.8020210247731582,
+    "score_raw": 0.8168839812278748
+  },
+  {
+    "a": "bjork",
     "b": "kate_bush",
-    "score": 0.6653141952147499,
-    "score_raw": 0.6512186527252197
+    "score": 0.8016038960534607,
+    "score_raw": 0.7905488610267639
   },
   {
-    "a": "bill_evans",
-    "b": "danny_brown",
-    "score": 0.6648967807115852,
-    "score_raw": 0.6804109215736389
+    "a": "animal_collective",
+    "b": "arthur_verocai",
+    "score": 0.8014936566366574,
+    "score_raw": 0.7716324329376221
   },
   {
     "a": "arthur_verocai",
-    "b": "frank_ocean",
-    "score": 0.6648545772332448,
-    "score_raw": 0.6267805099487305
-  },
-  {
-    "a": "badbadnotgood",
-    "b": "kaija_saariaho",
-    "score": 0.6647719121565834,
-    "score_raw": 0.6506763696670532
-  },
-  {
-    "a": "brian_eno",
-    "b": "yung_lean",
-    "score": 0.6647192233163005,
-    "score_raw": 0.709201455116272
-  },
-  {
-    "a": "bill_evans",
     "b": "skrillex",
-    "score": 0.6645224683281057,
-    "score_raw": 0.6687024831771851
-  },
-  {
-    "a": "arca",
-    "b": "kaija_saariaho",
-    "score": 0.6634704447379127,
-    "score_raw": 0.6493749022483826
-  },
-  {
-    "a": "badbadnotgood",
-    "b": "clairo",
-    "score": 0.6629468777522426,
-    "score_raw": 0.7320492267608643
+    "score": 0.8008387207998654,
+    "score_raw": 0.7709774971008301
   },
   {
     "a": "clairo",
-    "b": "earl_sweatshirt",
-    "score": 0.6627290855560358,
-    "score_raw": 0.7022217512130737
-  },
-  {
-    "a": "bladee",
     "b": "kaija_saariaho",
-    "score": 0.6623630500426307,
-    "score_raw": 0.6482675075531006
-  },
-  {
-    "a": "arca",
-    "b": "fishmans",
-    "score": 0.6618553329461502,
-    "score_raw": 0.636696457862854
-  },
-  {
-    "a": "fishmans",
-    "b": "frank_ocean",
-    "score": 0.6603248644822525,
-    "score_raw": 0.6351659893989563
-  },
-  {
-    "a": "joanna_newsom",
-    "b": "kaija_saariaho",
-    "score": 0.6602743840804115,
-    "score_raw": 0.6461788415908813
-  },
-  {
-    "a": "bill_evans",
-    "b": "kate_bush",
-    "score": 0.6592987752547279,
-    "score_raw": 0.6452032327651978
-  },
-  {
-    "a": "brian_eno",
-    "b": "tame_impala",
-    "score": 0.6579077237206584,
-    "score_raw": 0.7023899555206299
-  },
-  {
-    "a": "bjork",
-    "b": "danny_brown",
-    "score": 0.656425763729764,
-    "score_raw": 0.6753765344619751
-  },
-  {
-    "a": "bladee",
-    "b": "brian_eno",
-    "score": 0.6550949805337077,
-    "score_raw": 0.6995772123336792
-  },
-  {
-    "a": "arca",
-    "b": "joanna_newsom",
-    "score": 0.655088312582924,
-    "score_raw": 0.7400236129760742
-  },
-  {
-    "a": "bjork",
-    "b": "kate_bush",
-    "score": 0.653214333116056,
-    "score_raw": 0.6391187906265259
-  },
-  {
-    "a": "arca",
-    "b": "yung_lean",
-    "score": 0.6530652672849281,
-    "score_raw": 0.7288945913314819
-  },
-  {
-    "a": "brian_eno",
-    "b": "nujabes",
-    "score": 0.6524222459273297,
-    "score_raw": 0.5988340377807617
-  },
-  {
-    "a": "bjork",
-    "b": "brian_eno",
-    "score": 0.651420344475461,
-    "score_raw": 0.6703711152076721
-  },
-  {
-    "a": "bjork",
-    "b": "burial",
-    "score": 0.6511492658608841,
-    "score_raw": 0.6259903907775879
-  },
-  {
-    "a": "bill_evans",
-    "b": "tame_impala",
-    "score": 0.6504727546991645,
-    "score_raw": 0.6659868955612183
-  },
-  {
-    "a": "bladee",
-    "b": "earl_sweatshirt",
-    "score": 0.6503364454422053,
-    "score_raw": 0.6898291110992432
-  },
-  {
-    "a": "badbadnotgood",
-    "b": "kate_bush",
-    "score": 0.6500310874571815,
-    "score_raw": 0.6359355449676514
-  },
-  {
-    "a": "bill_evans",
-    "b": "fishmans",
-    "score": 0.6498054195397781,
-    "score_raw": 0.6246465444564819
-  },
-  {
-    "a": "kaija_saariaho",
-    "b": "yung_lean",
-    "score": 0.6469647861113563,
-    "score_raw": 0.6328692436218262
-  },
-  {
-    "a": "brian_eno",
-    "b": "danny_brown",
-    "score": 0.6465827220040447,
-    "score_raw": 0.6910649538040161
-  },
-  {
-    "a": "joanna_newsom",
-    "b": "sophie",
-    "score": 0.6439849511858102,
-    "score_raw": 0.7245012521743774
-  },
-  {
-    "a": "kate_bush",
-    "b": "nujabes",
-    "score": 0.6427649821715313,
-    "score_raw": 0.5891767740249634
-  },
-  {
-    "a": "danny_brown",
-    "b": "sophie",
-    "score": 0.6423380748506662,
-    "score_raw": 0.7228543758392334
-  },
-  {
-    "a": "earl_sweatshirt",
-    "b": "radiohead",
-    "score": 0.6423168182373047,
-    "score_raw": 0.6423168182373047
+    "score": 0.8006924218255554,
+    "score_raw": 0.7896373867988586
   },
   {
     "a": "frank_ocean",
     "b": "sophie",
-    "score": 0.641886830329895,
-    "score_raw": 0.641886830329895
-  },
-  {
-    "a": "fishmans",
-    "b": "kate_bush",
-    "score": 0.6416094232552932,
-    "score_raw": 0.6164505481719971
-  },
-  {
-    "a": "arca",
-    "b": "brian_eno",
-    "score": 0.6413116448479778,
-    "score_raw": 0.6857938766479492
-  },
-  {
-    "a": "boy_harsher",
-    "b": "earl_sweatshirt",
-    "score": 0.6393586434368589,
-    "score_raw": 0.6707057356834412
-  },
-  {
-    "a": "kaija_saariaho",
-    "b": "radiohead",
-    "score": 0.6389856315245643,
-    "score_raw": 0.6248900890350342
-  },
-  {
-    "a": "arca",
-    "b": "skrillex",
-    "score": 0.6388090245720022,
-    "score_raw": 0.6429890394210815
+    "score": 0.8002951741218567,
+    "score_raw": 0.8002951741218567
   },
   {
     "a": "earl_sweatshirt",
     "b": "tame_impala",
-    "score": 0.636147440544134,
-    "score_raw": 0.6756401062011719
+    "score": 0.7994394614732386,
+    "score_raw": 0.830413281917572
   },
   {
-    "a": "brian_eno",
-    "b": "sophie",
-    "score": 0.6349905722695476,
-    "score_raw": 0.679472804069519
-  },
-  {
-    "a": "arca",
-    "b": "earl_sweatshirt",
-    "score": 0.6315243850860651,
-    "score_raw": 0.671017050743103
-  },
-  {
-    "a": "arca",
+    "a": "bill_evans",
     "b": "tame_impala",
-    "score": 0.6313998085325995,
-    "score_raw": 0.6782610416412354
-  },
-  {
-    "a": "bill_evans",
-    "b": "boy_harsher",
-    "score": 0.6298242156328498,
-    "score_raw": 0.6453383564949036
-  },
-  {
-    "a": "earl_sweatshirt",
-    "b": "skrillex",
-    "score": 0.6286085240837209,
-    "score_raw": 0.6327885389328003
-  },
-  {
-    "a": "burial",
-    "b": "kaija_saariaho",
-    "score": 0.6265817810052322,
-    "score_raw": 0.601422905921936
-  },
-  {
-    "a": "bjork",
-    "b": "kaija_saariaho",
-    "score": 0.6263220883002296,
-    "score_raw": 0.6122265458106995
-  },
-  {
-    "a": "fishmans",
-    "b": "kaija_saariaho",
-    "score": 0.6209808517449783,
-    "score_raw": 0.5958219766616821
-  },
-  {
-    "a": "frank_ocean",
-    "b": "kaija_saariaho",
-    "score": 0.6204212880721107,
-    "score_raw": 0.6063257455825806
-  },
-  {
-    "a": "boy_harsher",
-    "b": "brian_eno",
-    "score": 0.6197236813549497,
-    "score_raw": 0.651070773601532
-  },
-  {
-    "a": "kaija_saariaho",
-    "b": "skrillex",
-    "score": 0.6173797822585121,
-    "score_raw": 0.6032842397689819
-  },
-  {
-    "a": "kaija_saariaho",
-    "b": "kate_bush",
-    "score": 0.6155201173415199,
-    "score_raw": 0.6014245748519897
-  },
-  {
-    "a": "kate_bush",
-    "b": "sophie",
-    "score": 0.6138995266547218,
-    "score_raw": 0.5998039841651917
-  },
-  {
-    "a": "arthur_verocai",
-    "b": "kate_bush",
-    "score": 0.6116502792138356,
-    "score_raw": 0.5735762119293213
+    "score": 0.7992399939032065,
+    "score_raw": 0.8114076256752014
   },
   {
     "a": "brian_eno",
-    "b": "earl_sweatshirt",
-    "score": 0.6088363538894709,
-    "score_raw": 0.6483290195465088
+    "b": "skrillex",
+    "score": 0.7992261831864673,
+    "score_raw": 0.8025045394897461
   },
   {
-    "a": "arthur_verocai",
-    "b": "brian_eno",
-    "score": 0.6087458044785756,
-    "score_raw": 0.5706717371940613
-  },
-  {
-    "a": "bill_evans",
-    "b": "earl_sweatshirt",
-    "score": 0.6085172836603462,
-    "score_raw": 0.6240314245223999
-  },
-  {
-    "a": "burial",
-    "b": "earl_sweatshirt",
-    "score": 0.6061454344743179,
-    "score_raw": 0.5809865593910217
+    "a": "joanna_newsom",
+    "b": "sophie",
+    "score": 0.7991845704443488,
+    "score_raw": 0.8623329401016235
   },
   {
     "a": "danny_brown",
-    "b": "kaija_saariaho",
-    "score": 0.6049703932394996,
-    "score_raw": 0.5908748507499695
-  },
-  {
-    "a": "arca",
-    "b": "nujabes",
-    "score": 0.6024041737990338,
-    "score_raw": 0.5488159656524658
+    "b": "sophie",
+    "score": 0.799125859869245,
+    "score_raw": 0.8622742295265198
   },
   {
     "a": "burial",
-    "b": "frank_ocean",
-    "score": 0.5968092609399246,
-    "score_raw": 0.5716503858566284
+    "b": "kate_bush",
+    "score": 0.7989904187264073,
+    "score_raw": 0.7792584896087646
   },
   {
-    "a": "animal_collective",
-    "b": "brian_eno",
-    "score": 0.5960561030465251,
-    "score_raw": 0.6405383348464966
-  },
-  {
-    "a": "brian_eno",
-    "b": "burial",
-    "score": 0.5954189229958938,
-    "score_raw": 0.5702600479125977
-  },
-  {
-    "a": "earl_sweatshirt",
-    "b": "nujabes",
-    "score": 0.5899553861098248,
-    "score_raw": 0.5363671779632568
-  },
-  {
-    "a": "bjork",
-    "b": "earl_sweatshirt",
-    "score": 0.5888412491118441,
-    "score_raw": 0.6077920198440552
+    "a": "frank_ocean",
+    "b": "radiohead",
+    "score": 0.7988901138305664,
+    "score_raw": 0.7988901138305664
   },
   {
     "a": "arca",
-    "b": "burial",
-    "score": 0.5887266922944473,
-    "score_raw": 0.5635678172111511
+    "b": "danny_brown",
+    "score": 0.7987249986272132,
+    "score_raw": 0.8696720600128174
   },
   {
-    "a": "bill_evans",
+    "a": "kaija_saariaho",
+    "b": "sophie",
+    "score": 0.7985008782464539,
+    "score_raw": 0.7874458432197571
+  },
+  {
+    "a": "brian_eno",
+    "b": "tame_impala",
+    "score": 0.7982212037865947,
+    "score_raw": 0.8331083059310913
+  },
+  {
+    "a": "bladee",
     "b": "kaija_saariaho",
-    "score": 0.5865590549101845,
-    "score_raw": 0.5724635124206543
+    "score": 0.7981944507676636,
+    "score_raw": 0.7871394157409668
+  },
+  {
+    "a": "burial",
+    "b": "radiohead",
+    "score": 0.7981570265831578,
+    "score_raw": 0.7784250974655151
+  },
+  {
+    "a": "brian_eno",
+    "b": "sophie",
+    "score": 0.7980888814751933,
+    "score_raw": 0.8329759836196899
+  },
+  {
+    "a": "badbadnotgood",
+    "b": "sophie",
+    "score": 0.7970205442358567,
+    "score_raw": 0.8512170314788818
+  },
+  {
+    "a": "kate_bush",
+    "b": "nujabes",
+    "score": 0.7958548776191626,
+    "score_raw": 0.7538260221481323
+  },
+  {
+    "a": "arca",
+    "b": "radiohead",
+    "score": 0.7958291172981262,
+    "score_raw": 0.7958291172981262
+  },
+  {
+    "a": "arthur_verocai",
+    "b": "kaija_saariaho",
+    "score": 0.794576358796539,
+    "score_raw": 0.7647151350975037
+  },
+  {
+    "a": "arthur_verocai",
+    "b": "bill_evans",
+    "score": 0.7924468636526486,
+    "score_raw": 0.7625856399536133
+  },
+  {
+    "a": "burial",
+    "b": "fishmans",
+    "score": 0.7920156620087254,
+    "score_raw": 0.7722837328910828
+  },
+  {
+    "a": "arthur_verocai",
+    "b": "brian_eno",
+    "score": 0.7918421149267575,
+    "score_raw": 0.7619808912277222
+  },
+  {
+    "a": "badbadnotgood",
+    "b": "yung_lean",
+    "score": 0.7910845772673203,
+    "score_raw": 0.8452810645103455
+  },
+  {
+    "a": "bjork",
+    "b": "radiohead",
+    "score": 0.7910499572753906,
+    "score_raw": 0.7910499572753906
+  },
+  {
+    "a": "animal_collective",
+    "b": "joanna_newsom",
+    "score": 0.7904610985150099,
+    "score_raw": 0.8499335050582886
+  },
+  {
+    "a": "arthur_verocai",
+    "b": "kate_bush",
+    "score": 0.7902885794653317,
+    "score_raw": 0.7604273557662964
+  },
+  {
+    "a": "arthur_verocai",
+    "b": "bjork",
+    "score": 0.7899052023901364,
+    "score_raw": 0.7600439786911011
+  },
+  {
+    "a": "brian_eno",
+    "b": "nujabes",
+    "score": 0.789857398657218,
+    "score_raw": 0.7478285431861877
+  },
+  {
+    "a": "kaija_saariaho",
+    "b": "kate_bush",
+    "score": 0.7897439426499878,
+    "score_raw": 0.778688907623291
   },
   {
     "a": "astrid_sonne",
-    "b": "earl_sweatshirt",
-    "score": 0.5820696364555414,
-    "score_raw": 0.6215623021125793
-  },
-  {
-    "a": "brian_eno",
-    "b": "kaija_saariaho",
-    "score": 0.5817720866789833,
-    "score_raw": 0.5676765441894531
+    "b": "brian_eno",
+    "score": 0.7883075804536174,
+    "score_raw": 0.823194682598114
   },
   {
     "a": "bill_evans",
     "b": "bjork",
-    "score": 0.5795835201563179,
-    "score_raw": 0.5950976610183716
+    "score": 0.7882366188498008,
+    "score_raw": 0.8004042506217957
   },
   {
-    "a": "bill_evans",
-    "b": "sophie",
-    "score": 0.5786179845156013,
-    "score_raw": 0.594132125377655
+    "a": "bjork",
+    "b": "kaija_saariaho",
+    "score": 0.7881672805863892,
+    "score_raw": 0.7771122455596924
   },
   {
-    "a": "kaija_saariaho",
-    "b": "nujabes",
-    "score": 0.5783347453551251,
-    "score_raw": 0.5247465372085571
+    "a": "arthur_verocai",
+    "b": "frank_ocean",
+    "score": 0.7875427722944638,
+    "score_raw": 0.7576815485954285
   },
   {
-    "a": "arca",
-    "b": "danny_brown",
-    "score": 0.5739672652640685,
-    "score_raw": 0.6644271612167358
+    "a": "bjork",
+    "b": "fishmans",
+    "score": 0.78728555660864,
+    "score_raw": 0.7675536274909973
+  },
+  {
+    "a": "arthur_verocai",
+    "b": "burial",
+    "score": 0.7863288044943234,
+    "score_raw": 0.7564675807952881
   },
   {
     "a": "animal_collective",
-    "b": "arca",
-    "score": 0.5739284784398658,
-    "score_raw": 0.6497578024864197
-  },
-  {
-    "a": "animal_collective",
-    "b": "earl_sweatshirt",
-    "score": 0.5739131580505427,
-    "score_raw": 0.6134058237075806
-  },
-  {
-    "a": "bill_evans",
-    "b": "nujabes",
-    "score": 0.5733819570021588,
-    "score_raw": 0.5197937488555908
+    "b": "yung_lean",
+    "score": 0.7861392849316359,
+    "score_raw": 0.8456116914749146
   },
   {
     "a": "earl_sweatshirt",
-    "b": "fishmans",
-    "score": 0.5728659559243606,
-    "score_raw": 0.5477070808410645
+    "b": "sophie",
+    "score": 0.7853493406808497,
+    "score_raw": 0.8163231611251831
+  },
+  {
+    "a": "earl_sweatshirt",
+    "b": "nujabes",
+    "score": 0.7850126735252295,
+    "score_raw": 0.7429838180541992
+  },
+  {
+    "a": "animal_collective",
+    "b": "clairo",
+    "score": 0.7840938919415236,
+    "score_raw": 0.8435662984848022
   },
   {
     "a": "arca",
     "b": "arthur_verocai",
-    "score": 0.5702146798867482,
-    "score_raw": 0.5321406126022339
+    "score": 0.783882451058807,
+    "score_raw": 0.7540212273597717
   },
   {
     "a": "badbadnotgood",
-    "b": "bill_evans",
-    "score": 0.5688965265573799,
-    "score_raw": 0.5844106674194336
+    "b": "kate_bush",
+    "score": 0.783475858600763,
+    "score_raw": 0.7724208235740662
+  },
+  {
+    "a": "fishmans",
+    "b": "kate_bush",
+    "score": 0.7831105492653477,
+    "score_raw": 0.7633786201477051
+  },
+  {
+    "a": "bill_evans",
+    "b": "skrillex",
+    "score": 0.7826962654694873,
+    "score_raw": 0.7859746217727661
+  },
+  {
+    "a": "arca",
+    "b": "kaija_saariaho",
+    "score": 0.7820470756608521,
+    "score_raw": 0.7709920406341553
+  },
+  {
+    "a": "arthur_verocai",
+    "b": "radiohead",
+    "score": 0.781304132939758,
+    "score_raw": 0.7514429092407227
+  },
+  {
+    "a": "danny_brown",
+    "b": "kaija_saariaho",
+    "score": 0.7809488004762207,
+    "score_raw": 0.7698937654495239
+  },
+  {
+    "a": "earl_sweatshirt",
+    "b": "radiohead",
+    "score": 0.7797904014587402,
+    "score_raw": 0.7797904014587402
+  },
+  {
+    "a": "fishmans",
+    "b": "frank_ocean",
+    "score": 0.7794859312119115,
+    "score_raw": 0.7597540020942688
+  },
+  {
+    "a": "badbadnotgood",
+    "b": "fishmans",
+    "score": 0.7794170282425511,
+    "score_raw": 0.7596850991249084
+  },
+  {
+    "a": "fishmans",
+    "b": "skrillex",
+    "score": 0.77916788082739,
+    "score_raw": 0.7594359517097473
+  },
+  {
+    "a": "arthur_verocai",
+    "b": "nujabes",
+    "score": 0.7786335460227881,
+    "score_raw": 0.7366046905517578
+  },
+  {
+    "a": "bill_evans",
+    "b": "sophie",
+    "score": 0.7782579072447288,
+    "score_raw": 0.7904255390167236
+  },
+  {
+    "a": "kaija_saariaho",
+    "b": "yung_lean",
+    "score": 0.7782493657189881,
+    "score_raw": 0.7671943306922913
+  },
+  {
+    "a": "animal_collective",
+    "b": "danny_brown",
+    "score": 0.7765329235424757,
+    "score_raw": 0.8360053300857544
+  },
+  {
+    "a": "earl_sweatshirt",
+    "b": "fishmans",
+    "score": 0.7764517567696202,
+    "score_raw": 0.7567198276519775
+  },
+  {
+    "a": "fishmans",
+    "b": "nujabes",
+    "score": 0.7760924808067237,
+    "score_raw": 0.7340636253356934
+  },
+  {
+    "a": "badbadnotgood",
+    "b": "burial",
+    "score": 0.775949468428098,
+    "score_raw": 0.7562175393104553
+  },
+  {
+    "a": "brian_eno",
+    "b": "kaija_saariaho",
+    "score": 0.7742675966340576,
+    "score_raw": 0.7632125616073608
+  },
+  {
+    "a": "arthur_verocai",
+    "b": "badbadnotgood",
+    "score": 0.7742517113699338,
+    "score_raw": 0.7443904876708984
+  },
+  {
+    "a": "bjork",
+    "b": "boy_harsher",
+    "score": 0.7732956391072646,
+    "score_raw": 0.7881585955619812
+  },
+  {
+    "a": "bill_evans",
+    "b": "boy_harsher",
+    "score": 0.7728930123777854,
+    "score_raw": 0.7850606441497803
+  },
+  {
+    "a": "badbadnotgood",
+    "b": "clairo",
+    "score": 0.7710823909689499,
+    "score_raw": 0.8252788782119751
+  },
+  {
+    "a": "astrid_sonne",
+    "b": "earl_sweatshirt",
+    "score": 0.7709032013452174,
+    "score_raw": 0.8018770217895508
+  },
+  {
+    "a": "animal_collective",
+    "b": "kaija_saariaho",
+    "score": 0.7706739729959046,
+    "score_raw": 0.7596189379692078
+  },
+  {
+    "a": "bill_evans",
+    "b": "nujabes",
+    "score": 0.7694525829833899,
+    "score_raw": 0.7274237275123596
+  },
+  {
+    "a": "boy_harsher",
+    "b": "earl_sweatshirt",
+    "score": 0.7690756343409947,
+    "score_raw": 0.7936609387397766
+  },
+  {
+    "a": "badbadnotgood",
+    "b": "bjork",
+    "score": 0.7688308339810744,
+    "score_raw": 0.783693790435791
+  },
+  {
+    "a": "badbadnotgood",
+    "b": "danny_brown",
+    "score": 0.768641759579332,
+    "score_raw": 0.8228382468223572
+  },
+  {
+    "a": "animal_collective",
+    "b": "frank_ocean",
+    "score": 0.7676751017570496,
+    "score_raw": 0.7676751017570496
+  },
+  {
+    "a": "arthur_verocai",
+    "b": "fishmans",
+    "score": 0.7675395727171322,
+    "score_raw": 0.7376783490180969
+  },
+  {
+    "a": "arthur_verocai",
+    "b": "boy_harsher",
+    "score": 0.7668500065817258,
+    "score_raw": 0.7369887828826904
+  },
+  {
+    "a": "arca",
+    "b": "sophie",
+    "score": 0.7664501763708624,
+    "score_raw": 0.8295985460281372
+  },
+  {
+    "a": "frank_ocean",
+    "b": "kaija_saariaho",
+    "score": 0.7657429403382813,
+    "score_raw": 0.7546879053115845
+  },
+  {
+    "a": "kaija_saariaho",
+    "b": "nujabes",
+    "score": 0.7653738967460547,
+    "score_raw": 0.7233450412750244
+  },
+  {
+    "a": "animal_collective",
+    "b": "earl_sweatshirt",
+    "score": 0.7644095137155177,
+    "score_raw": 0.7953833341598511
+  },
+  {
+    "a": "badbadnotgood",
+    "b": "joanna_newsom",
+    "score": 0.7641779081274582,
+    "score_raw": 0.8183743953704834
+  },
+  {
+    "a": "kaija_saariaho",
+    "b": "radiohead",
+    "score": 0.7616990036088501,
+    "score_raw": 0.7506439685821533
+  },
+  {
+    "a": "boy_harsher",
+    "b": "brian_eno",
+    "score": 0.7593262814090184,
+    "score_raw": 0.7839115858078003
+  },
+  {
+    "a": "arthur_verocai",
+    "b": "earl_sweatshirt",
+    "score": 0.7591416955007931,
+    "score_raw": 0.7292804718017578
+  },
+  {
+    "a": "kaija_saariaho",
+    "b": "skrillex",
+    "score": 0.756782514484552,
+    "score_raw": 0.7457274794578552
+  },
+  {
+    "a": "fishmans",
+    "b": "kaija_saariaho",
+    "score": 0.7553807399811375,
+    "score_raw": 0.7356488108634949
+  },
+  {
+    "a": "badbadnotgood",
+    "b": "frank_ocean",
+    "score": 0.7543593645095825,
+    "score_raw": 0.7543593645095825
   },
   {
     "a": "animal_collective",
     "b": "bill_evans",
-    "score": 0.5671015922846138,
-    "score_raw": 0.5826157331466675
+    "score": 0.7540284403295981,
+    "score_raw": 0.766196072101593
   },
   {
     "a": "bill_evans",
-    "b": "burial",
-    "score": 0.5625327754968094,
-    "score_raw": 0.5373739004135132
+    "b": "kaija_saariaho",
+    "score": 0.7539495057183777,
+    "score_raw": 0.7428944706916809
   },
   {
-    "a": "arthur_verocai",
-    "b": "bill_evans",
-    "score": 0.5600196630257863,
-    "score_raw": 0.521945595741272
-  },
-  {
-    "a": "arca",
-    "b": "badbadnotgood",
-    "score": 0.5588654854640346,
-    "score_raw": 0.6279678344726562
-  },
-  {
-    "a": "badbadnotgood",
+    "a": "animal_collective",
     "b": "brian_eno",
-    "score": 0.542435168560136,
-    "score_raw": 0.5869174003601074
+    "score": 0.7471971840684245,
+    "score_raw": 0.7820842862129211
   },
   {
-    "a": "earl_sweatshirt",
-    "b": "sophie",
-    "score": 0.5412232886467035,
-    "score_raw": 0.5807159543037415
+    "a": "animal_collective",
+    "b": "arca",
+    "score": 0.7471236937870741,
+    "score_raw": 0.8065961003303528
   },
   {
     "a": "badbadnotgood",
-    "b": "earl_sweatshirt",
-    "score": 0.537427843681341,
-    "score_raw": 0.5769205093383789
-  },
-  {
-    "a": "arthur_verocai",
-    "b": "earl_sweatshirt",
-    "score": 0.5348125607270497,
-    "score_raw": 0.4967384934425354
+    "b": "bill_evans",
+    "score": 0.746366442057656,
+    "score_raw": 0.7585340738296509
   },
   {
     "a": "burial",
-    "b": "kate_bush",
-    "score": 0.5343387652390884,
-    "score_raw": 0.5091798901557922
+    "b": "kaija_saariaho",
+    "score": 0.744496991449796,
+    "score_raw": 0.7247650623321533
   },
   {
-    "a": "arca",
-    "b": "sophie",
-    "score": 0.5269474164720651,
-    "score_raw": 0.6074637174606323
+    "a": "boy_harsher",
+    "b": "kaija_saariaho",
+    "score": 0.7420403784829651,
+    "score_raw": 0.7309853434562683
+  },
+  {
+    "a": "badbadnotgood",
+    "b": "kaija_saariaho",
+    "score": 0.7394230789262329,
+    "score_raw": 0.7283680438995361
+  },
+  {
+    "a": "badbadnotgood",
+    "b": "earl_sweatshirt",
+    "score": 0.731666178945315,
+    "score_raw": 0.7626399993896484
   },
   {
     "a": "earl_sweatshirt",
     "b": "kaija_saariaho",
-    "score": 0.4672075486769691,
-    "score_raw": 0.45311200618743896
+    "score": 0.7249849266130005,
+    "score_raw": 0.7139298915863037
+  },
+  {
+    "a": "arca",
+    "b": "badbadnotgood",
+    "score": 0.7177410618712021,
+    "score_raw": 0.7719375491142273
+  },
+  {
+    "a": "badbadnotgood",
+    "b": "brian_eno",
+    "score": 0.7064599723641704,
+    "score_raw": 0.741347074508667
   }
 ]
