@@ -81,3 +81,19 @@ data/
 ## Current artists
 
 animal_collective, arthur_verocai, astrid_sonne, badbadnotgood, bill_evans, bladee, boy_harsher, clairo, fishmans, nujabes, radiohead, skrillex, tame_impala, yung_lean
+
+---
+
+## Historical snapshots
+
+Earlier variations of this direction are preserved as tags rather than branches. Check out with `git checkout <tag>` (lands in detached HEAD; use `git checkout -b <name> <tag>` to resume work).
+
+| Tag | What it is |
+|---|---|
+| `self-discourse` | Final state of this direction at pivot (2026-04-26); same tip as branch `discourse` |
+| `v1-manual-graph` | Manual artist-graph experiment with confidence-weighted edges |
+| `v2` | First 20-artist results, pre-trafilatura |
+| `v3` | Overcooked v3 plan; 4-artist run |
+| `v4` | Trafilatura scrape + Claude extract |
+| `mb-genres` | MusicBrainz genre layer experiment |
+| `clean` | Empty-scaffold snapshot (no data/scripts/docs) |
