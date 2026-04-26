@@ -29,16 +29,25 @@ USER_AGENT = "basilect-research/0.1 (matherscottc@gmail.com)"
 HEADERS = {"User-Agent": USER_AGENT}
 
 
-def fetch_bytes(url: str) -> bytes:
-    r = requests.get(url, headers=HEADERS, timeout=30)
-    r.raise_for_status()
-    return r.content
-
-
 def fetch_text(url: str) -> str:
     r = requests.get(url, headers=HEADERS, timeout=30)
     r.raise_for_status()
     return r.text
+
+
+def fetch_xml_gz(url: str) -> str:
+    """Fetch a .xml.gz URL and return decoded XML.
+
+    If the server sets Content-Encoding: gzip on the .gz file, requests will have
+    already decompressed it (the gz layer collides with the transport layer).
+    Fall back to manual gunzip only when the bytes still have the gzip magic.
+    """
+    r = requests.get(url, headers=HEADERS, timeout=30)
+    r.raise_for_status()
+    content = r.content
+    if content[:2] == b"\x1f\x8b":
+        return gzip.decompress(content).decode()
+    return content.decode()
 
 
 def walk_sitemap() -> list[dict]:
@@ -48,14 +57,14 @@ def walk_sitemap() -> list[dict]:
             return [json.loads(line) for line in f]
 
     print("fetching sitemap index", file=sys.stderr)
-    index_xml = gzip.decompress(fetch_bytes(SITEMAP_INDEX)).decode()
+    index_xml = fetch_xml_gz(SITEMAP_INDEX)
     sub_urls = SUB_SITEMAP_RE.findall(index_xml)
     print(f"  {len(sub_urls)} sub-sitemaps", file=sys.stderr)
 
     artists = []
     for sub_url in sub_urls:
         print(f"fetching {sub_url}", file=sys.stderr)
-        sub_xml = gzip.decompress(fetch_bytes(sub_url)).decode()
+        sub_xml = fetch_xml_gz(sub_url)
         for m in ARTIST_URL_RE.finditer(sub_xml):
             artists.append({"id": int(m.group(2)), "slug": m.group(3), "url": m.group(1)})
 
