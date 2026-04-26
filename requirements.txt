@@ -1,7 +1,0 @@
-sentence-transformers
-numpy
-scipy
-scikit-learn
-requests
-python-dotenv
-trafilatura

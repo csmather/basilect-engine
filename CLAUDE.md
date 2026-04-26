@@ -1,96 +1,79 @@
-# Basilect Engine
-A music artist similarity engine that surfaces non-obvious connections between artists based on how they talk about making music. Two artists are "basilect-connected" if their creative philosophy is similar but their genre/scene is not.
-The signal is artist self-discourse: verbatim quotes from interviews, embedded and compared. No critic voice, no Claude-authored summaries.
+# Basilect Engine — NTS curator-graph
+
+A music artist similarity engine. Goal: surface non-obvious connections between musicians by mining intent-dense curatorial artifacts, starting with NTS Radio tracklists.
+
+Two artists are basilect-connected if they recur together in the choices of curators with different scenes, biases, or eras. Curated co-occurrence (a single mind chose to put A and B in the same hour of music) is structurally different from algorithmic co-occurrence (a million low-effort playlists averaged together) and orthogonal to genre tags / collaboration graphs.
 
 ---
 
-## Pipeline
+## Pipeline (v1 — co-occurrence only)
 
-1. **Search** — Claude finds interview URLs per artist (see below)
-2. **Scrape** — `scripts/scrape.py` fetches article text via trafilatura
-3. **Extract** — Claude pulls verbatim artist quotes from scraped text (see below)
-4. **Embed** — `scripts/embed.py` embeds quotes and aggregates per artist
-5. **Compute** — `scripts/compute.py` builds raw + count-adjusted similarity matrices
-6. **Discover** — `scripts/discover.py` surfaces ranked artist pairs (ranked on adjusted score)
+1. **Crawl** — enumerate NTS shows → episodes → tracklists via `/api/v2`
+2. **Canonicalize** — resolve artists via Discogs URLs in NTS artist payloads
+3. **Compute** — co-occurrence matrix, weighted by per-episode intent-density
+4. **Discover** — rank artist pairs
 
-Steps 1–3 run **per artist**. Steps 4–6 run **globally** across all artists.
-
-**Prototype rule: do not delegate steps 1–3 to subagents.** Run them directly in the main conversation — one artist at a time. Subagents have been unreliable (WebFetching live URLs instead of using stored text, writing invalid JSON, silently correcting verbatim quotes).
+V1 is plain co-occurrence. No thesis-fit, no LLM scoring, no aesthetic-axis layer — those are far-off.
 
 ---
 
-## Artist node schema
+## NTS API quick reference
 
-`data/artists/{artist_id}/sources.json`
-```json
-[{ "url": "...", "publication": "The Wire", "date": "2019", "title": "...", "text": "..." }]
-```
+Base: `https://www.nts.live/api/v2`. HAL-style, no auth, robots permits all (`User-Agent: * Allow: /`). Crawl politely anyway (≤1 req/s default).
 
-`data/artists/{artist_id}/quotes.json`
-```json
-{
-  "quotes": [{ "text": "...", "publication": "...", "url": "...", "date": "..." }],
-  "corpus_meta": { "quote_count": 12, "source_count": 4, "date_range": ["2014", "2021"], "corpus_valid": true }
-}
-```
-
-**corpus_valid thresholds:** ≥5 quotes, ≥3 distinct sources, ≥2 distinct years
-
-`corpus_valid` is a data-quality flag, not a usability flag. An artist failing it isn't excluded from the pipeline — it just means the source metadata is thin (often missing dates that weren't in the scraped articles).
-
----
-
-## Adding a new artist
-
-1. `/search-artist {artist}` — find interview URLs
-2. `python scripts/scrape.py {artist_id}` — fetch article text
-3. `/extract-artist {artist_id}` — pull quotes from scraped text
-4. Check `corpus_valid`
-5. `/run-pipeline` when ready — runs embed → compute → discover globally
-
----
-
-## Searching for interview URLs
-
-command: `/search-artist {artist}`
-
-Full instructions: `.claude/skills/search-artist/SKILL.md`
-
-`artist_id`: lowercase, spaces to underscores, strip punctuation; e.g. "Artist Name!"->"artist_name"
-
----
-
-## Extracting quotes from scraped text
-
-command: `/extract-artist {artist_id}`
-
-Full instructions: `.claude/skills/extract-artist/SKILL.md`
-
----
-
-## Scripts
-
-| Script | Purpose |
+| Endpoint | What it returns |
 |---|---|
-| `scripts/scrape.py` | Fetch article text via trafilatura |
-| `scripts/extract.py` | LEGACY: sentence-transformer probe (fallback only; precision issues) |
-| `scripts/embed.py` | Embed quotes, aggregate per artist via median |
-| `scripts/compute.py` | Raw cosine + count-adjusted similarity matrix (sparsity-artifact correction, fit in `data/similarity_fit.json`) |
-| `scripts/discover.py` | Surface ranked artist pairs — ranked on adjusted, raw kept as `score_raw` |
-| `scripts/diagnose.py` | D-phase audit (sparsity / stability / spread) → `data/diagnostics.html` |
+| `/shows` | All shows, paginated (count: 1709, default limit 12) |
+| `/shows/{alias}` | Show metadata (name, description, host, genres) |
+| `/shows/{alias}/episodes` | Episodes per show, paginated |
+| `/shows/{alias}/episodes/{ep_alias}` | Episode metadata (description, NTS-curated genres, location, mixcloud link, moods, intensity) |
+| `/shows/{alias}/episodes/{ep_alias}/tracklist` | Tracklist as separate sub-resource (`artist`, `title`, `uid`, `offset`, `duration`) |
+| `/genres` | NTS curated genre taxonomy with structured IDs |
+| `/mixtapes` | Themed music-only streams |
+| `/collections` | Show collections |
+| `/live` | Current broadcast |
+
+**`/search` is broken** as of 2026-04-26 — returns 0 results for every query, param name, and Accept header. POST returns 403. Don't waste time on it.
+
+**Artists sitemap**: `/artists_sitemap.xml.gz` is a sitemap-of-sitemaps pointing at 4 sub-files (~50k URLs each, ~200k artist pages). Each artist URL is `/artists/{int_id}-{slug}` — the integer ID is required. Each artist page server-renders a React state into `<script id="react-state">window._REACT_STATE_ = {...}</script>` containing:
+
+- `id`, `name`, `slug`, `biography`
+- `tracks` — every track of theirs played on NTS, each with `title`, `artistNames`, `releaseLabels`, `releaseYear`, **`discogsUrl`**
+- `totalTracks`
+- `residentShowLinks`, `specialShowLinks`, `episodes`, **`episodesPlayedOn`** ← the reverse-lookup search would have given us, computed and cached server-side
 
 ---
 
-## Known limitations
-- **embed.py is global-only.** Re-embeds all artists every run. Fine for current scale (<50 artists).
-- **extract.py is legacy.** Sentence-transformer probe has precision issues (catches journalist voice, wrong speakers). Kept as fallback, not primary path.
-- **Un-crawlable domains:** See `data/blocked_domains.md`.
+## Canonicalization
+
+NTS payloads include Discogs URLs in track entries. **Use Discogs IDs as the canonical artist key.** No need for MusicBrainz resolution — NTS has done the work, and Discogs IDs are arguably the cleaner identifier for our purposes anyway.
 
 ---
 
-## Deferred
-- Sonic validation via MAEST (post-hoc, later phase)
-- Specific influence citation extraction from same corpus
-- Manual tag/genre proximity layer (removed for now, may return)
-- Visualization
-- Scaling beyond prototype
+## Carry-forward priors (binding)
+
+These commitments survive from the prior direction (`discourse` branch / `self-discourse` tag) and still apply:
+
+- **No collaborative filtering.** Goal is to surface what CF misses, not compete with Spotify's signal.
+- **No genre supervision in scoring or ranking.** GATSY 2024 demonstrated genre signals hurt artist similarity. NTS-curated genre tags are useful for diagnostic spot-checks ("is this co-occurrence pair genre-far?"), never for filtering or weighting.
+- **No Claude-authored summaries / curated tag vocabulary.** Hand-labeling dressed up as LLM output isn't the point.
+- **Intent-density, not algorithmic-mass.** A single NTS show curated by a real person with a written thesis is the right substrate; Spotify's million-playlist average is not. Same data type, very different signal density per artifact.
+- **No curation layer on outputs.** Surface ranked pairs; don't editorialize the connections.
+
+---
+
+## Far-off (not chasing soon)
+
+- **Aesthetic-axis projection** (5–8 poles musicians argue about; LLM scores artists per axis with evidence). Eventually replaces plain co-occurrence ranking; would be fed by multiple evidence streams.
+- **Multi-evidence streams into the axis layer**: NTS curator-graph + artist self-discourse (the prior direction, on the `discourse` branch) + lyrics + LLM-listening to audio.
+- **Other curator substrates** if NTS works: Discogs compilations, Bandcamp Daily mixes, RA "In Residence", artist self-curation (year-end lists, guest mixes).
+- **Sampling lineage** (WhoSampled-derived; Spotify acquired Nov 2025, access trajectory uncertain).
+- **Listening-trajectory geometry** from Last.fm scrobble sequences.
+
+---
+
+## Prior direction (deprecated)
+
+The prior architecture mined artist self-discourse from interview corpora — extract verbatim quotes per artist, embed, median-pool, cosine. Frozen at tag `self-discourse` (branch `discourse`). Worked on n=25 with manually validated quote corpora; pivoted to curator-graph on 2026-04-26 because (a) self-discourse signal is partial and survivor-biased toward talkative anglophone artists, (b) embeddings encoded register strongly enough at the per-quote level to drive false positives that tracked scene rather than aesthetic. The full investigation lives in the `discourse` branch's `docs/NOTES.md`.
+
+The music-similarity research landscape that frames both directions: `docs/research/`.

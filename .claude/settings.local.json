@@ -3,18 +3,5 @@
     "allow": [
       "Bash(python3:*)"
     ]
-  },
-  "hooks": {
-    "PreToolUse": [
-      {
-        "matcher": "Write",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "python3 .claude/hooks/validate-json.py"
-          }
-        ]
-      }
-    ]
   }
 }
