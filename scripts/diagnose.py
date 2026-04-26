@@ -20,11 +20,34 @@ from sklearn.metrics.pairwise import cosine_similarity
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 ARTISTS_DIR = DATA_DIR / "artists"
 OUT_PATH = DATA_DIR / "diagnostics.html"
-MODEL_NAME = "all-MiniLM-L6-v2"
+BASELINE_PATH = DATA_DIR / "diagnostics_baseline.json"
+MODEL_PATH = str(Path(__file__).resolve().parent.parent / "models" / "Qwen3-Embedding-4B")
+MODEL_LABEL = "Qwen3-Embedding-4B"
+BATCH_SIZE = 8
 N_BOOTSTRAP = 20
 DROP_FRAC = 0.20
 TOP_K = 10
 RNG_SEED = 1
+
+
+def load_model():
+    """Load Qwen3-Embedding-4B in bf16. Try flash-attn 2; fall back to sdpa."""
+    base_kwargs = {"torch_dtype": "bfloat16"}
+    try:
+        model = SentenceTransformer(
+            MODEL_PATH,
+            model_kwargs={**base_kwargs, "attn_implementation": "flash_attention_2"},
+            tokenizer_kwargs={"padding_side": "left"},
+        )
+        print("  attn: flash_attention_2")
+    except (ImportError, ValueError, RuntimeError) as e:
+        print(f"  flash-attn unavailable ({type(e).__name__}); using default attention")
+        model = SentenceTransformer(
+            MODEL_PATH,
+            model_kwargs=base_kwargs,
+            tokenizer_kwargs={"padding_side": "left"},
+        )
+    return model
 
 
 def load_quotes():
@@ -66,8 +89,8 @@ def main():
     total = int(counts.sum())
     print(f"Loaded {n} artists, {total} quotes")
 
-    print(f"Loading {MODEL_NAME}...")
-    model = SentenceTransformer(MODEL_NAME)
+    print(f"Loading {MODEL_PATH}...")
+    model = load_model()
 
     flat = []
     bounds = []
@@ -77,8 +100,14 @@ def main():
         bounds.append((off, off + len(qs)))
         off += len(qs)
 
-    print("Encoding all quotes once...")
-    quote_embs = model.encode(flat, show_progress_bar=True, convert_to_numpy=True)
+    print(f"Encoding all quotes once (batch_size={BATCH_SIZE})...")
+    quote_embs = model.encode(
+        flat,
+        batch_size=BATCH_SIZE,
+        show_progress_bar=True,
+        convert_to_numpy=True,
+        normalize_embeddings=False,
+    )
     per_artist = [quote_embs[a:b] for (a, b) in bounds]
 
     # Canonical embeddings + similarity
@@ -196,11 +225,21 @@ def main():
     payload = {
         "n_artists": n,
         "n_quotes": total,
-        "model": MODEL_NAME,
+        "model": MODEL_LABEL,
         "d1": d1,
         "d2": d2,
         "d3": d3,
     }
+
+    if BASELINE_PATH.exists():
+        baseline = json.loads(BASELINE_PATH.read_text(encoding="utf-8"))
+        payload["baseline"] = {
+            "model": baseline.get("encoder_label", baseline.get("model", "baseline")),
+            "n_artists": baseline.get("n_artists"),
+            "n_quotes": baseline.get("n_quotes"),
+            "d3": baseline["d3"],
+        }
+        print(f"  baseline loaded for comparison: {payload['baseline']['model']}")
 
     html = render_html(payload)
     OUT_PATH.write_text(html, encoding="utf-8")
@@ -251,7 +290,7 @@ def render_html(p):
 </head>
 <body>
 <h1>basilect — D-phase diagnostics</h1>
-<div class="sub">n={p['n_artists']} artists, {p['n_quotes']} quotes · encoder: <code>{p['model']}</code></div>
+<div class="sub">n={p['n_artists']} artists, {p['n_quotes']} quotes · encoder: <code>{p['model']}</code>{f" vs baseline <code>{p['baseline']['model']}</code>" if p.get('baseline') else ''}</div>
 
 <div class="grid">
 
@@ -292,11 +331,18 @@ function fmt(x, d=3) {{ return x.toFixed(d); }}
 function pct(x) {{ return (100*x).toFixed(1) + '%'; }}
 
 // ---- D3: histograms of pair scores (raw + count-adjusted) ----
+// If a baseline payload is present, overlay its histograms (translucent grey)
+// for visual spread comparison and add a Δ-vs-baseline stats line.
 (function() {{
-  const raw = DATA.d3.raw, adj = DATA.d3.adjusted;
-  // Shared x-axis range so both histograms are visually comparable.
-  const lo = Math.min(raw.min, adj.min);
-  const hi = Math.max(raw.max, adj.max);
+  const cur = {{ raw: DATA.d3.raw, adj: DATA.d3.adjusted }};
+  const base = DATA.baseline
+    ? {{ raw: DATA.baseline.d3.raw, adj: DATA.baseline.d3.adjusted, label: DATA.baseline.model }}
+    : null;
+  const curLabel = DATA.model;
+
+  const allDists = [cur.raw, cur.adj].concat(base ? [base.raw, base.adj] : []);
+  const lo = Math.min(...allDists.map(d => d.min));
+  const hi = Math.max(...allDists.map(d => d.max));
   const pad = (hi - lo) * 0.02 || 0.01;
   const axisMin = lo - pad, axisMax = hi + pad;
   const bins = 30;
@@ -314,16 +360,29 @@ function pct(x) {{ return (100*x).toFixed(1) + '%'; }}
     return counts;
   }}
 
-  function renderHist(canvasId, scores, color) {{
+  function renderHist(canvasId, curD, curColor, baseD) {{
+    const datasets = [{{
+      label: curLabel + ' (current)',
+      data: histogram(curD.scores),
+      backgroundColor: curColor,
+      order: 1,
+    }}];
+    if (baseD) {{
+      datasets.push({{
+        label: base.label,
+        data: histogram(baseD.scores),
+        backgroundColor: 'rgba(160,165,175,0.45)',
+        order: 2,
+      }});
+    }}
     new Chart(document.getElementById(canvasId), {{
       type: 'bar',
-      data: {{ labels, datasets: [{{ label: 'pair count',
-                data: histogram(scores), backgroundColor: color }}] }},
+      data: {{ labels, datasets }},
       options: {{
-        plugins: {{ legend: {{ display: false }} }},
+        plugins: {{ legend: {{ labels: {{ color: '#e6e6e6' }} }} }},
         scales: {{
-          x: {{ title: {{ display: true, text: 'cosine similarity',
-                         color: '#8a8f98' }}, ticks: {{ color: '#8a8f98' }}, grid: {{ color: '#262a33' }} }},
+          x: {{ title: {{ display: true, text: 'cosine similarity', color: '#8a8f98' }},
+                ticks: {{ color: '#8a8f98' }}, grid: {{ color: '#262a33' }} }},
           y: {{ title: {{ display: true, text: 'pairs', color: '#8a8f98' }},
                 ticks: {{ color: '#8a8f98' }}, grid: {{ color: '#262a33' }} }}
         }}
@@ -331,39 +390,74 @@ function pct(x) {{ return (100*x).toFixed(1) + '%'; }}
     }});
   }}
 
-  function statsLine(d) {{
-    return `<span>mean <b>${{fmt(d.mean)}}</b></span>` +
+  function statsRow(d, label) {{
+    return `<div style="display:flex;flex-wrap:wrap;gap:16px 28px">` +
+           `<span style="min-width:180px;color:#e6e6e6">${{label}}</span>` +
+           `<span>mean <b>${{fmt(d.mean)}}</b></span>` +
            `<span>std <b>${{fmt(d.std)}}</b></span>` +
            `<span>range <b>[${{fmt(d.min)}}, ${{fmt(d.max)}}]</b></span>` +
            `<span>p5–p95 <b>[${{fmt(d.p05)}}, ${{fmt(d.p95)}}]</b></span>` +
-           `<span>IQR <b>${{fmt(d.iqr)}}</b></span>`;
+           `<span>IQR <b>${{fmt(d.iqr)}}</b></span>` +
+           `</div>`;
   }}
 
-  renderHist('d3', raw.scores, '#6ea8fe');
-  renderHist('d3adj', adj.scores, '#b38cff');
+  function deltaRow(curD, baseD) {{
+    const dStd = curD.std - baseD.std;
+    const dIqr = curD.iqr - baseD.iqr;
+    const dRange = (curD.max - curD.min) - (baseD.max - baseD.min);
+    const dP5P95 = (curD.p95 - curD.p05) - (baseD.p95 - baseD.p05);
+    const sign = (x) => x >= 0 ? '+' : '';
+    const color = (x) => x > 0 ? '#7fd6a0' : (x < 0 ? '#e56b6b' : '#8a8f98');
+    return `<div style="display:flex;flex-wrap:wrap;gap:16px 28px">` +
+           `<span style="min-width:180px;color:#7fd6a0">Δ vs baseline (current − baseline)</span>` +
+           `<span>std <b style="color:${{color(dStd)}}">${{sign(dStd)}}${{fmt(dStd)}}</b></span>` +
+           `<span>IQR <b style="color:${{color(dIqr)}}">${{sign(dIqr)}}${{fmt(dIqr)}}</b></span>` +
+           `<span>range <b style="color:${{color(dRange)}}">${{sign(dRange)}}${{fmt(dRange)}}</b></span>` +
+           `<span>p5–p95 width <b style="color:${{color(dP5P95)}}">${{sign(dP5P95)}}${{fmt(dP5P95)}}</b></span>` +
+           `</div>`;
+  }}
 
-  document.getElementById('d3-stats').innerHTML = statsLine(raw);
-  document.getElementById('d3adj-stats').innerHTML = statsLine(adj);
+  function buildStats(elId, curD, baseD) {{
+    let html = statsRow(curD, curLabel + ' (current)');
+    if (baseD) {{
+      html += statsRow(baseD, base.label);
+      html += deltaRow(curD, baseD);
+    }}
+    document.getElementById(elId).innerHTML = html;
+  }}
 
-  const oldBand = (raw.min >= 0.70 && raw.max <= 0.85);
-  const narrow = (raw.p95 - raw.p05) < 0.15;
+  renderHist('d3', cur.raw, '#6ea8fe', base ? base.raw : null);
+  renderHist('d3adj', cur.adj, '#b38cff', base ? base.adj : null);
+  buildStats('d3-stats', cur.raw, base ? base.raw : null);
+  buildStats('d3adj-stats', cur.adj, base ? base.adj : null);
+
+  function spreadVerdict(curD, baseD) {{
+    if (baseD) {{
+      const dStd = curD.std - baseD.std;
+      const dP = (curD.p95 - curD.p05) - (baseD.p95 - baseD.p05);
+      if (dStd > 0.005 || dP > 0.005)
+        return `<b>wider spread than baseline</b> — encoder swap loosened the compression (Δstd=${{fmt(dStd)}}, Δp5–p95 width=${{fmt(dP)}}).`;
+      if (dStd < -0.005 || dP < -0.005)
+        return `<b>tighter spread than baseline</b> — encoder swap compressed scores further (Δstd=${{fmt(dStd)}}, Δp5–p95 width=${{fmt(dP)}}).`;
+      return `<b>spread effectively unchanged from baseline.</b>`;
+    }}
+    const narrow = (curD.p95 - curD.p05) < 0.15;
+    return narrow ? `p5–p95 spread &lt; 0.15 — compressed.` : `p5–p95 spread ≥ 0.15.`;
+  }}
+
   document.getElementById('d3-verdict').innerHTML =
-    `<b>Verdict:</b> ${{oldBand ? 'old 0.70–0.85 compression still holds.' :
-      'no longer in the old 0.70–0.85 band.'}} ` +
-    `${{narrow ? 'p5–p95 spread &lt; 0.15 — still compressed; MiniLM encoder is a likely bottleneck.'
-               : 'p5–p95 spread ≥ 0.15 — scores are more spread than before.'}}`;
+    `<b>Verdict (raw):</b> ` + spreadVerdict(cur.raw, base ? base.raw : null);
 
   const fit = DATA.d3.fit;
-  const stdDelta = adj.std - raw.std;
-  const iqrDelta = adj.iqr - raw.iqr;
+  const stdDelta = cur.adj.std - cur.raw.std;
+  const iqrDelta = cur.adj.iqr - cur.raw.iqr;
   const baselineCount = Math.exp(fit.median_log_min_count).toFixed(0);
-  const deltaDirection = stdDelta > 0 ? 'wider' : 'tighter';
   document.getElementById('d3adj-verdict').innerHTML =
     `<b>Fit:</b> score ≈ ${{fmt(fit.slope)}}·log(min_count) + ${{fmt(fit.intercept)}} — ` +
     `baselined at median depth (≈${{baselineCount}} quotes). ` +
-    `<b>After adjustment:</b> std ${{stdDelta >= 0 ? '+' : ''}}${{fmt(stdDelta)}}, ` +
-    `IQR ${{iqrDelta >= 0 ? '+' : ''}}${{fmt(iqrDelta)}} — distribution is ${{deltaDirection}} than raw. ` +
-    `Adjusted scores answer: "what would this pair score if both artists had ≈${{baselineCount}} quotes?"`;
+    `<b>Raw → adjusted (current):</b> std ${{stdDelta >= 0 ? '+' : ''}}${{fmt(stdDelta)}}, ` +
+    `IQR ${{iqrDelta >= 0 ? '+' : ''}}${{fmt(iqrDelta)}}. ` +
+    `<b>Verdict (adjusted):</b> ` + spreadVerdict(cur.adj, base ? base.adj : null);
 }})();
 
 // ---- D1: rank vs quote count ----
