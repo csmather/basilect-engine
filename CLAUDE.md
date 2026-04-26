@@ -94,3 +94,17 @@ Full instructions: `.claude/skills/extract-artist/SKILL.md`
 - Manual tag/genre proximity layer (removed for now, may return)
 - Visualization
 - Scaling beyond prototype
+
+---
+
+## Working notes (carried from prior sessions)
+
+**Dead / pre-internet artists.** Flag deceased or pre-web artists at the start of `/search-artist` before running. Their interviews are audio, scanned print, or paywalled — not trafilatura-scrapeable. Burned a full search on Coltrane learning this.
+
+**Extraction runs in the main conversation.** Use the bash dump pattern in CLAUDE.md, no subagents. Same model as claude.ai; bad batches were subagent failures (live WebFetch, mangled JSON, silently rewritten quotes), not model quality.
+
+**The Motegi Clause.** A quote counts as self-discourse iff the speaker is inside the creative collective. Keep: target artist first-person, bandmate first-person speaking as the band (even about other members). Drop: external-collaborator third-person prose, even when relaying the artist's words (precedent: Shing02 on Nujabes was excluded). One question — is the speaker inside the collective? Yes keep, no drop.
+
+**No quote-count minimum.** Underground artists with thin corpora are the core use case. Sparsity bias is corrected in `compute.py` via `log(min(count_i, count_j))` residualization → `similarity_adjusted.npy`; never via exclusion. If score quality issues arise, propose encoder/aggregation/CI fixes — don't re-raise exclusion. `corpus_valid` is metadata-completeness, not a gate.
+
+**Fork at `~/projects/baseng-fork`** (`tangyraccoon/basilect-engine`, branch `v5`) has 672 scraped artists. Raw `sources.json` is clean trafilatura — reusable to skip the slow scrape step. Fork `quotes.json` is ~25% polluted (Haiku at scale, no review) — re-extract with main pipeline if cherry-picking, never copy. Never copy `critic_quotes.json`, `influences.json`, `tags.json`, fork `corpus_meta`. Fork `quotes.json` schema lacks `url`.
