@@ -1,7 +1,8 @@
-"""Render data/top_pairs.jsonl as an interactive force-directed graph.
+"""Render a pairs jsonl as an interactive force-directed graph.
 
-Usage: python visualize.py
-Output: data/graph.html (open in a browser).
+Usage:
+  python visualize.py                                       # data/top_pairs.jsonl → data/graph.html
+  python visualize.py --in data/top_pairs_wide.jsonl --out data/graph_wide.html
 
 Layout pipeline:
   1. spring_layout (Fruchterman-Reingold) for initial topology-respecting positions
@@ -9,6 +10,7 @@ Layout pipeline:
   3. physics disabled in vis.js so panning/zooming is cheap
 """
 
+import argparse
 import json
 import math
 from pathlib import Path
@@ -18,8 +20,12 @@ import numpy as np
 from pyvis.network import Network
 from scipy.spatial import cKDTree
 
-DATA = Path("data/top_pairs.jsonl")
-OUT = Path("data/graph.html")
+ap = argparse.ArgumentParser()
+ap.add_argument("--in", dest="input", default="data/top_pairs.jsonl")
+ap.add_argument("--out", default="data/graph.html")
+args = ap.parse_args()
+DATA = Path(args.input)
+OUT = Path(args.out)
 
 pairs = [json.loads(line) for line in DATA.open()]
 
@@ -58,12 +64,20 @@ def remove_overlaps(coords, radii, padding=3.0, max_iter=2000, step=0.5):
         if n_over == 0:
             print(f"  no overlaps after {it} iterations")
             return coords
-        i, j, diff, dist, min_dist = i[mask], j[mask], diff[mask], dist[mask], min_dist[mask]
+        i, j, diff, dist, min_dist = (
+            i[mask],
+            j[mask],
+            diff[mask],
+            dist[mask],
+            min_dist[mask],
+        )
         unit = diff / dist[:, None]
         push = unit * ((min_dist - dist) * step * 0.5)[:, None]
         np.add.at(coords, j, push)
         np.add.at(coords, i, -push)
-    print(f"  overlap removal stopped at max_iter={max_iter} ({n_over} pairs still overlap)")
+    print(
+        f"  overlap removal stopped at max_iter={max_iter} ({n_over} pairs still overlap)"
+    )
     return coords
 
 
@@ -85,10 +99,11 @@ def _fmt(c):
 
 
 HEATMAP_STOPS = [
-    (0.00, (35, 60, 110, 0.10)),
-    (0.30, (70, 130, 170, 0.22)),
-    (0.60, (255, 240, 160, 0.55)),
-    (1.00, (155, 25, 30, 0.95)),
+    (0.00, (200, 200, 0, 0.15)),
+    (0.25, (200, 150, 0, 0.35)),
+    (0.50, (200, 100, 0, 0.55)),
+    (0.75, (200, 50, 0, 0.75)),
+    (1.00, (200, 0, 0, 0.95)),
 ]
 
 
