@@ -3,8 +3,10 @@
 Usage: python visualize.py
 Output: data/graph.html (open in a browser).
 
-Layout is computed once via networkx.spring_layout, then physics is disabled
-in vis.js so panning/zooming is cheap.
+Layout pipeline:
+  1. spring_layout (Fruchterman-Reingold) for initial topology-respecting positions
+  2. iterative overlap removal so no two node disks intersect (planets + moons feel)
+  3. physics disabled in vis.js so panning/zooming is cheap
 """
 
 import json
@@ -12,7 +14,9 @@ import math
 from pathlib import Path
 
 import networkx as nx
+import numpy as np
 from pyvis.network import Network
+from scipy.spatial import cKDTree
 
 DATA = Path("data/top_pairs.jsonl")
 OUT = Path("data/graph.html")
@@ -21,22 +25,55 @@ pairs = [json.loads(line) for line in DATA.open()]
 
 G = nx.Graph()
 for p in pairs:
-    G.add_edge(
-        p["a"],
-        p["b"],
-        shows=p["shows"],
-        eps=p["eps"],
-    )
+    G.add_edge(p["a"], p["b"], shows=p["shows"], eps=p["eps"])
 
-print(f"laying out {G.number_of_nodes()} nodes...")
-pos = nx.spring_layout(G, weight=None, iterations=100, seed=7, k=0.12)
-SCALE = 4500
-for node, (x, y) in pos.items():
-    G.nodes[node]["x"] = x * SCALE
-    G.nodes[node]["y"] = y * SCALE
-    deg = G.degree(node)
-    G.nodes[node]["size"] = 6 + deg * 1.4
-    G.nodes[node]["title"] = f"{node}\ndegree: {deg}"
+nodes = list(G.nodes)
+sizes = np.array([6.0 + G.degree(n) * 1.4 for n in nodes])
+
+print(f"laying out {len(nodes)} nodes...")
+pos = nx.spring_layout(G, weight=None, iterations=120, seed=7, k=0.25)
+SCALE = 12000
+coords = np.array([[pos[n][0] * SCALE, pos[n][1] * SCALE] for n in nodes])
+
+
+def remove_overlaps(coords, radii, padding=3.0, max_iter=2000, step=0.5):
+    """Iteratively push apart overlapping disks. Uses cKDTree.query_pairs to
+    only consider candidate pairs each iteration (cheap when overlaps are sparse).
+    """
+    coords = coords.copy()
+    search_radius = 2 * radii.max() + padding
+    n_over = 0
+    for it in range(max_iter):
+        tree = cKDTree(coords)
+        pairs = tree.query_pairs(search_radius, output_type="ndarray")
+        if len(pairs) == 0:
+            print(f"  no overlaps after {it} iterations")
+            return coords
+        i, j = pairs[:, 0], pairs[:, 1]
+        diff = coords[j] - coords[i]
+        dist = np.linalg.norm(diff, axis=-1)
+        min_dist = radii[i] + radii[j] + padding
+        mask = (dist < min_dist) & (dist > 0)
+        n_over = int(mask.sum())
+        if n_over == 0:
+            print(f"  no overlaps after {it} iterations")
+            return coords
+        i, j, diff, dist, min_dist = i[mask], j[mask], diff[mask], dist[mask], min_dist[mask]
+        unit = diff / dist[:, None]
+        push = unit * ((min_dist - dist) * step * 0.5)[:, None]
+        np.add.at(coords, j, push)
+        np.add.at(coords, i, -push)
+    print(f"  overlap removal stopped at max_iter={max_iter} ({n_over} pairs still overlap)")
+    return coords
+
+
+coords = remove_overlaps(coords, sizes, padding=3.0, max_iter=2000, step=0.5)
+
+for i, n in enumerate(nodes):
+    G.nodes[n]["x"] = float(coords[i][0])
+    G.nodes[n]["y"] = float(coords[i][1])
+    G.nodes[n]["size"] = float(sizes[i])
+    G.nodes[n]["title"] = f"{n}\ndegree: {G.degree(n)}"
 
 
 def _mix(c1, c2, f):
@@ -47,12 +84,11 @@ def _fmt(c):
     return f"rgba({int(c[0])},{int(c[1])},{int(c[2])},{c[3]:.2f})"
 
 
-# cold (rare pairs) → hot (high-curator-recurrence pairs)
 HEATMAP_STOPS = [
-    (0.00, (40, 70, 130, 0.12)),
-    (0.35, (90, 140, 180, 0.22)),
-    (0.65, (220, 160, 70, 0.50)),
-    (1.00, (255, 80, 70, 0.90)),
+    (0.00, (35, 60, 110, 0.10)),
+    (0.30, (70, 130, 170, 0.22)),
+    (0.60, (255, 240, 160, 0.55)),
+    (1.00, (155, 25, 30, 0.95)),
 ]
 
 
@@ -75,10 +111,7 @@ for u, v, d in G.edges(data=True):
     t = (math.log(max(1, d["shows"])) - log_min) / log_span
     d["title"] = f"{u} ↔ {v}\nshows: {d['shows']}  eps: {d['eps']}"
     d["width"] = 0.025
-    d["color"] = {
-        "color": heatmap(t),
-        "highlight": "rgba(255,255,255,0.7)",
-    }
+    d["color"] = {"color": heatmap(t), "highlight": "rgba(255,255,255,0.7)"}
 
 net = Network(
     height="100vh",
