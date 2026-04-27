@@ -8,12 +8,12 @@ Two artists are basilect-connected if they recur together in the choices of cura
 
 ## Pipeline (v1 — co-occurrence only)
 
-1. **Crawl** — enumerate NTS shows → episodes → tracklists via `/api/v2`
-2. **Canonicalize** — resolve artists via Discogs URLs in NTS artist payloads
-3. **Compute** — co-occurrence matrix, weighted by per-episode intent-density
-4. **Discover** — rank artist pairs
+1. **Crawl** (`crawl.py`) — enumerate shows + episodes from master sitemap, fetch tracklists via `/api/v2`. Side phases: `shows` (per-show metadata) and `artists` (slug→id sitemap). Full corpus crawled: 86,600 episodes, 1,709 shows, 0 errors @ concurrency=10.
+2. **Canonicalize** (`canonicalize.py`) — free-text artist strings → NTS integer artist IDs. Two-tier split + full-string-match-first + article-prefix fallback. 80.5% resolution on 1.5M strings.
+3. **Compute** — raw unweighted co-occurrence pair counts. 11M distinct pairs across 147k artists. Top 2,000 saved to `data/top_pairs.jsonl`.
+4. **Discover** — rank by `shows` (distinct curator count) primarily, `eps` (raw count) secondarily.
 
-V1 is plain co-occurrence. No thesis-fit, no LLM scoring, no aesthetic-axis layer — those are far-off.
+V1 is plain co-occurrence. No thesis-fit, no LLM scoring, no aesthetic-axis layer, no per-episode intent-density weighting — deferred.
 
 ---
 
@@ -35,18 +35,33 @@ Base: `https://www.nts.live/api/v2`. HAL-style, no auth, robots permits all (`Us
 
 **`/search` is broken** as of 2026-04-26 — returns 0 results for every query, param name, and Accept header. POST returns 403. Don't waste time on it.
 
-**Artists sitemap**: `/artists_sitemap.xml.gz` is a sitemap-of-sitemaps pointing at 4 sub-files (~50k URLs each, ~200k artist pages). Each artist URL is `/artists/{int_id}-{slug}` — the integer ID is required. Each artist page server-renders a React state into `<script id="react-state">window._REACT_STATE_ = {...}</script>` containing:
+**`/shows` pagination caps at offset=1008** (HTTP 422 beyond), and per-show `/episodes` lists are similarly lossy past the API window. The corpus has 1709 shows and 86,600+ episodes; you cannot reach the full corpus through pure API pagination.
 
-- `id`, `name`, `slug`, `biography`
-- `tracks` — every track of theirs played on NTS, each with `title`, `artistNames`, `releaseLabels`, `releaseYear`, **`discogsUrl`**
-- `totalTracks`
-- `residentShowLinks`, `specialShowLinks`, `episodes`, **`episodesPlayedOn`** ← the reverse-lookup search would have given us, computed and cached server-side
+**Master sitemap** (`/sitemap.xml.gz`) enumerates every show landing and every episode URL, including ones the API can't paginate to. This is the crawl frontier. Verified: even 2012-era episodes fetch 200 via the tracklist endpoint when accessed directly. (`data/master_sitemap.jsonl`.)
+
+**Artists sitemap** (`/artists_sitemap.xml.gz`): 166,704 artist pages, sitemap-of-sitemaps pointing at 4 sub-files. Each artist URL is `/artists/{int_id}-{slug}` — the integer ID is the canonical artist key. Used as a slug→id dictionary for canonicalization (`data/artist_sitemap.jsonl`); the artist *pages* themselves are not crawled (their server-rendered React state is paginated/truncated and unreliable for prolific artists — `tracks` capped at 10, `episodesPlayedOn` empty for residents, "MORE TRACKS" button hits a non-public endpoint).
 
 ---
 
 ## Canonicalization
 
-NTS payloads include Discogs URLs in track entries. **Use Discogs IDs as the canonical artist key.** No need for MusicBrainz resolution — NTS has done the work, and Discogs IDs are arguably the cleaner identifier for our purposes anyway.
+Tracklist responses give free-text artist strings (`"Wiki, Subjxct 5"`, `"DJ Lucas & Papo2oo4"`, `"Rhythm & Sound, Paul St. Hilaire"`). Canonical key is the **NTS integer artist ID** from the artists sitemap. ~15.3% of strings carry a multi-artist marker (corpus-validated).
+
+Resolution flow (`canonicalize.py`):
+1. Skip placeholders (`Unknown Artist`, `Excerpt`, ...).
+2. **Full-string slug match first.** Catches names with internal commas/&'s like "Tyler, the Creator" or "Earth, Wind & Fire" without false-splitting.
+3. **Two-tier split** if step 2 misses: comma is a hard collaborator boundary; `&`/`ft`/`x` are inside-band-name fallbacks. Try each comma-fragment as a full match before falling back to sub-delimiter splitting on it. (One-tier `&`-splitting falsely shreds "Rhythm & Sound, Paul St. Hilaire" into [Rhythm, Sound, Paul St. Hilaire] — caught and fixed during first ranking pass.)
+4. **Article-prefix fallback** (`the-x ↔ x`) on individual fragment lookups.
+
+Slugify: NFKD-strip non-ASCII, lowercase, replace non-alphanumerics with hyphens. NTS slugs are pure ASCII (verified: 0/166,704 have non-ASCII).
+
+Resolution rate on full corpus (1.5M strings): 80.5% (68% full + 9.3% clean split + 3.2% partial). Unresolved 19.5% breaks down into tracklist staff notes ("Excerpt"), shorthand references ("Eno", "Janet"), special-character mismatches ("A$AP Rocky" → `a-ap-rocky`, NTS uses `asap-rocky`), and small artists not on NTS.
+
+**NTS-data dupes** (same human, two artist pages — not our bug, NTS's): visible at the top of co-occurrence ranking. Examples: `j-dilla ↔ jay-dee`, `dj-spinn ↔ spinn`, `d-angelo ↔ dangelo`, `d-angelo ↔ the-vanguard` (band-name page split). Cleanup is a hand-curated merge table — deferred.
+
+**Collaborator-pair pattern** (calibration): some top-ranked pairs are duos / frequent collaborators (Sam Gendel↔Sam Wilkes, Dean Blunt↔Joanne Robertson, Madlib↔Freddie Gibbs). Treat as expected, not noise — same pattern as music-map.com surfacing aliases/partners adjacent to the center artist. Cross-curator validation still holds; just don't claim these as *non-obvious* discoveries.
+
+Discogs IDs are deferred. The `discogsUrl` field on artist-page tracks points to a Discogs *release*, not artist; resolution to a Discogs artist ID requires extra API hops. Discogs joins matter only when joining external evidence streams later.
 
 ---
 

@@ -1,9 +1,15 @@
 .env
 data/diagnostics.html
 data/artists.jsonl
-data/sitemap.jsonl
+data/artist_sitemap.jsonl
+data/master_sitemap.jsonl
+data/shows.jsonl
+data/tracklists.jsonl
 data/errors.jsonl
 models/
 __pycache__/
 .venv/
 venv/
+data/canonicalized.jsonl
+data/unresolved.jsonl
+data/top_pairs.jsonl
