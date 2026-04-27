@@ -1,5 +1,6 @@
 .env
 data/diagnostics.html
+data/graph.html
 data/artists.jsonl
 data/artist_sitemap.jsonl
 data/master_sitemap.jsonl

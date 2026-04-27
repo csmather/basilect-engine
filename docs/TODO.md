@@ -23,6 +23,7 @@ Pipeline shipped end-to-end (crawl → canonicalize → rank). 86,600 episodes, 
 
 ## Parked (far-off, see CLAUDE.md)
 
+- Gephi / ForceAtlas2 layout pass — pyvis covers v1 inspection; revisit when we want prettier exports, community detection, or layout control beyond barnes_hut defaults.
 - Discourse axis revival — would feed axis layer alongside curator-graph; the `discourse` branch has the prior pipeline, validated 25-artist corpus, A-investigation findings.
 - Sampling lineage (WhoSampled, Spotify-acquired Nov 2025, access risk).
 - Listening-trajectory geometry from Last.fm scrobble sequences.
