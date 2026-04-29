@@ -97,6 +97,10 @@ Full instructions: `.claude/skills/extract-artist/SKILL.md`
 
 ---
 
+## Meta
+`docs/TODO.md` is MY kanban/todo list for status + goals at a glance.
+`docs/NOTES.md` is YOUR scratchpad for details, state, and reference.
+
 ## Working notes (carried from prior sessions)
 
 **Dead / pre-internet artists.** Flag deceased or pre-web artists at the start of `/search-artist` before running. Their interviews are audio, scanned print, or paywalled — not trafilatura-scrapeable. Burned a full search on Coltrane learning this.
