@@ -107,7 +107,7 @@ Full instructions: `.claude/skills/extract-artist/SKILL.md`
 
 **Extraction runs in the main conversation.** Use the bash dump pattern in CLAUDE.md, no subagents. Same model as claude.ai; bad batches were subagent failures (live WebFetch, mangled JSON, silently rewritten quotes), not model quality.
 
-**The Motegi Clause.** A quote counts as self-discourse iff the speaker is inside the creative collective. Keep: target artist first-person, bandmate first-person speaking as the band (even about other members). Drop: external-collaborator third-person prose, even when relaying the artist's words (precedent: Shing02 on Nujabes was excluded). One question — is the speaker inside the collective? Yes keep, no drop.
+**The Motegi Clause.** A quote counts as self-discourse iff the speaker is inside the creative collective or band. Keep: target artist first-person, bandmate first-person speaking as the band (even about other members). Drop: external-collaborator third-person prose, even when relaying the artist's words (precedent: Shing02 on Nujabes was excluded). One question — is the speaker inside the collective? Yes keep, no drop.
 
 **No quote-count minimum.** Underground artists with thin corpora are the core use case. Sparsity bias is corrected in `compute.py` via `log(min(count_i, count_j))` residualization → `similarity_adjusted.npy`; never via exclusion. If score quality issues arise, propose encoder/aggregation/CI fixes — don't re-raise exclusion. `corpus_valid` is metadata-completeness, not a gate.
 
