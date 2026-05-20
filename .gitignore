@@ -1,4 +1,6 @@
 .claude/settings.local.json
 .env
+.venv/
+__pycache__/
 docs/*
 !docs/research/
