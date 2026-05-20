@@ -12,7 +12,7 @@ from sentence_transformers import SentenceTransformer
 
 DATA_DIR = Path(__file__).resolve().parent.parent / "data"
 ARTISTS_DIR = DATA_DIR / "artists"
-MODEL_PATH = str(Path(__file__).resolve().parent.parent / "models" / "Qwen3-Embedding-4B")
+MODEL_PATH = "Qwen/Qwen3-Embedding-4B"
 BATCH_SIZE = 8  # 4B model on 12GB VRAM; bump if headroom allows
 
 
